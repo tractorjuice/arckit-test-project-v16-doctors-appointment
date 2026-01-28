@@ -265,7 +265,7 @@
 
 | Artifact | Location | Last Modified | Status |
 |----------|----------|---------------|--------|
-| Architecture Principles | `.arckit/memory/ARC-000-PRIN-v*.md` | [Date] | [✅ Analyzed / ❌ Not Found] |
+| Architecture Principles | `projects/000-global/ARC-000-PRIN-v*.md` | [Date] | [✅ Analyzed / ❌ Not Found] |
 | Stakeholder Drivers | `projects/[project]/ARC-*-STKE-v*.md` | [Date] | [✅ Analyzed / ❌ Not Found] |
 | Requirements | `projects/[project]/ARC-*-REQ-v*.md` | [Date] | [✅ Analyzed / ❌ Not Found] |
 | Risk Register | `projects/[project]/ARC-*-RISK-v*.md` | [Date] | [✅ Analyzed / ❌ Not Found] |

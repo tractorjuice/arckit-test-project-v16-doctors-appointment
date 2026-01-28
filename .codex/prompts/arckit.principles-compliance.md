@@ -10,7 +10,7 @@ $ARGUMENTS
 
 ## Goal
 
-Generate a comprehensive compliance assessment document that measures adherence to each architecture principle defined in `.arckit/memory/ARC-000-PRIN-*.md`. The assessment includes RAG status (Red/Amber/Green), evidence links, gaps, and actionable recommendations.
+Generate a comprehensive compliance assessment document that measures adherence to each architecture principle defined in `projects/000-global/ARC-000-PRIN-*.md`. The assessment includes RAG status (Red/Amber/Green), evidence links, gaps, and actionable recommendations.
 
 **This is a point-in-time assessment** - run at key project gates (Discovery, Alpha, Beta, Live) to track compliance over time.
 
@@ -19,7 +19,7 @@ Generate a comprehensive compliance assessment document that measures adherence 
 ### Architecture Principles (MANDATORY)
 
 a. **Architecture Principles Document** (MUST exist):
-   - Check if any `ARC-000-PRIN-*.md` file exists in `.arckit/memory/`
+   - Check if any `ARC-000-PRIN-*.md` file exists in `projects/000-global/`
    - If NOT found: ERROR "Run /arckit.principles first to define governance standards for your organization"
    - Principles compliance cannot be assessed without defined principles
 
@@ -52,14 +52,14 @@ More artifacts = better evidence = more accurate assessment:
 
 **Check Architecture Principles**:
 ```bash
-if [ ! -f .arckit/memory/ARC-000-PRIN-*.md ]; then
+if [ ! -f projects/000-global/ARC-000-PRIN-*.md ]; then
     ERROR "Architecture principles not found. Run /arckit.principles first."
 fi
 ```
 
 ### 2. Extract All Principles Dynamically
 
-Read any `ARC-000-PRIN-*.md` file in `.arckit/memory/` and extract ALL principles found.
+Read any `ARC-000-PRIN-*.md` file in `projects/000-global/` and extract ALL principles found.
 
 **Extraction Pattern**:
 
@@ -356,7 +356,7 @@ Display concise summary (NOT full document):
 | **Assessment Date** | {YYYY-MM-DD} |
 | **Project Phase** | [Discovery / Alpha / Beta / Live] |
 | **Assessor** | ArcKit AI + {USER_NAME} |
-| **Principles Source** | `.arckit/memory/ARC-000-PRIN-*.md` ({DATE}) |
+| **Principles Source** | `projects/000-global/ARC-000-PRIN-*.md` ({DATE}) |
 | **Status** | [DRAFT / FINAL] |
 
 ## Revision History
@@ -369,7 +369,7 @@ Display concise summary (NOT full document):
 
 ## Executive Summary
 
-**Purpose**: This document assesses project compliance with enterprise architecture principles defined in `.arckit/memory/ARC-000-PRIN-*.md`. This is a point-in-time assessment for the {PHASE} phase gate review.
+**Purpose**: This document assesses project compliance with enterprise architecture principles defined in `projects/000-global/ARC-000-PRIN-*.md`. This is a point-in-time assessment for the {PHASE} phase gate review.
 
 **Scope**: Assessment covers all {N} architecture principles against available project artifacts.
 
@@ -710,7 +710,7 @@ This principle **cannot be assessed** at current project phase:
 This assessment was based on the following artifacts:
 
 **Architecture Principles** (source of truth):
-- ✅ `.arckit/memory/ARC-000-PRIN-*.md` - {DATE} - {N} principles defined
+- ✅ `projects/000-global/ARC-000-PRIN-*.md` - {DATE} - {N} principles defined
 
 **Project Artifacts** (evidence sources):
 [LIST ALL FILES ACTUALLY READ WITH DATES:]

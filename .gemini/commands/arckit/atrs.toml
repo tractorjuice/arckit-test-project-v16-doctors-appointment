@@ -31,7 +31,7 @@ You are helping a UK government organization create an Algorithmic Transparency 
    - **LOW-RISK**: Administrative, productivity tools, recommendations with human control
 
 4. **Read relevant project documents**:
-   - Read `.arckit/memory/ARC-000-PRIN-*.md` (if exists)
+   - Read `projects/000-global/ARC-000-PRIN-*.md` (if exists)
    - Read `projects/{project-dir}/ARC-*-REQ-*.md` (if exists)
    - Read any `ARC-*-AIPB-*.md` file in `projects/{project-dir}/` (if exists - for AI systems)
    - Read `.arckit/templates/uk-gov-atrs-template.md` for structure

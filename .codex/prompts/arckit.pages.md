@@ -27,9 +27,9 @@ Scan the repository to find all ArcKit artifacts:
 
 ### 1.1 Global Documents
 
-Check `.arckit/memory/` for global artifacts:
+Check `projects/000-global/` for global artifacts:
 ```
-.arckit/memory/
+projects/000-global/
 ├── ARC-000-PRIN-v1.0.md    # Architecture Principles (global)
 └── {other global documents}
 ```
@@ -158,7 +158,7 @@ Create `docs/manifest.json` with the discovered structure:
   },
   "global": [
     {
-      "path": ".arckit/memory/ARC-000-PRIN-v1.0.md",
+      "path": "projects/000-global/ARC-000-PRIN-v1.0.md",
       "title": "Architecture Principles",
       "category": "Architecture",
       "documentId": "ARC-000-PRIN-v1.0"

@@ -43,7 +43,7 @@ First, analyze existing project artifacts to understand what to diagram:
    - Identify: Strategic positioning (Genesis/Custom/Product/Commodity)
 
 5. **Read Architecture Principles** (if available):
-   - File: Any `ARC-000-PRIN-*.md` file in `.arckit/memory/`
+   - File: Any `ARC-000-PRIN-*.md` file in `projects/000-global/`
    - Extract: Technology standards, patterns, constraints
    - Identify: Cloud provider, security framework, compliance requirements
 

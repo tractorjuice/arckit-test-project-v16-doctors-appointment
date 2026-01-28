@@ -23,7 +23,7 @@
 | **Assessment Date** | [YYYY-MM-DD] |
 | **Project Phase** | [Discovery / Alpha / Beta / Live] |
 | **Assessor** | ArcKit AI + [USER_NAME] |
-| **Principles Source** | `.arckit/memory/ARC-000-PRIN-v*.md` ([DATE]) |
+| **Principles Source** | `projects/000-global/ARC-000-PRIN-v*.md` ([DATE]) |
 
 ## Revision History
 
@@ -35,7 +35,7 @@
 
 ## Executive Summary
 
-**Purpose**: This document assesses project compliance with enterprise architecture principles defined in `.arckit/memory/ARC-000-PRIN-v*.md`. This is a point-in-time assessment for the [PHASE] phase gate review.
+**Purpose**: This document assesses project compliance with enterprise architecture principles defined in `projects/000-global/ARC-000-PRIN-v*.md`. This is a point-in-time assessment for the [PHASE] phase gate review.
 
 **Scope**: Assessment covers all [N] architecture principles against available project artifacts.
 
@@ -278,7 +278,7 @@
 ## Artifacts Reviewed
 
 **Architecture Principles** (source of truth):
-- ✅ `.arckit/memory/ARC-000-PRIN-v*.md` - [DATE] - [N] principles defined
+- ✅ `projects/000-global/ARC-000-PRIN-v*.md` - [DATE] - [N] principles defined
 
 **Project Artifacts** (evidence sources):
 - ✅ `projects/[project-dir]/ARC-*-REQ-v*.md` - [DATE] - [N] requirements

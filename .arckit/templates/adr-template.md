@@ -133,7 +133,7 @@ These forces influence the decision. They are often in tension with each other.
 
 ### 4.4 Alignment to Architecture Principles
 
-Reference architecture principles from `.arckit/memory/ARC-000-PRIN-v*.md`:
+Reference architecture principles from `projects/000-global/ARC-000-PRIN-v*.md`:
 
 | Principle | Alignment | Impact |
 |-----------|-----------|--------|
@@ -345,7 +345,7 @@ Reference architecture principles from `.arckit/memory/ARC-000-PRIN-v*.md`:
 
 ### 9.2 Architecture Artifacts
 
-**Architecture principles**: `.arckit/memory/ARC-000-PRIN-v*.md`
+**Architecture principles**: `projects/000-global/ARC-000-PRIN-v*.md`
 - [List which principles influenced this decision]
 
 **Stakeholder drivers**: `projects/XXX/ARC-XXX-STKE-v*.md`

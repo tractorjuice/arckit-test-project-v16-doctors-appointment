@@ -91,7 +91,7 @@ $ARGUMENTS
    - Termination clauses
 
 5. **Ensure alignment**:
-   - Cross-reference architecture principles from any `ARC-000-PRIN-*.md` file in `.arckit/memory/`
+   - Cross-reference architecture principles from any `ARC-000-PRIN-*.md` file in `projects/000-global/`
    - Ensure all requirements from the requirements document are included
    - Add validation gates that align with principles
 

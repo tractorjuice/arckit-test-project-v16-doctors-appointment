@@ -51,8 +51,9 @@ ArcKit is an enterprise architecture governance toolkit providing 40 slash comma
 
 ```
 projects/
+├── 000-global/
+│   └── ARC-000-PRIN-v1.0.md     # Global architecture principles
 └── 001-doctors-appointment/
-    ├── ARC-001-PRIN-v1.0.md     # Architecture principles
     ├── ARC-001-STKE-v1.0.md     # Stakeholder analysis
     ├── ARC-001-REQ-v1.0.md      # Requirements
     ├── ARC-001-DATA-v1.0.md     # Data model
@@ -63,8 +64,7 @@ projects/
     └── vendors/                 # Vendor evaluations
 
 .arckit/
-├── memory/                      # Global artifacts (principles)
-├── templates/                   # Document templates (41 templates)
+├── templates/                   # Document templates (42 templates)
 └── scripts/bash/               # Utility scripts
 ```
 

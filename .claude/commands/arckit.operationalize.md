@@ -47,7 +47,7 @@ First, read existing project artifacts to understand the service:
 
 **Required Files**:
 1. Any `ARC-*-REQ-*.md` file in `projects/{project-name}/` - NFRs for availability, performance, recovery
-2. Any `ARC-000-PRIN-*.md` file in `.arckit/memory/` - Operational principles
+2. Any `ARC-000-PRIN-*.md` file in `projects/000-global/` - Operational principles
 3. `projects/{project-name}/diagrams/` - Architecture components
 
 **Optional Files** (read if available):

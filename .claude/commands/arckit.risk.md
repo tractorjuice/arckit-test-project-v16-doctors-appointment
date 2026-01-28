@@ -31,14 +31,14 @@ This command creates a **comprehensive risk register** following HM Treasury Ora
 
 1. **Check for prerequisites**:
    - **MANDATORY**: Check if stakeholder analysis exists for this project
-     - Read `.arckit/memory/` or `projects/*/ARC-*-STKE-v*.md` to find it
+     - Read `projects/000-global/` or `projects/*/ARC-*-STKE-v*.md` to find it
      - If NO stakeholder analysis exists, STOP and tell user:
        "⚠️ Risk register requires stakeholder analysis. Run `/arckit.stakeholders` first to identify risk owners and affected parties."
    - **RECOMMENDED**: Check if architecture principles exist
-     - Read any `ARC-000-PRIN-*.md` file in `.arckit/memory/`
+     - Read any `ARC-000-PRIN-*.md` file in `projects/000-global/`
      - Non-compliance with principles creates risks
    - **RECOMMENDED**: Check if organizational risk appetite exists
-     - Read `.arckit/memory/risk-appetite.md`
+     - Read `projects/000-global/risk-appetite.md`
      - If exists, assess risks against appetite thresholds
    - **OPTIONAL**: Check if requirements exist
      - Requirements can create risks (complexity, technical challenges)

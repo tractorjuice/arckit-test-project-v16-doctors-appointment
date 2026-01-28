@@ -302,7 +302,7 @@ The service **SHOULD** provide:
 ### Project Documents
 
 - **Requirements**: projects/[project]/ARC-*-REQ-v*.md
-- **Architecture Principles**: .arckit/memory/ARC-000-PRIN-v*.md
+- **Architecture Principles**: projects/000-global/ARC-000-PRIN-v*.md
 - **Stakeholder Analysis**: projects/[project]/ARC-*-STKE-v*.md (if exists)
 
 ### Related ArcKit Commands

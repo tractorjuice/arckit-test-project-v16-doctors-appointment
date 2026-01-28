@@ -1236,7 +1236,7 @@ The Platform Design Canvas synthesizes insights from all previous canvases into 
 | FR-005 | [Functional requirement] | [Feature that delivers it] |
 | NFR-S-002 | [Scalability requirement] | [Architecture decision] |
 
-**Alignment to Architecture Principles** (from `.arckit/memory/ARC-000-PRIN-v*.md`):
+**Alignment to Architecture Principles** (from `projects/000-global/ARC-000-PRIN-v*.md`):
 
 | Principle | How Platform Embodies Principle |
 |-----------|----------------------------------|

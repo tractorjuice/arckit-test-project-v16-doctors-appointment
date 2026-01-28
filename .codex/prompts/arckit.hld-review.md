@@ -18,7 +18,7 @@ $ARGUMENTS
    - Location of HLD document or diagrams
 
 2. **Read the governance context**:
-   - Read any `ARC-000-PRIN-*.md` file in `.arckit/memory/` - These are the rules
+   - Read any `ARC-000-PRIN-*.md` file in `projects/000-global/` - These are the rules
    - Read any `ARC-*-REQ-*.md` file in `projects/{project-dir}/` - These must be satisfied
    - Read `projects/{project-dir}/ARC-*-SOW-*.md` - Check deliverable expectations
    - Read `.arckit/templates/hld-review-template.md` - Review checklist

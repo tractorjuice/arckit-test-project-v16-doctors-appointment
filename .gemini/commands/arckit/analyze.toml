@@ -16,7 +16,7 @@ Identify inconsistencies, gaps, ambiguities, and compliance issues across all ar
 
 **Non-Destructive Analysis**: Do **not** modify existing artifacts. Generate a comprehensive analysis report and save it to the project directory for tracking, sharing, and audit trail.
 
-**Architecture Principles Authority**: The architecture principles (`ARC-000-PRIN-*.md` in `.arckit/memory/`) are **non-negotiable**. Any conflicts with principles are automatically CRITICAL and require adjustment of requirements, designs, or vendor proposals—not dilution or reinterpretation of the principles.
+**Architecture Principles Authority**: The architecture principles (`ARC-000-PRIN-*.md` in `projects/000-global/`) are **non-negotiable**. Any conflicts with principles are automatically CRITICAL and require adjustment of requirements, designs, or vendor proposals—not dilution or reinterpretation of the principles.
 
 **UK Government Compliance Authority** (if applicable): TCoP, AI Playbook, and ATRS compliance are mandatory for UK government projects. Non-compliance is CRITICAL.
 
@@ -56,7 +56,7 @@ projects/
 
 Load only minimal necessary context from each artifact:
 
-**From any `ARC-000-PRIN-*.md` file in `.arckit/memory/`** (if exists):
+**From any `ARC-000-PRIN-*.md` file in `projects/000-global/`** (if exists):
 - Strategic principles (Cloud-First, API-First, etc.)
 - Security principles
 - Data principles
@@ -1157,7 +1157,7 @@ NFR-S-005: All stored data SHALL be encrypted with AES-256 encryption
 FR-025: System SHALL deploy to on-premise servers in corporate datacenter
 ```
 
-**Issue**: Violates \"Cloud-First\" architecture principle defined in `.arckit/memory/ARC-000-PRIN-*.md`. Principle states \"MUST use public cloud (AWS/Azure/GCP) unless explicitly justified exception.\"
+**Issue**: Violates \"Cloud-First\" architecture principle defined in `projects/000-global/ARC-000-PRIN-*.md`. Principle states \"MUST use public cloud (AWS/Azure/GCP) unless explicitly justified exception.\"
 
 **Impact**: Architecture doesn't align with organization standards. Blocks procurement approval.
 

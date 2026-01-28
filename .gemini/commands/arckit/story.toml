@@ -22,7 +22,7 @@ This command creates a **ARC-{PROJECT_ID}-STRY-v1.0.md** document that serves as
 **IMPORTANT**: Before generating a project story, verify that foundational governance artifacts exist:
 
 1. **Architecture Principles** (REQUIRED):
-   - Check if any `ARC-000-PRIN-*.md` file exists in `.arckit/memory/`
+   - Check if any `ARC-000-PRIN-*.md` file exists in `projects/000-global/`
    - If it does NOT exist:
      ```
      ❌ Architecture principles not found.
@@ -93,7 +93,7 @@ find \"$PROJECT_DIR\" -type f -name \"*.md\" | sort
 
 **Foundation Artifacts**:
 - `ARC-*-STKE-*.md` - Stakeholder analysis
-- `ARC-000-PRIN-*.md` in `.arckit/memory/` - Architecture principles (global)
+- `ARC-000-PRIN-*.md` in `projects/000-global/` - Architecture principles (global)
 - `ARC-*-RISK-*.md` - Risk assessment
 
 **Business Case Artifacts**:

@@ -55,7 +55,7 @@ Read existing project artifacts:
 2. Any `ARC-*-DATA-*.md` file in `projects/{project-name}/` - Training data, features
 
 **Optional Files** (read if available):
-3. Any `ARC-000-PRIN-*.md` file in `.arckit/memory/` - AI/ML principles
+3. Any `ARC-000-PRIN-*.md` file in `projects/000-global/` - AI/ML principles
 4. Any `ARC-*-AIPB-*.md` file in `projects/{project-name}/` - Responsible AI context
 5. Any `ARC-*-ATRS-*.md` file in `projects/{project-name}/` - Algorithmic transparency
 6. Any `ARC-*-JSP936-*.md` file in `projects/{project-name}/` - MOD AI assurance

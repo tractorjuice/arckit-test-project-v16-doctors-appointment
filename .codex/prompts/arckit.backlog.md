@@ -119,7 +119,7 @@ Read these files from `projects/{project-dir}/`:
 - Extract test types and coverage needs
 
 **Principles**:
-- Any `ARC-000-PRIN-*.md` file in `.arckit/memory/` - Definition of Done
+- Any `ARC-000-PRIN-*.md` file in `projects/000-global/` - Definition of Done
 - Extract quality standards
 
 **Note**: If any file is missing, continue with available artifacts. The command adapts to what exists.

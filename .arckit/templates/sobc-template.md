@@ -943,7 +943,7 @@ If this SOBC is not approved:
 
 ## Appendix B: Architecture Principles
 
-**Source**: `.arckit/memory/ARC-000-PRIN-v*.md`
+**Source**: `projects/000-global/ARC-000-PRIN-v*.md`
 
 **Relevant Principles**:
 - [Principle 1]: [How this project aligns]

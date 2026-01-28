@@ -13,7 +13,7 @@ $ARGUMENTS
 ## Instructions
 
 1. **Check for architecture principles and stakeholder analysis**:
-   - First, check if `.arckit/memory/ARC-000-PRIN-*.md` exists
+   - First, check if `projects/000-global/ARC-000-PRIN-*.md` exists
      - If it doesn't exist, suggest running `/arckit.principles` first
    - Then, check if a stakeholder analysis exists for this project
      - Look for `projects/*/ARC-*-STKE-v*.md` files
@@ -76,7 +76,7 @@ $ARGUMENTS
    - If stakeholder analysis exists, trace requirements back to stakeholder goals:
      - Example: "BR-001 addresses CFO's goal G-1: Reduce infrastructure costs 40% by end of Year 1"
      - Example: "NFR-P-001 supports Operations Director's outcome O-3: Maintain 99.95% uptime"
-   - Reference relevant principles from `.arckit/memory/ARC-000-PRIN-*.md`:
+   - Reference relevant principles from `projects/000-global/ARC-000-PRIN-*.md`:
      - Example: "NFR-S-001 aligns with Security by Design principle (SEC-001)"
    - Ensure high-priority stakeholder drivers get MUST requirements
    - Document which stakeholder benefits from each requirement

@@ -32,7 +32,7 @@ Wardley Mapping is a strategic situational awareness technique that maps:
 First, analyze the existing project artifacts:
 
 1. **Read Architecture Principles** (if available):
-   - File: Any `ARC-000-PRIN-*.md` file in `.arckit/memory/`
+   - File: Any `ARC-000-PRIN-*.md` file in `projects/000-global/`
    - Extract: Strategic principles, technology standards, compliance requirements
 
 2. **Read Requirements** (if available):

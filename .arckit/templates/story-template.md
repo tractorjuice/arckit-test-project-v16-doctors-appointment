@@ -685,7 +685,7 @@ Complete list of all artifacts generated during this project:
 
 | # | Artifact | Location | Date Created | Command | Status |
 |---|----------|----------|--------------|---------|--------|
-| 1 | Architecture Principles | `.arckit/memory/ARC-000-PRIN-v*.md` | [DATE] | `/arckit.principles` | ✅ |
+| 1 | Architecture Principles | `projects/000-global/ARC-000-PRIN-v*.md` | [DATE] | `/arckit.principles` | ✅ |
 | 2 | Stakeholder Drivers | `projects/{project_id}/ARC-{PROJECT_ID}-STKE-v*.md` | [DATE] | `/arckit.stakeholders` | ✅ |
 | 3 | Risk Register | `projects/{project_id}/ARC-{PROJECT_ID}-RISK-v*.md` | [DATE] | `/arckit.risk` | ✅ |
 | 4 | SOBC | `projects/{project_id}/ARC-{PROJECT_ID}-SOBC-v*.md` | [DATE] | `/arckit.sobc` | ✅ |

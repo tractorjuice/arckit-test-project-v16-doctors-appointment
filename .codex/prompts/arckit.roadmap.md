@@ -14,7 +14,7 @@ $ARGUMENTS
 
 Before creating the roadmap, verify these strategic inputs exist (roadmap synthesis requires upstream context):
 
-1. **Architecture Principles**: `.arckit/memory/ARC-000-PRIN-*.md` (REQUIRED)
+1. **Architecture Principles**: `projects/000-global/ARC-000-PRIN-*.md` (REQUIRED)
    - If missing: Ask user to run `/arckit.principles` first
 
 2. **Stakeholder Drivers**: Check if stakeholder analysis exists for this initiative
@@ -47,7 +47,7 @@ Parse the JSON response to extract:
 Read the following files to understand strategic context (only read files that exist):
 
 **REQUIRED**:
-- `.arckit/memory/ARC-000-PRIN-*.md` - Principles to align roadmap to
+- `projects/000-global/ARC-000-PRIN-*.md` - Principles to align roadmap to
 
 **If Available**:
 - `projects/[PROJECT_ID]/ARC-*-STKE-*.md` - Business drivers and outcomes

@@ -18,7 +18,7 @@ This command generates a **data-mesh-contract** document that defines the formal
 **IMPORTANT**: Before generating a data mesh contract, verify that foundational artifacts exist:
 
 1. **Architecture Principles** (REQUIRED):
-   - Check if `.arckit/memory/ARC-000-PRIN-*.md` exists
+   - Check if `projects/000-global/ARC-000-PRIN-*.md` exists
    - If it does NOT exist:
      ```
      ❌ Architecture principles not found.
@@ -178,7 +178,7 @@ cat .arckit/templates/data-mesh-contract-template.md
   - Stakeholder names and roles (these become ownership roles: Product Owner, Data Steward)
   - Consumer stakeholders (these inform consumer obligations)
 
-**IF `.arckit/memory/ARC-000-PRIN-*.md` exists**:
+**IF `projects/000-global/ARC-000-PRIN-*.md` exists**:
 - Read it to understand mesh governance standards
 - Look for principles about:
   - Federated ownership

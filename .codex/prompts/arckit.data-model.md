@@ -248,7 +248,7 @@ You should:
 - **Use Mermaid ERD syntax** for GitHub-renderable diagrams (not PlantUML or other formats)
 - **Data quality metrics should be measurable** (not "high quality", use "99% accuracy")
 - **Consider data lifecycle**: creation, updates, archival, deletion (GDPR "right to erasure")
-- **Reference architecture principles** from any `ARC-000-PRIN-*.md` file in `.arckit/memory/` if they exist
+- **Reference architecture principles** from any `ARC-000-PRIN-*.md` file in `projects/000-global/` if they exist
 - **Flag any DR-xxx requirements that cannot be modeled** (gaps for requirements clarification)
 
 ## Integration with Other Commands

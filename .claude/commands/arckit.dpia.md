@@ -36,7 +36,7 @@ $ARGUMENTS
    - If it exists, proceed to Step 1
 
 2. **Architecture Principles** (RECOMMENDED):
-   - Check if `.arckit/memory/ARC-000-PRIN-*.md` exists
+   - Check if `projects/000-global/ARC-000-PRIN-*.md` exists
    - If it does NOT exist, warn:
      ```
      ⚠️  Warning: Architecture principles not found.
@@ -92,7 +92,7 @@ Read the following artifacts to extract information for auto-population:
      - RACI for data governance roles (DPO, Data Controller, Data Processors)
 
 4. **Architecture Principles** (if exists):
-   - Read `.arckit/memory/ARC-000-PRIN-*.md`
+   - Read `projects/000-global/ARC-000-PRIN-*.md`
    - Extract:
      - Privacy by Design principles
      - Data minimization principles
@@ -365,7 +365,7 @@ If YES:
 - ✅ Data Model: projects/{project_id}/ARC-*-DATA-*.md
 - ✅ Requirements: projects/{project_id}/ARC-*-REQ-*.md
 - ✅ Stakeholders: projects/{project_id}/ARC-*-STKE-*.md
-- ✅ Architecture Principles: .arckit/memory/ARC-000-PRIN-*.md
+- ✅ Architecture Principles: projects/000-global/ARC-000-PRIN-*.md
 
 **Related Artifacts**:
 - Risk Register: projects/{project_id}/ARC-*-RISK-*.md ({added/updated})

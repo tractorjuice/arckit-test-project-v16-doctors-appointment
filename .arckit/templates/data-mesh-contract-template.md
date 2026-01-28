@@ -81,7 +81,7 @@ status: {active|deprecated|retired}
 | **Source Data Model** | `projects/{PROJECT_ID}/ARC-{PROJECT_ID}-DATA-v*.md` | Entity definitions and ERD |
 | **Requirements** | `projects/{PROJECT_ID}/ARC-{PROJECT_ID}-REQ-v*.md` | DR-xxx data requirements |
 | **Stakeholder Analysis** | `projects/{PROJECT_ID}/ARC-{PROJECT_ID}-STKE-v*.md` | Domain owners and consumers |
-| **Architecture Principles** | `.arckit/memory/ARC-000-PRIN-v*.md` | Mesh governance principles |
+| **Architecture Principles** | `projects/000-global/ARC-000-PRIN-v*.md` | Mesh governance principles |
 
 ---
 

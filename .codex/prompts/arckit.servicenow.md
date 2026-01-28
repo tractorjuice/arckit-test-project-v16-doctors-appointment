@@ -42,7 +42,7 @@ Before generating the ServiceNow design, read and analyze:
    - Data flow diagram → CMDB relationships
    - Deployment diagram → Infrastructure CIs (servers, databases, queues)
 
-3. **Architecture Principles** (any `ARC-000-PRIN-*.md` file in `.arckit/memory/`):
+3. **Architecture Principles** (any `ARC-000-PRIN-*.md` file in `projects/000-global/`):
    - Operational principles that affect service management
    - Support requirements
    - Compliance requirements
@@ -72,7 +72,7 @@ Before generating the ServiceNow design, read and analyze:
 
 1. Read any `ARC-*-REQ-*.md` file in `projects/{project-name}/`
 2. Read all files in diagrams/ directory (especially context and container diagrams)
-3. Read any `ARC-000-PRIN-*.md` file in `.arckit/memory/`
+3. Read any `ARC-000-PRIN-*.md` file in `projects/000-global/`
 4. Read HLD/DLD if available
 5. Read any `ARC-*-TRAC-*.md` file if available
 
@@ -283,7 +283,7 @@ Do NOT:
 **Expected Behavior**:
 1. Read `projects/001-benefits-chatbot/ARC-*-REQ-*.md`
 2. Read `projects/001-benefits-chatbot/diagrams/` (context, container, dataflow)
-3. Read `.arckit/memory/ARC-000-PRIN-*.md`
+3. Read `projects/000-global/ARC-000-PRIN-*.md`
 4. Read `projects/001-benefits-chatbot/ARC-001-TCOP-*.md` (for compliance)
 5. Analyze:
    - NFR: 99.95% availability → Tier 1 service

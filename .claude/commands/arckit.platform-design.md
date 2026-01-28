@@ -23,7 +23,7 @@ Generate a comprehensive platform strategy design document using PDT v2.2.1 meth
 **IMPORTANT**: Before generating a platform design, verify that foundational artifacts exist:
 
 1. **Architecture Principles** (REQUIRED):
-   - Check if `.arckit/memory/ARC-000-PRIN-*.md` exists
+   - Check if `projects/000-global/ARC-000-PRIN-*.md` exists
    - If it does NOT exist:
      ```
      ❌ Architecture principles not found.
@@ -195,7 +195,7 @@ If `projects/{project_id}/wardley-maps/ARC-*-WARD-*.md` exists:
 
 #### 3.4 Extract Architecture Principles → Platform Governance
 
-Read `.arckit/memory/ARC-000-PRIN-*.md`:
+Read `projects/000-global/ARC-000-PRIN-*.md`:
 
 **Extract principles** that apply to platform strategy:
 - Example: Principle "API-First" → Platform must expose APIs for ecosystem integrations

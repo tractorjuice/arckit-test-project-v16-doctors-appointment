@@ -742,7 +742,7 @@ If YES, select condition(s):
 
 | Artifact | Location | Information Extracted |
 |----------|----------|----------------------|
-| **Architecture Principles** | `.arckit/memory/ARC-000-PRIN-v*.md` | Privacy by Design, Data Minimization principles |
+| **Architecture Principles** | `projects/000-global/ARC-000-PRIN-v*.md` | Privacy by Design, Data Minimization principles |
 | **Data Model** | `projects/{project_id}/ARC-{PROJECT_ID}-DATA-v*.md` | Entities, PII inventory, special category data, GDPR lawful basis, retention periods |
 | **Requirements** | `projects/{project_id}/ARC-{PROJECT_ID}-REQ-v*.md` | Data requirements (DR-xxx), processing purposes |
 | **Stakeholder Analysis** | `projects/{project_id}/ARC-{PROJECT_ID}-STKE-v*.md` | Data subject categories, vulnerable groups, RACI for data governance roles |

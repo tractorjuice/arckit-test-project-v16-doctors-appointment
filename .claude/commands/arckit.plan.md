@@ -37,7 +37,7 @@ Read existing project artifacts to tailor the plan:
    - Impact: 100+ requirements = longer Alpha phase
 
 3. **Read Architecture Principles** (if available):
-   - File: Any `ARC-000-PRIN-*.md` file in `.arckit/memory/`
+   - File: Any `ARC-000-PRIN-*.md` file in `projects/000-global/`
    - Extract: Complexity constraints (security, compliance)
    - Impact: PCI-DSS/GDPR = additional time for threat modeling
 

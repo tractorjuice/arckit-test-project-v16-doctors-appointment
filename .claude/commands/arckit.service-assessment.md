@@ -68,7 +68,7 @@ Systematically read and analyze all available ArcKit artifacts in the project di
 - `ARC-*-SOBC-*.md` - Strategic business case, benefits, success metrics, TCO
 - `ARC-*-REQ-*.md` - Functional requirements, NFRs, user stories, acceptance criteria
 - `ARC-*-DATA-*.md` - Data entities, GDPR compliance, data governance
-- `.arckit/memory/ARC-000-PRIN-*.md` - Architecture principles and rationale
+- `projects/000-global/ARC-000-PRIN-*.md` - Architecture principles and rationale
 
 **Design & Review Artifacts**:
 - `reviews/ARC-*-HLD-*.md` - High-level design reviews, architecture decisions

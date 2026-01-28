@@ -21,7 +21,7 @@ $ARGUMENTS
 **IMPORTANT**: Check prerequisites before proceeding:
 
 a. **Architecture Principles** (MUST exist):
-   - Check if any `ARC-000-PRIN-*.md` file exists in `.arckit/memory/`
+   - Check if any `ARC-000-PRIN-*.md` file exists in `projects/000-global/`
    - If NOT found: ERROR "Run /arckit.principles first to define governance standards"
    - Vendor evaluation MUST align with organizational governance
 
@@ -38,7 +38,7 @@ c. **Statement of Work** (RECOMMENDED):
 3. **Read project context**:
    - Read any `ARC-*-REQ-*.md` file in `projects/{project-dir}/` to understand what's being evaluated
    - Read any `ARC-*-SOW-*.md` file in `projects/{project-dir}/` to understand evaluation criteria already defined
-   - Read any `ARC-000-PRIN-*.md` file in `.arckit/memory/` to ensure alignment with governance
+   - Read any `ARC-000-PRIN-*.md` file in `projects/000-global/` to ensure alignment with governance
 
 4. **Read the template**: Read `.arckit/templates/evaluation-criteria-template.md`
 

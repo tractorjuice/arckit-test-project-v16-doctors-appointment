@@ -42,7 +42,7 @@ $ARGUMENTS
 - Examples: Email categorization, meeting scheduling, document summarization
 
 3. **Read relevant project documents**:
-   - Read `.arckit/memory/ARC-000-PRIN-*.md` (if exists)
+   - Read `projects/000-global/ARC-000-PRIN-*.md` (if exists)
    - Read `projects/{project-dir}/ARC-*-REQ-*.md` (if exists)
    - Read `.arckit/templates/uk-gov-ai-playbook-template.md` for assessment structure
 

@@ -48,7 +48,7 @@ Read existing project artifacts:
 
 **Required Files**:
 1. Any `ARC-*-REQ-*.md` file in `projects/{project-name}/` - Scale, performance, budget NFRs
-2. Any `ARC-000-PRIN-*.md` file in `.arckit/memory/` - Technology standards
+2. Any `ARC-000-PRIN-*.md` file in `projects/000-global/` - Technology standards
 
 **Optional Files** (read if available):
 3. Any `ARC-*-DEVOPS-*.md` file in `projects/{project-name}/` - Infrastructure patterns
