@@ -21,16 +21,34 @@
       "name": "NHS Doctors Online Appointment System",
       "documents": [
         {
-          "path": "projects/001-doctors-appointment/ARC-001-STKE-v1.3.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery",
-          "documentId": "ARC-001-STKE-v1.3"
-        },
-        {
           "path": "projects/001-doctors-appointment/ARC-001-REQ-v1.0.md",
           "title": "Requirements",
           "category": "Discovery",
           "documentId": "ARC-001-REQ-v1.0"
+        },
+        {
+          "path": "projects/001-doctors-appointment/ARC-001-STKE-v1.0.md",
+          "title": "Stakeholder Drivers v1.0",
+          "category": "Discovery",
+          "documentId": "ARC-001-STKE-v1.0"
+        },
+        {
+          "path": "projects/001-doctors-appointment/ARC-001-STKE-v1.1.md",
+          "title": "Stakeholder Drivers v1.1",
+          "category": "Discovery",
+          "documentId": "ARC-001-STKE-v1.1"
+        },
+        {
+          "path": "projects/001-doctors-appointment/ARC-001-STKE-v1.2.md",
+          "title": "Stakeholder Drivers v1.2",
+          "category": "Discovery",
+          "documentId": "ARC-001-STKE-v1.2"
+        },
+        {
+          "path": "projects/001-doctors-appointment/ARC-001-STKE-v1.3.md",
+          "title": "Stakeholder Drivers v1.3",
+          "category": "Discovery",
+          "documentId": "ARC-001-STKE-v1.3"
         },
         {
           "path": "projects/001-doctors-appointment/ARC-001-DATA-v1.0.md",
@@ -39,8 +57,14 @@
           "documentId": "ARC-001-DATA-v1.0"
         },
         {
+          "path": "projects/001-doctors-appointment/ARC-001-RISK-v1.0.md",
+          "title": "Risk Register v1.0",
+          "category": "Governance",
+          "documentId": "ARC-001-RISK-v1.0"
+        },
+        {
           "path": "projects/001-doctors-appointment/ARC-001-RISK-v1.1.md",
-          "title": "Risk Register",
+          "title": "Risk Register v1.1",
           "category": "Governance",
           "documentId": "ARC-001-RISK-v1.1"
         },
@@ -64,7 +88,11 @@
         }
       ],
       "diagrams": [],
+      "research": [],
       "decisions": [],
+      "wardleyMaps": [],
+      "dataContracts": [],
+      "reviews": [],
       "vendors": []
     }
   ]
