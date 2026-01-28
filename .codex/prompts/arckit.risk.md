@@ -212,26 +212,37 @@ This command creates a **comprehensive risk register** following HM Treasury Ora
    - Key risks requiring immediate attention (top 3-5)
    - Recommended actions and decisions needed
 
-   **B. Risk Matrix Visualization** (5x5 grid):
+   **B. Risk Matrix Visualization** (using Mermaid quadrantChart):
 
-   Create TWO matrices:
+   Create TWO matrices using **Mermaid quadrantChart**:
 
    **Inherent Risk Matrix** (before controls):
-   ```
-   LIKELIHOOD ↑
-       5 |     | R-3 | R-7 |     | R-1 |  ← Almost Certain
-       4 |     |     | R-5 | R-9 |     |
-       3 | R-6 |     | R-2 |     | R-4 |  ← Possible
-       2 |     | R-8 |     |     |     |
-       1 |     |     | R-10|     |     |  ← Rare
-         +---------------------------→
-           1     2     3     4     5
-                IMPACT →
+   ```mermaid
+   quadrantChart
+       title Inherent Risk Matrix (Before Controls)
+       x-axis Low Impact --> High Impact
+       y-axis Low Likelihood --> High Likelihood
+       quadrant-1 High Risk
+       quadrant-2 Critical Risk
+       quadrant-3 Low Risk
+       quadrant-4 Medium Risk
+       R-001: [0.95, 0.95]
+       R-003: [0.55, 0.95]
+       R-007: [0.65, 0.95]
+       %% Add all risks with [impact, likelihood] coordinates (0-1 scale)
    ```
 
    **Residual Risk Matrix** (after controls):
-   ```
-   [Similar 5x5 grid showing risk positions AFTER controls]
+   ```mermaid
+   quadrantChart
+       title Residual Risk Matrix (After Controls)
+       x-axis Low Impact --> High Impact
+       y-axis Low Likelihood --> High Likelihood
+       quadrant-1 High Risk
+       quadrant-2 Critical Risk
+       quadrant-3 Low Risk
+       quadrant-4 Medium Risk
+       %% Show risks at new positions after controls applied
    ```
 
    Show movement: "R-001 moved from Critical (25) to Medium (9) after controls"

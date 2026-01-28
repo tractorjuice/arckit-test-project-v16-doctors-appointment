@@ -96,55 +96,63 @@
 
 **Likelihood × Impact Matrix - Inherent Risk Positions**
 
-```
-LIKELIHOOD ↑
-     5 | Almost Certain |       | R-003 | R-007 |       | R-001 |
-       |                |-------|-------|-------|-------|-------|
-     4 | Likely         |       |       | R-005 | R-009 |       |
-       |                |-------|-------|-------|-------|-------|
-     3 | Possible       | R-006 |       | R-002 |       | R-004 |
-       |                |-------|-------|-------|-------|-------|
-     2 | Unlikely       |       | R-008 |       |       |       |
-       |                |-------|-------|-------|-------|-------|
-     1 | Rare           |       |       | R-010 |       |       |
-       |________________|_______|_______|_______|_______|_______|
-                            1       2       3       4       5
-                        Negligible Minor  Moderate Major Catastrophic
-                                      IMPACT →
+```mermaid
+quadrantChart
+    title Inherent Risk Matrix (Before Controls)
+    x-axis Low Impact --> High Impact
+    y-axis Low Likelihood --> High Likelihood
+    quadrant-1 High Risk
+    quadrant-2 Critical Risk
+    quadrant-3 Low Risk
+    quadrant-4 Medium Risk
+    R-001: [0.95, 0.95]
+    R-003: [0.55, 0.95]
+    R-007: [0.65, 0.95]
+    R-004: [0.95, 0.55]
+    R-005: [0.55, 0.75]
+    R-009: [0.75, 0.75]
+    R-002: [0.55, 0.55]
+    R-006: [0.15, 0.55]
+    R-008: [0.35, 0.35]
+    R-010: [0.55, 0.15]
 ```
 
 **Risk Zones:**
-- 🟥 **Critical (20-25)**: R-001, R-003 - Immediate escalation required
-- 🟧 **High (13-19)**: R-002, R-004, R-005, R-007, R-009 - Senior management attention
-- 🟨 **Medium (6-12)**: R-006, R-008 - Management monitoring
-- 🟩 **Low (1-5)**: R-010 - Routine monitoring
+- **Critical (20-25)**: R-001, R-003 - Immediate escalation required
+- **High (13-19)**: R-002, R-004, R-005, R-007, R-009 - Senior management attention
+- **Medium (6-12)**: R-006, R-008 - Management monitoring
+- **Low (1-5)**: R-010 - Routine monitoring
 
 ### Residual Risk Matrix (After Controls)
 
 **Likelihood × Impact Matrix - Residual Risk Positions**
 
-```
-LIKELIHOOD ↑
-     5 | Almost Certain |       |       |       |       |       |
-       |                |-------|-------|-------|-------|-------|
-     4 | Likely         |       |       | R-003 |       |       |
-       |                |-------|-------|-------|-------|-------|
-     3 | Possible       | R-006 | R-001 | R-002 | R-005 |       |
-       |                |-------|-------|-------|-------|-------|
-     2 | Unlikely       |       | R-008 | R-007 | R-009 |       |
-       |                |-------|-------|-------|-------|-------|
-     1 | Rare           |       | R-010 |       | R-004 |       |
-       |________________|_______|_______|_______|_______|_______|
-                            1       2       3       4       5
-                        Negligible Minor  Moderate Major Catastrophic
-                                      IMPACT →
+```mermaid
+quadrantChart
+    title Residual Risk Matrix (After Controls)
+    x-axis Low Impact --> High Impact
+    y-axis Low Likelihood --> High Likelihood
+    quadrant-1 High Risk
+    quadrant-2 Critical Risk
+    quadrant-3 Low Risk
+    quadrant-4 Medium Risk
+    R-003: [0.55, 0.75]
+    R-001: [0.35, 0.55]
+    R-002: [0.55, 0.55]
+    R-005: [0.75, 0.55]
+    R-006: [0.15, 0.55]
+    R-007: [0.55, 0.35]
+    R-008: [0.35, 0.35]
+    R-009: [0.75, 0.35]
+    R-004: [0.75, 0.15]
+    R-010: [0.35, 0.15]
 ```
 
 **Risk Movement Analysis:**
-- ✅ **Significant Improvement**: R-001 (25→9), R-004 (20→4) - Controls very effective
-- ⚠️ **Moderate Improvement**: R-002 (15→9), R-005 (16→12) - Additional controls needed
-- ❌ **Limited Improvement**: R-003 (20→16) - Current controls insufficient
-- 📊 **Monitoring**: R-006, R-008, R-010 - Stable, continue current approach
+- **Significant Improvement**: R-001 (25→9), R-004 (20→4) - Controls very effective
+- **Moderate Improvement**: R-002 (15→9), R-005 (16→12) - Additional controls needed
+- **Limited Improvement**: R-003 (20→16) - Current controls insufficient
+- **Monitoring**: R-006, R-008, R-010 - Stable, continue current approach
 
 ---
 

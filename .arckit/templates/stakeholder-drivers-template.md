@@ -76,21 +76,32 @@ This document identifies key stakeholders, their underlying drivers (motivations
 
 ### Stakeholder Power-Interest Grid
 
+```mermaid
+quadrantChart
+    title Stakeholder Power-Interest Grid
+    x-axis Low Interest --> High Interest
+    y-axis Low Power --> High Power
+    quadrant-1 Keep Satisfied
+    quadrant-2 Manage Closely
+    quadrant-3 Monitor
+    quadrant-4 Keep Informed
+    Executive Sponsor: [0.9, 0.95]
+    Business Unit Leader: [0.85, 0.9]
+    Security: [0.7, 0.85]
+    Finance: [0.5, 0.8]
+    Compliance: [0.45, 0.75]
+    Legal: [0.4, 0.7]
+    End Users: [0.85, 0.3]
+    Product Owner: [0.9, 0.4]
+    Operations: [0.7, 0.35]
+    Industry Bodies: [0.2, 0.15]
 ```
-HIGH POWER
-    │
-    │  [Manage Closely]          │  [Keep Satisfied]
-    │  - Executive Sponsor        │  - Finance
-    │  - Business Unit Leader     │  - Compliance
-    │  - Security                 │  - Legal
-────┼──────────────────────────────┼─────────────────
-    │  [Keep Informed]            │  [Monitor]
-    │  - End Users                │  - Industry Bodies
-    │  - Product Owner            │
-    │  - Operations               │
-    │                             │
-LOW POWER                                        HIGH INTEREST
-```
+
+**Quadrant Interpretation:**
+- **Manage Closely** (High Power, High Interest): Key decision-makers requiring active engagement
+- **Keep Satisfied** (High Power, Low Interest): Influential stakeholders needing periodic updates
+- **Keep Informed** (Low Power, High Interest): Engaged stakeholders needing regular communication
+- **Monitor** (Low Power, Low Interest): Minimal engagement required
 
 ---
 
