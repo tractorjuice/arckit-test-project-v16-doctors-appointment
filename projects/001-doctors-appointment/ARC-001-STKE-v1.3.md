@@ -26,9 +26,9 @@
 | Version | Date | Author | Changes | Approved By | Approval Date |
 |---------|------|--------|---------|-------------|---------------|
 | 1.0 | 2026-01-28 | ArcKit AI | Initial creation from `/arckit.stakeholders` command | PENDING | PENDING |
-| 1.1 | 2026-01-28 | ArcKit AI | Updated with Mermaid Power-Interest Grid | PENDING | PENDING |
-| 1.2 | 2026-01-28 | ArcKit AI | Updated with short codes, legend table, split diagrams | PENDING | PENDING |
-| 1.3 | 2026-01-28 | ArcKit AI | Fixed quadrant labels to match Mermaid spec (q1=Keep Satisfied, q2=Manage Closely) | PENDING | PENDING |
+| 1.1 | 2026-01-28 | ArcKit AI | Updated Power-Interest Grid with Mermaid quadrantChart | PENDING | PENDING |
+| 1.2 | 2026-01-28 | ArcKit AI | Improved Mermaid quadrantChart with inverted axes for correct quadrant positions | PENDING | PENDING |
+| 1.3 | 2026-01-28 | ArcKit AI | Updated to latest template format with ASCII Power-Interest Grid and enhanced structure | PENDING | PENDING |
 
 ---
 
@@ -91,85 +91,63 @@ While strategic objectives align well across NHS England, NHS Digital, and patie
 
 ### Stakeholder Power-Interest Grid
 
-```mermaid
-quadrantChart
-    title Stakeholder Power-Interest Grid
-    x-axis Low Interest --> High Interest
-    y-axis Low Power --> High Power
-    quadrant-1 Keep Satisfied
-    quadrant-2 Manage Closely
-    quadrant-3 Monitor
-    quadrant-4 Keep Informed
-    S1 NHS Eng Dir: [0.85, 0.95]
-    S2 NHS Dig Dir: [0.90, 0.90]
-    S3 CSO: [0.85, 0.88]
-    S4 GP Suppliers: [0.80, 0.85]
-    S5 GP Practice Mgr: [0.85, 0.82]
-    S6 GDS Team: [0.65, 0.80]
-    S7 Minister: [0.45, 0.92]
-    S8 ICO: [0.30, 0.78]
-    S9 IG Lead: [0.55, 0.75]
-    S10 Security Lead: [0.60, 0.75]
-    S11 CQC: [0.25, 0.65]
-    S12 Welsh Gov: [0.50, 0.60]
+```
+                          INTEREST
+              Low                         High
+        ┌─────────────────────┬─────────────────────┐
+        │                     │                     │
+        │   KEEP SATISFIED    │   MANAGE CLOSELY    │
+   High │                     │                     │
+        │  • Minister (DHSC)  │  • NHS England Dir  │
+        │  • ICO              │  • NHS Digital Dir  │
+        │  • CQC              │  • Clinical Safety  │
+ P      │  • Welsh Government │  • GP System Supprs │
+ O      │  • IG Lead          │  • GP Practice Mgrs │
+ W      │  • Security Lead    │  • GDS Assessment   │
+ E      ├─────────────────────┼─────────────────────┤
+ R      │                     │                     │
+        │      MONITOR        │    KEEP INFORMED    │
+        │                     │                     │
+   Low  │  • Industry Bodies  │  • Patients         │
+        │                     │  • Receptionists    │
+        │                     │  • Product Owner    │
+        │                     │  • Patient Advocacy │
+        │                     │  • Healthwatch      │
+        │                     │  • Enterprise Arch  │
+        │                     │  • GP Connect Team  │
+        │                     │  • NHS Login Team   │
+        └─────────────────────┴─────────────────────┘
 ```
 
-**Stakeholder Key** (short codes used in diagram to prevent overlap):
-
-| Code | Stakeholder | Power | Interest | Quadrant |
-|------|-------------|-------|----------|----------|
-| S1 | NHS England Director | 0.95 | 0.85 | Manage Closely |
-| S2 | NHS Digital Director | 0.90 | 0.90 | Manage Closely |
-| S3 | Clinical Safety Officer | 0.88 | 0.85 | Manage Closely |
-| S4 | GP System Suppliers | 0.85 | 0.80 | Manage Closely |
-| S5 | GP Practice Managers | 0.82 | 0.85 | Manage Closely |
-| S6 | GDS Assessment Team | 0.80 | 0.65 | Manage Closely |
-| S7 | Minister (DHSC) | 0.92 | 0.45 | Keep Satisfied |
-| S8 | ICO | 0.78 | 0.30 | Keep Satisfied |
-| S9 | Information Governance Lead | 0.75 | 0.55 | Keep Satisfied |
-| S10 | Security Lead | 0.75 | 0.60 | Keep Satisfied |
-| S11 | CQC | 0.65 | 0.25 | Keep Satisfied |
-| S12 | Welsh Government | 0.60 | 0.50 | Keep Satisfied |
-
-**Additional Stakeholders** (Lower Power - separate for diagram clarity):
-
-```mermaid
-quadrantChart
-    title Stakeholder Power-Interest Grid (Operational)
-    x-axis Low Interest --> High Interest
-    y-axis Low Power --> High Power
-    quadrant-1 Keep Satisfied
-    quadrant-2 Manage Closely
-    quadrant-3 Monitor
-    quadrant-4 Keep Informed
-    S13 Product Owner: [0.95, 0.45]
-    S14 Ent Architect: [0.80, 0.50]
-    S15 GP Connect: [0.85, 0.45]
-    S16 NHS Login: [0.75, 0.45]
-    S17 Patients: [0.90, 0.25]
-    S18 Receptionists: [0.85, 0.20]
-    S19 Advocacy: [0.80, 0.25]
-    S20 Healthwatch: [0.75, 0.40]
-    S21 Industry: [0.15, 0.15]
-```
-
-| Code | Stakeholder | Power | Interest | Quadrant |
-|------|-------------|-------|----------|----------|
-| S13 | Product Owner | 0.45 | 0.95 | Keep Informed |
-| S14 | Enterprise Architect | 0.50 | 0.80 | Keep Informed |
-| S15 | GP Connect Team | 0.45 | 0.85 | Keep Informed |
-| S16 | NHS Login Team | 0.45 | 0.75 | Keep Informed |
-| S17 | Patients | 0.25 | 0.90 | Keep Informed |
-| S18 | Practice Receptionists | 0.20 | 0.85 | Keep Informed |
-| S19 | Patient Advocacy Groups | 0.25 | 0.80 | Keep Informed |
-| S20 | Healthwatch | 0.40 | 0.75 | Keep Informed |
-| S21 | Industry Bodies | 0.15 | 0.15 | Monitor |
+| Stakeholder | Power | Interest | Quadrant | Engagement Strategy |
+|-------------|-------|----------|----------|---------------------|
+| NHS England Director | HIGH | HIGH | Manage Closely | Weekly steering meetings, decision authority |
+| NHS Digital Director | HIGH | HIGH | Manage Closely | Regular status updates, escalation point |
+| Clinical Safety Officer | HIGH | HIGH | Manage Closely | Safety review gates, hazard log sign-off |
+| GP System Suppliers | HIGH | HIGH | Manage Closely | Quarterly roadmap reviews, API collaboration |
+| GP Practice Managers | HIGH | HIGH | Manage Closely | Practice champion network, feedback loops |
+| GDS Assessment Team | HIGH | MEDIUM | Manage Closely | Pre-assessment engagement, evidence portfolio |
+| Minister (DHSC) | HIGH | LOW | Keep Satisfied | Quarterly briefings, parliamentary question prep |
+| ICO | HIGH | LOW | Keep Satisfied | DPIA submission, annual review |
+| CQC | MEDIUM | LOW | Keep Satisfied | Clinical governance compliance |
+| Welsh Government | MEDIUM | MEDIUM | Keep Satisfied | Devolution considerations |
+| Security Lead | HIGH | MEDIUM | Keep Satisfied | Penetration testing, DSPT gates |
+| IG Lead | HIGH | MEDIUM | Keep Satisfied | DPIA approval, data handling review |
+| Patients | LOW | HIGH | Keep Informed | Newsletter, user research sessions, feedback surveys |
+| Practice Receptionists | LOW | HIGH | Keep Informed | Training sessions, feedback channels |
+| Product Owner | MEDIUM | HIGH | Keep Informed | Daily stand-ups, sprint reviews |
+| Patient Advocacy Groups | LOW | HIGH | Keep Informed | Quarterly updates, co-design workshops |
+| Healthwatch | MEDIUM | HIGH | Keep Informed | Patient experience reports |
+| Enterprise Architect | MEDIUM | HIGH | Keep Informed | Design reviews, architecture decisions |
+| GP Connect Team | MEDIUM | HIGH | Keep Informed | Integration testing, API support |
+| NHS Login Team | MEDIUM | HIGH | Keep Informed | Authentication integration |
+| Industry Bodies | LOW | LOW | Monitor | Annual updates, standards tracking |
 
 **Quadrant Interpretation:**
-- **Manage Closely** (quadrant-2, High Power + High Interest): Key decision-makers requiring active engagement - NHS England Director, NHS Digital Director, Clinical Safety Officer, GP System Suppliers, GP Practice Managers, GDS Assessment Team
-- **Keep Satisfied** (quadrant-1, High Power + Low Interest): Influential stakeholders needing periodic updates - Minister (DHSC), ICO, CQC, Welsh Government, IG Lead, Security Lead
-- **Keep Informed** (quadrant-4, Low Power + High Interest): Engaged stakeholders needing regular communication - Patients, Practice Receptionists, Product Owner, Patient Advocacy Groups, Healthwatch, Enterprise Architect, GP Connect Team, NHS Login Team
-- **Monitor** (quadrant-3, Low Power + Low Interest): Minimal engagement required - Industry Bodies
+- **Manage Closely** (High Power, High Interest): Key decision-makers requiring active engagement and regular communication
+- **Keep Satisfied** (High Power, Low Interest): Influential stakeholders needing periodic updates on their specific concerns
+- **Keep Informed** (Low Power, High Interest): Engaged stakeholders needing regular communication and involvement in feedback
+- **Monitor** (Low Power, Low Interest): Minimal engagement required, periodic awareness updates
 
 ---
 
@@ -192,13 +170,15 @@ The NHS Long Term Plan (2019) committed to expanding digital access to primary c
 - Clear delivery milestones that can be publicly announced
 - Patient testimonials and success stories
 - Measurable uptake statistics for parliamentary answers
+- Cross-party political support for digital NHS investment
 
 **Blockers**:
 - Service failures that generate negative media coverage
 - Clinical safety incidents requiring pause or rollback
 - Poor patient experience undermining the digital access narrative
+- GP practice resistance slowing adoption
 
-**Related Stakeholders**: Minister (DHSC), NHS Digital Director, Patient Advocacy Groups
+**Related Stakeholders**: Minister (DHSC), NHS Digital Director, Patient Advocacy Groups, GDS Assessment Team
 
 ---
 
@@ -219,13 +199,15 @@ DCB0129 (manufacturer) and DCB0160 (deployer) standards place personal accountab
 - Sufficient time for thorough hazard identification and testing
 - Clear clinical governance with authority to halt releases
 - Independent clinical review of system design
+- Adequate budget for clinical safety activities
 
 **Blockers**:
 - Pressure to accelerate delivery at expense of safety review
 - Incomplete testing before release
 - Scope creep introducing new unassessed hazards
+- Insufficient clinical expertise in development team
 
-**Related Stakeholders**: NHS England Director (potential conflict), Product Owner, GPs
+**Related Stakeholders**: NHS England Director (potential conflict), Product Owner, GPs, Patients
 
 ---
 
@@ -246,13 +228,15 @@ GP practices are under severe operational pressure. Monday 8am booking opens cre
 - System that actually reduces phone calls (not just adds another channel)
 - Seamless integration with existing clinical systems (no dual data entry)
 - Patient adoption so online booking becomes primary channel
+- Onboarding support and training for practice staff
 
 **Blockers**:
 - System that creates more work (reconciling bookings, handling errors)
 - Patients still calling because online system is confusing
 - GP Connect integration issues with their specific system supplier
+- Change fatigue from previous failed digital initiatives
 
-**Related Stakeholders**: Practice Receptionists, GPs, GP System Suppliers
+**Related Stakeholders**: Practice Receptionists, GPs, GP System Suppliers, NHS England Director
 
 ---
 
@@ -273,13 +257,15 @@ Patient surveys consistently show appointment access as the top concern with GP 
 - 24/7 availability - book when convenient
 - Simple, accessible interface (including for less digital-confident users)
 - Real-time slot visibility (not false availability)
+- NHS Login integration for seamless authentication
 
 **Blockers**:
 - Complex registration or authentication processes
 - Slots already taken when you try to book
 - System only offering appointments far in future
+- Accessibility barriers for disabled users
 
-**Related Stakeholders**: Patient Advocacy Groups, Healthwatch, Elderly/Disabled Patient Groups
+**Related Stakeholders**: Patient Advocacy Groups, Healthwatch, Elderly/Disabled Patient Groups, GDS Assessment Team
 
 ---
 
@@ -300,11 +286,13 @@ GP system suppliers have contractual obligations to support GP Connect. However,
 - Clear, stable GP Connect specifications (not constantly changing)
 - NHS funding for integration development
 - Recognition that national system grows overall digital adoption
+- Early visibility of roadmap for planning
 
 **Blockers**:
 - Unfunded mandates for integration work
 - Specifications that favour competitors
 - Perception that NHS is competing with their products
+- Frequent API changes requiring rework
 
 **Related Stakeholders**: GP Practice Managers, GP Connect Team, NHS Digital Director
 
@@ -335,7 +323,7 @@ GDS assessors are accountable for maintaining Service Standard integrity. Passin
 - Lack of performance data or unclear success metrics
 - Technology choices that don't follow open standards
 
-**Related Stakeholders**: Product Owner, Patients, Accessibility Specialists
+**Related Stakeholders**: Product Owner, Patients, Accessibility Specialists, NHS Digital Director
 
 ---
 
@@ -356,13 +344,15 @@ The Minister faces regular parliamentary questions about GP access. Positive dig
 - Positive patient stories for announcements
 - Clear statistics showing improvement
 - Phased rollout allowing early wins before full commitment
+- Cross-party support for digital NHS investment
 
 **Blockers**:
 - System failures generating media coverage
 - Patient complaints reaching MP surgeries
 - NAO or PAC criticism of project delivery
+- Cost overruns or timeline slippage
 
-**Related Stakeholders**: NHS England Director, NHS Digital Director, Patients
+**Related Stakeholders**: NHS England Director, NHS Digital Director, Patients, Treasury
 
 ---
 
@@ -389,8 +379,9 @@ Health data is special category under UK GDPR requiring explicit legal basis. Th
 - Unclear data flows or processing purposes
 - Third-party services with unclear data handling
 - Pressure to launch before DPIA approved
+- Inadequate data security testing
 
-**Related Stakeholders**: Clinical Safety Officer, Security Lead, ICO
+**Related Stakeholders**: Clinical Safety Officer, Security Lead, ICO, Patients
 
 ---
 
@@ -411,13 +402,15 @@ Receptionists bear the brunt of patient frustration about appointment access. Th
 - Online bookings appearing automatically in clinical system
 - Fewer phone calls from patients who can self-serve
 - Clear process for handling online booking queries
+- Training and support for new system
 
 **Blockers**:
 - System errors requiring manual intervention
 - Patients calling to confirm online bookings worked
 - Dual entry between online and clinical systems
+- Lack of training or unclear procedures
 
-**Related Stakeholders**: GP Practice Managers, Patients
+**Related Stakeholders**: GP Practice Managers, Patients, GP System Suppliers
 
 ---
 
@@ -438,13 +431,15 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 - Security requirements considered from design phase
 - Penetration testing before each release
 - Incident response plans tested and ready
+- Adequate security budget and expertise
 
 **Blockers**:
 - Pressure to skip security testing for speed
 - Third-party components with known vulnerabilities
 - Insufficient security expertise in development team
+- Legacy integration requirements compromising security
 
-**Related Stakeholders**: IG Lead, NHS Spine Team, GP System Suppliers
+**Related Stakeholders**: IG Lead, NHS Spine Team, GP System Suppliers, Enterprise Architect
 
 ---
 
@@ -875,7 +870,7 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 
 ## Complete Traceability Matrix
 
-### Stakeholder -> Driver -> Goal -> Outcome
+### Stakeholder → Driver → Goal → Outcome
 
 | Stakeholder | Driver ID | Driver Summary | Goal ID | Goal Summary | Outcome ID | Outcome Summary |
 |-------------|-----------|----------------|---------|--------------|------------|-----------------|
@@ -1027,6 +1022,24 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 
 ---
 
+### GDS Assessment Team
+
+**Primary Message**: We are building a genuinely user-centered service with strong evidence of user research, accessibility testing, and iterative design.
+
+**Key Talking Points**:
+- X user research sessions completed with diverse patient groups
+- Accessibility testing with assistive technology users ongoing
+- Clear performance metrics and success criteria defined
+- Multidisciplinary team in place with appropriate skills
+
+**Communication Frequency**: Pre-assessment briefings, assessment evidence submission
+
+**Preferred Channel**: GDS assessment portal, assessment panel meetings
+
+**Success Story**: "This service demonstrates genuine user-centered design with clear evidence of iteration based on user feedback."
+
+---
+
 ### Minister for Health (DHSC)
 
 **Primary Message**: The service demonstrates tangible NHS modernisation with measurable patient benefits and robust safety governance.
@@ -1045,24 +1058,6 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 
 ---
 
-### Information Governance Lead
-
-**Primary Message**: Privacy by design is embedded throughout with DPIA approved and robust data protection controls in place.
-
-**Key Talking Points**:
-- DPIA approved with all risks mitigated
-- UK-only data residency confirmed
-- Encryption at rest and in transit
-- Zero data breaches
-
-**Communication Frequency**: Monthly IG review, as-needed for incidents
-
-**Preferred Channel**: IG governance meetings, incident escalation calls
-
-**Success Story**: "DPIA audit showed exemplary compliance - this can be a model for other NHS digital services."
-
----
-
 ## Change Impact Assessment
 
 ### Impact on Stakeholders
@@ -1075,7 +1070,6 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 | GP System Suppliers | Core product | API integration support | MEDIUM | MEDIUM | Funded development, stable specifications |
 | NHS Digital Teams | Other projects | New service to operate | MEDIUM | LOW | Clear roles, operational handover |
 | GPs / Clinicians | Phone bookings in system | Online bookings in system | LOW | LOW | No change to clinical workflow |
-| Enterprise Architect | Existing NHS patterns | New GP Connect integration | LOW | LOW | Technical documentation, design reviews |
 
 ### Change Readiness
 
@@ -1211,25 +1205,24 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 
 ---
 
-### Risk R-6: Ministerial Scrutiny During Incident
+### Risk R-6: Ministerial Priority Changes
 
-**Related Stakeholders**: Minister, NHS England Director, NHS Digital Director
+**Related Stakeholders**: Minister, NHS England Director
 
-**Risk Description**: Service issue (performance, safety, security) generates negative media coverage and parliamentary questions.
+**Risk Description**: Change in government priorities or ministerial portfolio reduces support for digital primary care initiatives.
 
-**Impact on Goals**: G-1 (uptake), G-2 (safety), G-7 (Minister support)
+**Impact on Goals**: G-1 (uptake), G-7 (practice enablement)
 
-**Probability**: MEDIUM
+**Probability**: LOW
 
-**Impact**: HIGH
+**Impact**: MEDIUM
 
 **Mitigation Strategy**:
-- Proactive communications with Minister's office
-- Rapid response process for incidents
-- Clear messaging and talking points prepared
-- Evidence portfolio for parliamentary answers
+- Build cross-party support for digital NHS
+- Demonstrate clear patient benefits that transcend political cycles
+- Embed service in operational NHS before elections
 
-**Contingency Plan**: Ministerial briefing, holding statement, investigation summary, remediation plan.
+**Contingency Plan**: Continue with reduced scope, focus on committed practices and regions.
 
 ---
 
@@ -1250,7 +1243,8 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 | Go/No-go for Live | NHS England Director | NHS Digital Director | All | Minister |
 | Practice onboarding | GP Connect Team | NHS England Director | Practice Managers | Suppliers |
 | GP system supplier issues | GP Connect Team | NHS Digital Director | Suppliers | NHS England |
-| Patient communications | Communications Team | Product Owner | Patients, Practices | All |
+| User research approach | User Researcher | Product Owner | Patients, GDS | All |
+| Accessibility compliance | Accessibility Lead | Product Owner | GDS, Patient Groups | All |
 
 ### Escalation Path
 
@@ -1272,6 +1266,7 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 | GP Practice Manager Rep | PENDING | | PENDING |
 | Patient Representative | PENDING | | PENDING |
 | Enterprise Architect | PENDING | | PENDING |
+| GDS Assessment Lead | PENDING | | PENDING |
 | Information Governance Lead | PENDING | | PENDING |
 | Security Lead | PENDING | | PENDING |
 
@@ -1335,11 +1330,11 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 - ARC-001-REQ-v1.0.md - Requirements Specification
 - ARC-001-DATA-v1.0.md - Data Model
 - ARC-001-DPIA-v1.0.md - Data Protection Impact Assessment
-- ARC-001-RISK-v1.0.md - Risk Register
-- ARC-001-SECD-v1.0.md - Secure by Design Assessment
 - NHS Long Term Plan (2019)
 - GDS Service Standard
 - DCB0129/DCB0160 Clinical Safety Standards
+- UK GDPR and Data Protection Act 2018
+- NHS Data Security and Protection Toolkit (DSPT)
 
 ---
 
@@ -1347,4 +1342,4 @@ NHS has been targeted by significant cyber attacks (WannaCry). The Security Lead
 **Generated on**: 2026-01-28
 **ArcKit Version**: 1.0.0
 **Project**: NHS Doctors Online Appointment System (Project 001)
-**Model**: Claude Opus 4.5 (claude-opus-4-5-20251101)
+**AI Model**: Claude Opus 4.5 (claude-opus-4-5-20251101)
