@@ -107,6 +107,10 @@ Supported global files (000-global):
     architecture-principles.md  → ARC-000-PRIN-v1.0.md
     principles.md               → ARC-000-PRIN-v1.0.md
 
+Legacy locations checked for principles:
+    .arckit/memory/architecture-principles.md
+    .arckit/memory/principles.md
+
 EOF
     exit 1
 }
@@ -277,8 +281,31 @@ migrate_project() {
 
     local backup_dir="$project_dir/.backup/$(date +%Y%m%d_%H%M%S)"
 
-    # Create subdirectories for new structure if they don't exist
-    if [[ "$DRY_RUN" == "false" ]]; then
+    # Special handling for 000-global: check legacy locations for principles
+    if [[ "$project_id" == "000" ]]; then
+        local legacy_locations=(
+            "$REPO_ROOT/.arckit/memory/architecture-principles.md"
+            "$REPO_ROOT/.arckit/memory/principles.md"
+        )
+
+        for legacy_path in "${legacy_locations[@]}"; do
+            if [[ -f "$legacy_path" ]]; then
+                local new_name="ARC-000-PRIN-v1.0.md"
+                local new_path="$project_dir/$new_name"
+
+                if [[ -f "$new_path" && "$FORCE" == "false" ]]; then
+                    log_warning "Principles already exist at: $new_path (use --force to overwrite)"
+                else
+                    log_info "Found principles at legacy location: $legacy_path"
+                    migrate_file "$legacy_path" "$new_path" "$backup_dir"
+                fi
+                break
+            fi
+        done
+    fi
+
+    # Create subdirectories for new structure if they don't exist (skip for 000-global)
+    if [[ "$DRY_RUN" == "false" && "$project_id" != "000" ]]; then
         mkdir -p "$project_dir/decisions"
         mkdir -p "$project_dir/diagrams"
         mkdir -p "$project_dir/wardley-maps"
