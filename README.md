@@ -1,89 +1,82 @@
-# arckit-test-project-v16-doctors-appointment
+# Doctors Online Appointment System
 
-Enterprise Architecture Governance Project
+An NHS-aligned digital service for booking GP and specialist appointments online.
 
-## Getting Started
+## Project Overview
 
-This project uses ArcKit for enterprise architecture governance and vendor procurement.
+This project implements a modern online appointment booking system for healthcare services, designed to:
 
-### Available Commands
+- Enable patients to book, reschedule, and cancel appointments online
+- Integrate with NHS Spine for patient demographics and GP registration
+- Support multiple appointment types (GP, specialist, nurse, video consultations)
+- Provide SMS and email appointment reminders
+- Ensure accessibility compliance (WCAG 2.2 AA)
+- Meet NHS Digital and GDS Service Standard requirements
 
-Once you start your AI assistant, you'll have access to these commands:
+## Target Users
 
-#### Project Planning
-- `/arckit.plan` - Create project plan with timeline, phases, and gates
+- **Patients**: Book and manage their own appointments
+- **Practice Staff**: Manage appointment availability and patient communications
+- **GPs/Clinicians**: View daily schedules and patient appointment history
+- **Practice Managers**: Configure services, reporting, and system settings
 
-#### Core Workflow
-- `/arckit.principles` - Create or update architecture principles
+## Compliance Requirements
+
+- GDS Service Standard (14 points)
+- NHS Digital standards and interoperability
+- WCAG 2.2 Level AA accessibility
+- UK GDPR and Data Protection Act 2018
+- NHS Data Security and Protection Toolkit (DSPT)
+- Clinical safety standards (DCB0129/DCB0160)
+
+## Architecture Commands
+
+Use ArcKit commands to generate architecture documentation:
+
+### Core Workflow
+- `/arckit.principles` - Establish architecture principles
 - `/arckit.stakeholders` - Analyze stakeholder drivers, goals, and outcomes
-- `/arckit.risk` - Create comprehensive risk register (Orange Book)
-- `/arckit.sobc` - Create Strategic Outline Business Case (Green Book 5-case)
-- `/arckit.requirements` - Define comprehensive requirements
-- `/arckit.data-model` - Create data model with ERD, GDPR compliance, data governance
-- `/arckit.research` - Research technology, services, and products with build vs buy analysis
-- `/arckit.wardley` - Create strategic Wardley Maps for build vs buy and procurement strategy
+- `/arckit.requirements` - Capture requirements (BR/FR/NFR)
+- `/arckit.data-model` - Design patient and appointment data model
+- `/arckit.diagram` - Create architecture diagrams
 
-#### Vendor Procurement
-- `/arckit.sow` - Generate Statement of Work (RFP)
-- `/arckit.dos` - Digital Outcomes and Specialists (DOS) procurement (UK Digital Marketplace)
-- `/arckit.gcloud-search` - Search G-Cloud services on UK Digital Marketplace
-- `/arckit.gcloud-clarify` - Validate G-Cloud services and generate clarification questions
-- `/arckit.evaluate` - Create vendor evaluation framework and score vendors
+### Compliance & Security
+- `/arckit.dpia` - Data Protection Impact Assessment
+- `/arckit.secure` - Secure by Design assessment (NCSC CAF)
+- `/arckit.service-assessment` - GDS Service Standard preparation
+- `/arckit.tcop` - Technology Code of Practice assessment
 
-#### Design Review
-- `/arckit.hld-review` - Review High-Level Design
-- `/arckit.dld-review` - Review Detailed Design
-
-#### Architecture Diagrams
-- `/arckit.diagram` - Generate visual architecture diagrams using Mermaid
-
-#### Sprint Planning
-- `/arckit.backlog` - Generate prioritised product backlog with GDS user stories
-
-#### Service Management
-- `/arckit.servicenow` - Generate ServiceNow service design (CMDB, SLAs, incident/change management)
-
-#### Traceability & Quality
-- `/arckit.traceability` - Generate requirements traceability matrix
-- `/arckit.analyze` - Comprehensive governance quality analysis
-
-#### UK Government Compliance
-- `/arckit.service-assessment` - GDS Service Standard assessment preparation
-- `/arckit.tcop` - Technology Code of Practice assessment (all 13 points)
-- `/arckit.ai-playbook` - AI Playbook compliance for responsible AI
-- `/arckit.atrs` - Algorithmic Transparency Recording Standard (ATRS) record
-
-#### Security Assessment
-- `/arckit.secure` - UK Government Secure by Design (NCSC CAF, Cyber Essentials, UK GDPR)
-- `/arckit.mod-secure` - MOD Secure by Design (JSP 440, IAMM, security clearances)
-- `/arckit.jsp-936` - MOD JSP 936 AI assurance documentation
+### Risk & Business Case
+- `/arckit.risk` - Create risk register (Orange Book)
+- `/arckit.sobc` - Strategic Outline Business Case (Green Book)
 
 ## Project Structure
 
 ```
-arckit-test-project-v16-doctors-appointment/
-├── .arckit/
-│   ├── memory/
-│   │   └── architecture-principles.md (global principles)
-│   ├── scripts/
-│   │   └── bash/
-│   └── templates/
-├── projects/
-│   └── 001-project-name/
-│       ├── requirements.md
-│       ├── sow.md
-│       └── vendors/
-└── .claude/commands/
+projects/
+└── 001-doctors-appointment/
+    ├── ARC-001-PRIN-v1.0.md     # Architecture principles
+    ├── ARC-001-STKE-v1.0.md     # Stakeholder analysis
+    ├── ARC-001-REQ-v1.0.md      # Requirements specification
+    ├── ARC-001-DATA-v1.0.md     # Data model
+    ├── ARC-001-DPIA-v1.0.md     # DPIA
+    ├── ARC-001-RISK-v1.0.md     # Risk register
+    └── vendors/                  # Vendor evaluations
 ```
 
-## Next Steps
+## Getting Started
 
-1. Start your AI assistant (Claude Code)
-2. Run `/arckit.principles` to establish architecture governance
-3. Create your first project with `/arckit.requirements`
+1. Start your AI assistant: `claude`
+2. Establish principles: `/arckit.principles`
+3. Analyze stakeholders: `/arckit.stakeholders`
+4. Capture requirements: `/arckit.requirements`
 
 ## Documentation
 
-- [ArcKit Documentation](https://github.com/github/arc-kit)
-- [Architecture Principles Guide](https://github.com/github/arc-kit/docs/principles.md)
-- [Vendor Procurement Guide](https://github.com/github/arc-kit/docs/procurement.md)
+- See `docs/` for command guides
+- See `DEPENDENCY-MATRIX.md` for command dependencies
+- See `WORKFLOW-DIAGRAMS.md` for visual workflows
+
+---
+
+*This is an ArcKit test repository (v16) for testing architecture governance commands.*
