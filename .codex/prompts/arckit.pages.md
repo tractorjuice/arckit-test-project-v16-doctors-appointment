@@ -156,12 +156,14 @@ Create `docs/manifest.json` with the discovered structure:
     "name": "{repo-name}",
     "branch": "main"
   },
+  "defaultDocument": "projects/000-global/ARC-000-PRIN-v1.0.md",
   "global": [
     {
       "path": "projects/000-global/ARC-000-PRIN-v1.0.md",
       "title": "Architecture Principles",
       "category": "Architecture",
-      "documentId": "ARC-000-PRIN-v1.0"
+      "documentId": "ARC-000-PRIN-v1.0",
+      "isDefault": true
     }
   ],
   "projects": [
@@ -259,10 +261,11 @@ The HTML must include:
 
 1. **Manifest Loading**: Fetch and parse `manifest.json`
 2. **Navigation Building**: Generate sidebar from manifest
-3. **Document Fetching**: Fetch markdown from GitHub raw URLs
-4. **Markdown Rendering**: Convert markdown to HTML using marked.js
-5. **Mermaid Rendering**: Detect and render Mermaid code blocks
-6. **URL Routing**: Handle hash-based navigation (#document-path)
+3. **Default Document**: **If Architecture Principles (ARC-000-PRIN-*.md) exists in global documents, load it as the default landing page**. Otherwise, show a welcome message.
+4. **Document Fetching**: Fetch markdown from GitHub raw URLs
+5. **Markdown Rendering**: Convert markdown to HTML using marked.js
+6. **Mermaid Rendering**: Detect and render Mermaid code blocks
+7. **URL Routing**: Handle hash-based navigation (#document-path). If no hash is present and principles exist, default to principles.
 
 ### 3.4 GitHub Raw URL Pattern
 
@@ -360,6 +363,14 @@ Next Steps:
 ```
 
 ## Important Notes
+
+### Default Document (Architecture Principles)
+
+- **If `projects/000-global/ARC-000-PRIN-*.md` exists, it MUST be the default landing page**
+- Set `defaultDocument` in manifest.json to the principles path
+- On page load with no hash fragment, automatically load and display the principles
+- Highlight the principles in the sidebar as the currently selected document
+- If principles don't exist, show a welcome message with instructions to run `/arckit.principles`
 
 ### File Discovery
 
