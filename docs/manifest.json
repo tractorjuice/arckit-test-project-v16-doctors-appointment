@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-28T15:00:00Z",
+  "generated": "2026-01-28T15:30:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v16-doctors-appointment",
@@ -7,7 +7,7 @@
   },
   "global": [
     {
-      "path": ".arckit/memory/ARC-000-PRIN-v1.0.md",
+      "path": "projects/000-global/ARC-000-PRIN-v1.0.md",
       "title": "Architecture Principles",
       "category": "Architecture",
       "documentId": "ARC-000-PRIN-v1.0"
