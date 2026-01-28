@@ -54,12 +54,15 @@ $ARGUMENTS
    - **Government**: Add accessibility (Section 508), public records, security clearances
 
 6. **Write the output**:
+   - **CRITICAL**: The filename MUST be `ARC-000-PRIN-v1.0.md` (NOT `architecture-principles.md`)
    - Generate the document ID using: `.arckit/scripts/bash/generate-document-id.sh 000 PRIN 1.0 --filename`
    - This produces: `ARC-000-PRIN-v1.0.md` (000 indicates global/cross-project document)
-   - If `.arckit/memory/ARC-000-PRIN-v1.0.md` exists, update it
-   - If it doesn't exist, create it with comprehensive principles
+   - Write to: `.arckit/memory/ARC-000-PRIN-v1.0.md`
+   - If this file exists, update it; if not, create it
    - Use the exact template structure
    - Make it ready for immediate use by development teams
+
+   > **WARNING**: Do NOT use legacy filename `architecture-principles.md`. Always use the document ID format.
 
 
 
