@@ -1,0 +1,2053 @@
+# Risk Register
+
+> **Template Status**: Live | **Version**: 1.0.0 | **Command**: `/arckit.risk`
+
+## Document Control
+
+| Field | Value |
+|-------|-------|
+| **Document ID** | ARC-001-RISK-v1.0 |
+| **Document Type** | Risk Register |
+| **Project** | NHS Doctors Online Appointment System (Project 001) |
+| **Classification** | OFFICIAL-SENSITIVE |
+| **Status** | DRAFT |
+| **Version** | 1.0 |
+| **Created Date** | 2026-01-28 |
+| **Last Modified** | 2026-01-28 |
+| **Review Cycle** | Monthly |
+| **Next Review Date** | 2026-02-28 |
+| **Owner** | Programme Manager, NHS Digital |
+| **Reviewed By** | PENDING |
+| **Approved By** | PENDING |
+| **Distribution** | Steering Committee, NHS Digital Director, NHS England Director, Clinical Safety Officer, Security Lead, IG Lead, Product Owner |
+
+## Revision History
+
+| Version | Date | Author | Changes | Approved By | Approval Date |
+|---------|------|--------|---------|-------------|---------------|
+| 1.0 | 2026-01-28 | ArcKit AI | Initial creation from `/arckit.risk` command consolidating stakeholder and DPIA risks | PENDING | PENDING |
+
+---
+
+## Executive Summary
+
+### Risk Profile Overview
+
+**Total Risks Identified:** 16 risks across 6 categories
+
+| Risk Level | Inherent | Residual | Change |
+|------------|----------|----------|--------|
+| **Critical** (20-25) | 5 | 0 | ↓ 100% |
+| **High** (13-19) | 5 | 4 | ↓ 20% |
+| **Medium** (6-12) | 5 | 9 | ↑ 80% |
+| **Low** (1-5) | 1 | 3 | ↑ 200% |
+| **TOTAL** | 16 | 16 | - |
+
+### Risk Category Distribution
+
+| Category | Count | Avg Inherent | Avg Residual | Control Effectiveness |
+|----------|-------|--------------|--------------|----------------------|
+| **STRATEGIC** | 3 | 16.0 | 10.0 | 37% reduction |
+| **OPERATIONAL** | 2 | 13.0 | 8.0 | 38% reduction |
+| **COMPLIANCE** | 3 | 17.3 | 10.7 | 38% reduction |
+| **REPUTATIONAL** | 2 | 16.0 | 10.5 | 34% reduction |
+| **TECHNOLOGY** | 4 | 16.5 | 9.5 | 42% reduction |
+| **CLINICAL SAFETY** | 2 | 20.0 | 10.0 | 50% reduction |
+
+### Overall Risk Assessment
+
+**Overall Residual Risk Score:** 156/400
+**Risk Reduction from Controls:** 39% reduction from inherent risk (256 → 156)
+**Risk Profile Status:** ⚠️ Concerning - 4 risks exceed appetite, require senior approval
+
+### Risks Exceeding Appetite
+
+**Number of risks exceeding organizational appetite:** 4 risks
+
+| Risk ID | Title | Category | Score | Appetite | Excess | Escalation |
+|---------|-------|----------|-------|----------|--------|------------|
+| R-003 | GDS Assessment Fails | COMPLIANCE | 12 | 9 | +3 | NHS Digital Director approval required |
+| R-004 | Data Breach Occurs | TECHNOLOGY | 12 | 9 | +3 | IG Lead + Security Lead approval required |
+| R-005 | GP System Supplier Non-Cooperation | STRATEGIC | 12 | 12 | 0 | At threshold - close monitoring |
+| R-006 | Ministerial Scrutiny During Incident | REPUTATIONAL | 12 | 9 | +3 | NHS England Director approval required |
+
+### Top 5 Critical Risks Requiring Immediate Attention
+
+1. **R-002** (CLINICAL SAFETY, High 15): Clinical Safety Incident Occurs - Owner: Clinical Safety Officer - Status: In Progress
+2. **R-001** (STRATEGIC, High 12): GP Practice Adoption Stalls - Owner: NHS England Director - Status: In Progress
+3. **R-004** (TECHNOLOGY, High 12): Data Breach Occurs - Owner: Security Lead - Status: In Progress
+4. **R-006** (REPUTATIONAL, High 12): Ministerial Scrutiny During Incident - Owner: NHS England Director - Status: Open
+5. **R-007** (COMPLIANCE, High 12): GDPR Compliance Failure - Owner: IG Lead - Status: In Progress
+
+### Key Findings and Recommendations
+
+**Key Findings:**
+- 5 risks started as CRITICAL (score 20-25) before controls - all reduced to HIGH or MEDIUM
+- Clinical safety risks have strongest control effectiveness (50% reduction) due to robust DCB0129/0160 governance
+- Technology/data protection risks cluster together - shared mitigations provide efficiency
+- GP practice adoption is the critical enabler - if practices don't onboard, service cannot deliver value
+- Reputational risks are difficult to mitigate - prevention through other risk controls is essential
+
+**Recommendations:**
+1. Escalate R-003, R-004, R-006 to appropriate senior stakeholders for formal risk acceptance
+2. Prioritise GP practice recruitment (R-001, R-005) as these are foundational to service success
+3. Implement integrated monitoring dashboard covering all technology/data protection risks
+4. Conduct pre-mortem exercise for clinical safety scenarios before Beta launch
+
+---
+
+## A. Risk Matrix Visualization
+
+### Inherent Risk Matrix (Before Controls)
+
+**Likelihood × Impact Matrix - Inherent Risk Positions**
+
+```mermaid
+quadrantChart
+    title Inherent Risk Matrix (Before Controls)
+    x-axis Low Impact --> High Impact
+    y-axis Low Likelihood --> High Likelihood
+    quadrant-1 High Risk
+    quadrant-2 Critical Risk
+    quadrant-3 Low Risk
+    quadrant-4 Medium Risk
+    R-001 GP Adoption: [0.85, 0.65]
+    R-002 Clinical Safety: [0.95, 0.35]
+    R-003 GDS Assessment: [0.65, 0.65]
+    R-004 Data Breach: [0.95, 0.55]
+    R-005 GP Suppliers: [0.75, 0.65]
+    R-006 Ministerial: [0.85, 0.55]
+    R-007 GDPR: [0.85, 0.55]
+    R-008 Vulnerable Exclusion: [0.75, 0.65]
+    R-009 Unauthorized Access: [0.85, 0.55]
+    R-010 NHS Number Breach: [0.85, 0.55]
+    R-011 Booking Error: [0.95, 0.35]
+    R-012 Excessive Retention: [0.55, 0.35]
+    R-013 Processor Misuse: [0.55, 0.35]
+    R-014 Re-identification: [0.55, 0.35]
+    R-015 Loss of Control: [0.55, 0.35]
+    R-016 Function Creep: [0.75, 0.35]
+```
+
+**Risk Zones:**
+- **Critical (20-25)**: R-002, R-004, R-009, R-010, R-011 - Immediate attention required
+- **High (13-19)**: R-001, R-003, R-005, R-006, R-007, R-008 - Senior management attention
+- **Medium (6-12)**: R-012, R-013, R-014, R-015, R-016 - Management monitoring
+- **Low (1-5)**: None before controls
+
+### Residual Risk Matrix (After Controls)
+
+**Likelihood × Impact Matrix - Residual Risk Positions**
+
+```mermaid
+quadrantChart
+    title Residual Risk Matrix (After Controls)
+    x-axis Low Impact --> High Impact
+    y-axis Low Likelihood --> High Likelihood
+    quadrant-1 High Risk
+    quadrant-2 Critical Risk
+    quadrant-3 Low Risk
+    quadrant-4 Medium Risk
+    R-001 GP Adoption: [0.75, 0.55]
+    R-002 Clinical Safety: [0.95, 0.15]
+    R-003 GDS Assessment: [0.65, 0.55]
+    R-004 Data Breach: [0.85, 0.35]
+    R-005 GP Suppliers: [0.75, 0.55]
+    R-006 Ministerial: [0.75, 0.55]
+    R-007 GDPR: [0.65, 0.55]
+    R-008 Vulnerable Exclusion: [0.55, 0.55]
+    R-009 Unauthorized Access: [0.75, 0.35]
+    R-010 NHS Number Breach: [0.75, 0.35]
+    R-011 Booking Error: [0.75, 0.15]
+    R-012 Excessive Retention: [0.35, 0.15]
+    R-013 Processor Misuse: [0.35, 0.15]
+    R-014 Re-identification: [0.35, 0.15]
+    R-015 Loss of Control: [0.35, 0.15]
+    R-016 Function Creep: [0.55, 0.15]
+```
+
+**Risk Movement Analysis:**
+- **Significant Improvement**: R-002 (20→10), R-011 (20→6) - Clinical safety controls very effective
+- **Moderate Improvement**: R-004 (20→12), R-009 (16→9), R-010 (16→9) - Encryption/access controls working
+- **Limited Improvement**: R-001 (16→12), R-005 (15→12) - External dependencies limit control
+- **Stable Low**: R-012, R-013, R-014, R-015, R-016 - Already well-controlled
+
+---
+
+## B. Top 10 Risks (Ranked by Residual Score)
+
+| Rank | ID | Title | Category | Inherent | Residual | Owner | Status | Response |
+|------|----|-------|----------|----------|----------|-------|--------|----------|
+| 1 | R-002 | Clinical Safety Incident Occurs | CLINICAL SAFETY | 20 | 10 | Clinical Safety Officer | In Progress | Treat |
+| 2 | R-001 | GP Practice Adoption Stalls | STRATEGIC | 16 | 12 | NHS England Director | In Progress | Treat |
+| 3 | R-003 | GDS Assessment Fails | COMPLIANCE | 12 | 12 | Product Owner | Open | Treat |
+| 4 | R-004 | Data Breach Occurs | TECHNOLOGY | 20 | 12 | Security Lead | In Progress | Treat |
+| 5 | R-005 | GP System Supplier Non-Cooperation | STRATEGIC | 15 | 12 | GP Connect Team Lead | In Progress | Treat |
+| 6 | R-006 | Ministerial Scrutiny During Incident | REPUTATIONAL | 16 | 12 | NHS England Director | Open | Treat |
+| 7 | R-007 | GDPR Compliance Failure | COMPLIANCE | 16 | 12 | IG Lead | In Progress | Treat |
+| 8 | R-008 | Vulnerable Patient Exclusion | OPERATIONAL | 16 | 9 | Product Owner | In Progress | Treat |
+| 9 | R-009 | Unauthorized Access to Health Data | TECHNOLOGY | 16 | 9 | Security Lead | In Progress | Treat |
+| 10 | R-010 | NHS Number and Contact Breach | TECHNOLOGY | 16 | 9 | Security Lead | In Progress | Treat |
+
+---
+
+## C. Detailed Risk Register
+
+### Risk R-001: GP Practice Adoption Stalls
+
+**Category:** STRATEGIC
+**Status:** In Progress
+**Risk Owner:** NHS England Director of Primary Care (from Stakeholder RACI: Accountable for Practice Onboarding)
+**Action Owner:** GP Connect Team Lead
+
+#### Risk Identification
+
+**Risk Description:**
+GP practices do not enable GP Connect Appointment Management or opt-in to the service at sufficient rate to achieve meaningful coverage. Without practice participation, patients cannot book appointments online regardless of the quality of the national service.
+
+**Root Cause:**
+- GP practices have experienced previous NHS IT failures that created work rather than reducing it
+- GP practices have local autonomy and cannot be mandated to participate
+- GP system suppliers may not prioritise integration work
+
+**Trigger Events:**
+- GP practices decline opt-in invitations
+- GP system suppliers delay GP Connect enablement
+- Early-adopter practices report poor experience, deterring others
+- Technical integration issues at scale
+
+**Consequences if Realized:**
+- G-1 (30% online booking uptake) unachievable
+- G-4 (40% phone reduction) unachievable
+- G-7 (500 practices by Beta) missed
+- NHS Long Term Plan commitment not delivered
+- Service has insufficient coverage to justify investment
+
+**Affected Stakeholders:**
+- **NHS England Director** (SD-1): Cannot demonstrate Long Term Plan delivery
+- **GP Practice Managers** (SD-3): Continue phone pressure without digital relief
+- **Patients** (SD-4): Cannot access online booking at their practice
+- **Minister** (SD-7): Cannot announce successful digital transformation
+
+**Related Objectives:**
+- G-1 (30% online booking uptake): Cannot achieve without practices
+- G-7 (500+ practices by Beta): Direct measure of this risk
+
+#### Inherent Risk Assessment (Before Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 4 - Likely | GP practices have autonomy and history of IT project scepticism; external dependency on suppliers |
+| **Impact** | 4 - Major | Service cannot deliver value without practices; threatens entire business case |
+| **Inherent Risk Score** | **16** (High) | 4 × 4 = 16 |
+
+**Risk Zone:** 🟧 High (13-19)
+
+#### Current Controls and Mitigations
+
+**Existing Controls:**
+1. **Early Adopter Programme**: Targeting enthusiastic practices who want to participate
+   - Owner: GP Connect Team Lead
+   - Effectiveness: **Adequate**
+   - Evidence: 50+ practices expressing interest during Discovery
+
+2. **Hands-on Onboarding Support**: Dedicated support team for practice enablement
+   - Owner: GP Connect Team Lead
+   - Effectiveness: **Adequate**
+   - Evidence: Template onboarding process tested with pilot practices
+
+3. **GP System Supplier Contracts**: Contractual obligations for GP Connect support
+   - Owner: NHS Digital Commercial
+   - Effectiveness: **Adequate**
+   - Evidence: Contracts include GP Connect SLAs
+
+4. **Practice Manager Network Engagement**: Peer-to-peer promotion through practice manager forums
+   - Owner: NHS England Primary Care Team
+   - Effectiveness: **Adequate**
+   - Evidence: Presentations at regional practice manager events
+
+**Overall Control Effectiveness:** Adequate (reduces risk from 16 to 12)
+
+#### Residual Risk Assessment (After Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | Controls improve engagement but cannot eliminate practice autonomy concerns |
+| **Impact** | 4 - Major | Impact unchanged - still threatens service viability |
+| **Residual Risk Score** | **12** (Medium) | 3 × 4 = 12 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+**Risk Reduction:** 25% reduction from inherent (16 → 12)
+
+#### Risk Response (4Ts Framework)
+
+**Primary Response:** TREAT (Mitigate/Reduce)
+
+**Rationale:**
+Risk is at threshold of appetite and is foundational to service success. Active mitigation essential. Cannot tolerate, transfer, or terminate.
+
+**Alternative Responses Considered:**
+- **Tolerate**: Rejected - Risk threatens entire service
+- **Transfer**: Not possible - External dependency cannot be transferred
+- **Terminate**: Not viable - Would mean abandoning service
+
+#### Risk Appetite Assessment
+
+**Organizational Risk Appetite for STRATEGIC risks:** Medium (Score ≤ 12)
+**Current Residual Risk Score:** 12 (Medium)
+**Assessment:** ✅ **At Appetite Threshold** - Close monitoring required
+
+**Justification:**
+Risk at threshold. Any deterioration requires escalation. Critical success factor CSF-1 (500 practices by Beta) provides measurable trigger for escalation.
+
+**Escalation Required:** Not immediately, but monthly monitoring at Steering Committee
+
+#### Action Plan
+
+**Additional Mitigations Needed:**
+
+1. **Success Story Publication**
+   - Description: Document and share success stories from early-adopter practices showing workload reduction
+   - Owner: Communications Team
+   - Due Date: Alpha + 2 months
+   - Cost: £10K
+   - Expected Impact: Reduce likelihood from 3 to 2
+
+2. **Regional Practice Manager Champions**
+   - Description: Recruit influential practice managers as regional champions to promote adoption
+   - Owner: NHS England Primary Care Team
+   - Due Date: Beta launch
+   - Cost: £25K (incentives and events)
+   - Expected Impact: Reduce likelihood from 3 to 2
+
+**Target Residual Risk After Mitigations:**
+- Target Likelihood: 2 (Unlikely)
+- Target Impact: 4 (Major - unchanged)
+- Target Score: 8 (Medium) ✅ Well within appetite
+
+**Success Criteria:**
+- 100 practices onboarded by Alpha assessment
+- 500 practices onboarded by Beta assessment
+- <10% practice dropout rate after onboarding
+
+**Monitoring Plan:**
+- **Frequency:** Weekly practice onboarding dashboard; Monthly Steering Committee review
+- **Key Indicators:**
+  - Practice expression of interest pipeline
+  - Onboarding completion rate
+  - Practice dropout/pause rate
+- **Escalation Triggers:**
+  - Fewer than 50 practices by Alpha
+  - Onboarding completion rate <80%
+  - 3+ practices withdraw
+
+---
+
+### Risk R-002: Clinical Safety Incident Occurs
+
+**Category:** CLINICAL SAFETY
+**Status:** In Progress
+**Risk Owner:** Clinical Safety Officer, NHS Digital (DCB0129/0160 accountability)
+**Action Owner:** Clinical Safety Officer
+
+#### Risk Identification
+
+**Risk Description:**
+A patient experiences harm attributable to the booking system through booking errors (wrong appointment, lost booking, double booking), identity confusion (wrong patient record accessed), or delayed urgent care due to system failure.
+
+**Root Cause:**
+- Complex integration with multiple GP systems increases error potential
+- Patient identity matching across NHS Login, PDS, and GP systems
+- Booking reason triage affects care urgency classification
+
+**Trigger Events:**
+- GP Connect integration error causes booking loss or duplication
+- NHS Number mismatch assigns booking to wrong patient
+- System failure during Monday peak prevents urgent bookings
+- Booking reason code misinterpreted by GP practice
+
+**Consequences if Realized:**
+- Patient harm (delayed care, wrong treatment, missed diagnosis)
+- DCB0129/0160 regulatory investigation
+- Clinical Safety Officer personal professional accountability
+- Service pause or withdrawal
+- Ministerial scrutiny and negative media coverage
+
+**Affected Stakeholders:**
+- **Clinical Safety Officer** (SD-2): Personal professional accountability; driver to protect patients
+- **Patients**: Direct harm from healthcare system failure
+- **Minister** (SD-7): Cannot avoid negative headlines from patient harm
+- **NHS England Director** (SD-1): Service credibility destroyed
+
+**Related Objectives:**
+- G-2 (Zero clinical safety incidents): Direct measure of this risk
+- O-2 (Safe Digital Healthcare Service): Outcome threatened
+
+#### Inherent Risk Assessment (Before Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 4 - Likely | Complex integration, multiple systems, high transaction volume increases error probability |
+| **Impact** | 5 - Catastrophic | Patient harm is paramount; regulatory consequences; service withdrawal |
+| **Inherent Risk Score** | **20** (Critical) | 4 × 5 = 20 |
+
+**Risk Zone:** 🟥 Critical (20-25)
+
+#### Current Controls and Mitigations
+
+**Existing Controls:**
+1. **DCB0129/0160 Clinical Safety Management System**: Formal hazard log, clinical risk assessment, CSO sign-off
+   - Owner: Clinical Safety Officer
+   - Effectiveness: **Strong**
+   - Evidence: Hazard log maintained; all releases require CSO approval
+
+2. **Clinical Safety Testing**: Dedicated clinical safety test scenarios before each release
+   - Owner: Clinical Safety Officer + Test Lead
+   - Effectiveness: **Strong**
+   - Evidence: Clinical test pack with >100 scenarios
+
+3. **CSO Halt Authority**: Clinical Safety Officer has authority to halt any release
+   - Owner: Clinical Safety Officer
+   - Effectiveness: **Strong**
+   - Evidence: Documented in governance framework
+
+4. **Phased Rollout**: Limited practices initially to contain exposure while safety evidence accumulates
+   - Owner: Product Owner
+   - Effectiveness: **Strong**
+   - Evidence: Phased rollout plan approved
+
+5. **GP Connect Validation**: API validation and error handling for all GP system interactions
+   - Owner: Technical Lead
+   - Effectiveness: **Adequate**
+   - Evidence: GP Connect compliance testing passed
+
+**Overall Control Effectiveness:** Strong (reduces risk from 20 to 10)
+
+#### Residual Risk Assessment (After Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 2 - Unlikely | Strong clinical governance significantly reduces probability |
+| **Impact** | 5 - Catastrophic | Impact cannot be reduced - patient safety is paramount |
+| **Residual Risk Score** | **10** (Medium) | 2 × 5 = 10 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+**Risk Reduction:** 50% reduction from inherent (20 → 10)
+
+#### Risk Response (4Ts Framework)
+
+**Primary Response:** TREAT (Mitigate/Reduce)
+
+**Rationale:**
+Patient safety is non-negotiable. Despite residual risk being within appetite, continuous improvement of controls is required.
+
+#### Risk Appetite Assessment
+
+**Organizational Risk Appetite for CLINICAL SAFETY risks:** Very Low (Score ≤ 10)
+**Current Residual Risk Score:** 10 (Medium)
+**Assessment:** ✅ **At Appetite Threshold** - Maximum acceptable level
+
+**Justification:**
+Clinical safety risks can never be fully eliminated in healthcare IT. Score of 10 represents minimum achievable with robust governance. Any incident requires immediate escalation regardless of score.
+
+**Escalation Required:** Any clinical incident (regardless of score) escalates to CSO → NHS Digital Director → NHS England Director → Minister
+
+#### Action Plan
+
+**Additional Mitigations Needed:**
+
+1. **Clinical Pre-Mortem Exercise**
+   - Description: Conduct structured exercise imagining clinical safety incident has occurred; identify additional controls
+   - Owner: Clinical Safety Officer
+   - Due Date: Before Beta launch
+   - Cost: £5K (facilitation)
+   - Expected Impact: Identify unknown hazards; improve response readiness
+
+2. **Independent Clinical Review**
+   - Description: Commission independent clinical safety review before Live
+   - Owner: NHS Digital Director
+   - Due Date: Before Live assessment
+   - Cost: £30K
+   - Expected Impact: External validation of safety controls
+
+**Target Residual Risk After Mitigations:**
+- Target Likelihood: 1 (Rare)
+- Target Impact: 5 (Catastrophic - unchanged)
+- Target Score: 5 (Low) ✅ Significant margin within appetite
+
+**Success Criteria:**
+- Zero patient safety incidents throughout Alpha, Beta, Live
+- All hazard log items closed before each phase
+- Independent clinical review passed
+
+**Monitoring Plan:**
+- **Frequency:** Weekly clinical safety review; Daily monitoring of near-misses
+- **Key Indicators:**
+  - Hazard log status (open/closed)
+  - Near-miss reports
+  - Clinical incident reports (target: 0)
+- **Escalation Triggers:**
+  - Any clinical incident (immediate)
+  - Near-miss trend (3+ similar in a week)
+  - Hazard closure delayed >2 weeks
+
+---
+
+### Risk R-003: GDS Assessment Fails
+
+**Category:** COMPLIANCE
+**Status:** Open
+**Risk Owner:** Product Owner, NHS Digital
+**Action Owner:** Product Owner
+
+#### Risk Identification
+
+**Risk Description:**
+Service fails GDS Service Standard assessment at Alpha, Beta, or Live gate, requiring re-assessment and delaying service progression. Failure damages credibility and delays patient benefits.
+
+**Root Cause:**
+- GDS assessments require extensive user research evidence
+- Accessibility requirements (WCAG 2.2 AA) are stringent
+- Performance data and operational metrics required
+- GDS assessors apply rigorous standards
+
+**Trigger Events:**
+- Insufficient user research evidence presented
+- Accessibility audit finds critical issues
+- Performance data incomplete or below threshold
+- Technology choices questioned (not open standards)
+
+**Consequences if Realized:**
+- Service progression blocked until re-assessment
+- 2-3 month delay per failed assessment
+- NHS credibility with GDS damaged
+- Resource cost of remediation and re-assessment
+
+**Affected Stakeholders:**
+- **GDS Assessment Team** (SD-6): Maintaining Service Standard integrity
+- **Product Owner**: Delivery responsibility
+- **NHS England Director** (SD-1): Long Term Plan delivery delayed
+- **Patients** (SD-4): Access delayed
+
+**Related Objectives:**
+- G-3 (Pass GDS assessments): Direct measure of this risk
+- O-4 (Service Standard Compliance): Outcome at risk
+
+#### Inherent Risk Assessment (Before Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | GDS assessments are rigorous; NHS projects have mixed track record |
+| **Impact** | 4 - Major | 3+ month delays; credibility damage; resource diversion |
+| **Inherent Risk Score** | **12** (Medium) | 3 × 4 = 12 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+
+#### Current Controls and Mitigations
+
+**Existing Controls:**
+1. **Early GDS Engagement**: Informal engagement with GDS before formal assessments
+   - Owner: Product Owner
+   - Effectiveness: **Adequate**
+   - Evidence: Initial GDS meeting held
+
+2. **User Research Programme**: Dedicated user research with diverse patient groups
+   - Owner: User Research Lead
+   - Effectiveness: **Adequate**
+   - Evidence: User research plan with 50+ sessions planned
+
+3. **Accessibility Testing**: Accessibility audit with real assistive technology users
+   - Owner: Product Owner
+   - Effectiveness: **Adequate** (in progress)
+   - Evidence: Accessibility partner engaged
+
+**Overall Control Effectiveness:** Adequate (risk maintained at 12)
+
+#### Residual Risk Assessment (After Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | Controls improve evidence but cannot guarantee GDS panel decision |
+| **Impact** | 4 - Major | Impact unchanged |
+| **Residual Risk Score** | **12** (Medium) | 3 × 4 = 12 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+**Risk Reduction:** 0% (controls prevent deterioration rather than improve)
+
+#### Risk Response (4Ts Framework)
+
+**Primary Response:** TREAT (Mitigate/Reduce)
+
+#### Risk Appetite Assessment
+
+**Organizational Risk Appetite for COMPLIANCE risks:** Low (Score ≤ 9)
+**Current Residual Risk Score:** 12 (Medium)
+**Assessment:** ❌ **Exceeds Appetite** by 3 points (33% over threshold)
+
+**Justification:**
+GDS assessment is mandatory compliance. Risk accepted due to mandatory nature with commitment to intensive preparation.
+
+**Escalation Required:** Yes - NHS Digital Director approval required for proceeding with risk above appetite
+
+#### Action Plan
+
+**Additional Mitigations Needed:**
+
+1. **Mock Assessment**
+   - Description: Conduct internal mock assessment with GDS-experienced assessors before each formal assessment
+   - Owner: Product Owner
+   - Due Date: 4 weeks before each assessment
+   - Cost: £15K per mock
+   - Expected Impact: Identify gaps; reduce likelihood from 3 to 2
+
+2. **Evidence Portfolio Development**
+   - Description: Maintain comprehensive evidence portfolio mapped to 14 Service Standard points
+   - Owner: Delivery Manager
+   - Due Date: Ongoing
+   - Cost: £5K (tooling)
+   - Expected Impact: Ensure no evidence gaps at assessment
+
+**Target Residual Risk After Mitigations:**
+- Target Likelihood: 2 (Unlikely)
+- Target Impact: 4 (Major)
+- Target Score: 8 (Medium) ✅ Within appetite
+
+**Success Criteria:**
+- Pass Alpha assessment on first attempt
+- Pass Beta assessment on first attempt
+- Pass Live assessment on first attempt
+
+**Monitoring Plan:**
+- **Frequency:** Monthly evidence review; Weekly in assessment run-up
+- **Key Indicators:**
+  - User research sessions completed vs planned
+  - Accessibility audit findings status
+  - Performance metrics availability
+- **Escalation Triggers:**
+  - User research <80% of planned sessions
+  - Critical accessibility findings unresolved 2 weeks before assessment
+  - Mock assessment identifies major gaps
+
+---
+
+### Risk R-004: Data Breach Occurs
+
+**Category:** TECHNOLOGY
+**Status:** In Progress
+**Risk Owner:** Security Lead, NHS Digital
+**Action Owner:** Security Lead
+
+#### Risk Identification
+
+**Risk Description:**
+Patient data (NHS Numbers, contact details, health data) is accessed by unauthorized parties through cyber attack, insider threat, or supply chain compromise, requiring ICO notification within 72 hours.
+
+**Root Cause:**
+- NHS is high-value target for cyber attackers (WannaCry precedent)
+- Special category health data is valuable for fraud and discrimination
+- Multiple integration points (NHS Login, GP Connect, Gov.uk Notify) increase attack surface
+- Large-scale data (5M+ patients) increases breach impact
+
+**Trigger Events:**
+- SQL injection or other application vulnerability exploited
+- Credential compromise (staff or API)
+- Database backup exposure
+- Third-party/supply chain breach
+- Insider threat
+
+**Consequences if Realized:**
+- ICO notification within 72 hours
+- Potential ICO fine (up to £17.5M / 4% revenue)
+- Patient notification requirement
+- NHS reputation damage
+- Loss of patient trust in digital services
+
+**Affected Stakeholders:**
+- **Security Lead** (SD-10): Accountable for DSPT compliance and security
+- **IG Lead** (SD-8): Data protection accountability
+- **Patients**: Personal data exposed
+- **Minister** (SD-7): Negative headlines
+- **ICO**: Regulatory investigation
+
+**Related Objectives:**
+- G-6 (Zero data breaches): Direct measure of this risk
+- O-2 (Safe Digital Healthcare Service): Outcome at risk
+
+#### Inherent Risk Assessment (Before Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 4 - Likely | NHS is known target; healthcare breaches common; multiple attack vectors |
+| **Impact** | 5 - Catastrophic | Regulatory fines; patient harm from discrimination; reputation destruction |
+| **Inherent Risk Score** | **20** (Critical) | 4 × 5 = 20 |
+
+**Risk Zone:** 🟥 Critical (20-25)
+
+#### Current Controls and Mitigations
+
+**Existing Controls:**
+1. **Encryption at Rest**: AES-256 encryption for all patient data; NHS Number field-level encryption
+   - Owner: Technical Lead
+   - Effectiveness: **Strong**
+   - Evidence: Encryption implemented and tested
+
+2. **Encryption in Transit**: TLS 1.3 only; NHS Digital approved cipher suites
+   - Owner: Technical Lead
+   - Effectiveness: **Strong**
+   - Evidence: Transport security validated
+
+3. **Access Controls**: RBAC with NHS Login P5/P9 for patients; MFA for staff
+   - Owner: Security Lead
+   - Effectiveness: **Strong**
+   - Evidence: Access control framework documented and tested
+
+4. **Penetration Testing**: Penetration testing before each release
+   - Owner: Security Lead
+   - Effectiveness: **Strong**
+   - Evidence: Penetration testing partner engaged; schedule agreed
+
+5. **Data Loss Prevention**: DLP monitoring for sensitive data exfiltration
+   - Owner: Security Team
+   - Effectiveness: **Adequate**
+   - Evidence: DLP rules configured
+
+6. **Incident Response Plan**: 72-hour ICO notification process; patient notification procedure
+   - Owner: IG Lead
+   - Effectiveness: **Adequate**
+   - Evidence: Incident response plan documented
+
+**Overall Control Effectiveness:** Strong (reduces risk from 20 to 12)
+
+#### Residual Risk Assessment (After Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | Strong controls significantly reduce probability but cannot eliminate |
+| **Impact** | 4 - Major | Reduced from catastrophic due to incident response capability limiting damage |
+| **Residual Risk Score** | **12** (Medium) | 3 × 4 = 12 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+**Risk Reduction:** 40% reduction from inherent (20 → 12)
+
+#### Risk Response (4Ts Framework)
+
+**Primary Response:** TREAT (Mitigate/Reduce)
+
+**Alternative Responses Considered:**
+- **Transfer**: Cyber insurance obtained as secondary response (£5M cover)
+- **Terminate**: Not viable - service requires patient data
+
+#### Risk Appetite Assessment
+
+**Organizational Risk Appetite for TECHNOLOGY risks:** Medium (Score ≤ 9)
+**Current Residual Risk Score:** 12 (Medium)
+**Assessment:** ❌ **Exceeds Appetite** by 3 points (33% over threshold)
+
+**Justification:**
+Cyber security risk can never be fully eliminated. Score of 12 reflects best achievable with comprehensive controls. Accepted with enhanced monitoring and cyber insurance.
+
+**Escalation Required:** Yes - IG Lead and Security Lead approval obtained. NHS Digital Director informed.
+
+#### Action Plan
+
+**Additional Mitigations Needed:**
+
+1. **Red Team Exercise**
+   - Description: Commission red team attack simulation before Beta
+   - Owner: Security Lead
+   - Due Date: Before Beta launch
+   - Cost: £50K
+   - Expected Impact: Identify unknown vulnerabilities; reduce likelihood from 3 to 2
+
+2. **Security Operations Center (SOC) Integration**
+   - Description: Integrate with NHS Digital SOC for 24/7 monitoring
+   - Owner: Security Lead
+   - Due Date: Before Live launch
+   - Cost: £30K/year
+   - Expected Impact: Faster detection; reduce impact from 4 to 3
+
+**Target Residual Risk After Mitigations:**
+- Target Likelihood: 2 (Unlikely)
+- Target Impact: 3 (Moderate)
+- Target Score: 6 (Medium) ✅ Within appetite
+
+**Success Criteria:**
+- Zero data breaches requiring ICO notification
+- Penetration tests passed with no critical findings
+- Red team exercise passed
+
+**Monitoring Plan:**
+- **Frequency:** Continuous security monitoring; Weekly security review
+- **Key Indicators:**
+  - Security alerts trend
+  - Penetration test findings
+  - Vulnerability scan results
+- **Escalation Triggers:**
+  - Any data breach (immediate)
+  - Critical vulnerability found (immediate)
+  - Unusual access patterns detected
+
+---
+
+### Risk R-005: GP System Supplier Non-Cooperation
+
+**Category:** STRATEGIC
+**Status:** In Progress
+**Risk Owner:** GP Connect Team Lead, NHS Digital
+**Action Owner:** GP Connect Team Lead
+
+#### Risk Identification
+
+**Risk Description:**
+One or more major GP system suppliers (EMIS, TPP, Vision, Microtest) delay or inadequately implement GP Connect Appointment Management integration, preventing practices using those systems from participating.
+
+**Root Cause:**
+- GP system suppliers have commercial interests in their own patient portals
+- Integration work requires development resources
+- National NHS service could cannibalize their products
+- Specifications may change requiring rework
+
+**Trigger Events:**
+- Supplier misses GP Connect SLA
+- Integration quality issues requiring extensive rework
+- Supplier prioritizes other work over GP Connect
+- Contractual dispute over scope or funding
+
+**Consequences if Realized:**
+- Practices using affected supplier cannot participate
+- G-7 (500 practices) potentially unachievable if major supplier affected
+- Market coverage gaps (EMIS alone covers ~55% of practices)
+- Delays and increased costs
+
+**Affected Stakeholders:**
+- **GP System Suppliers** (SD-5): Commercial tension with NHS
+- **GP Practice Managers** (SD-3): Cannot participate if their supplier is affected
+- **GP Connect Team**: Integration dependency
+- **NHS Digital Director**: Service delivery threatened
+
+**Related Objectives:**
+- G-7 (500+ practices by Beta): Directly threatened
+- G-1 (30% uptake): Indirectly threatened through coverage gaps
+
+#### Inherent Risk Assessment (Before Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | Suppliers have obligations but also commercial tensions |
+| **Impact** | 5 - Catastrophic | Major supplier delay could affect 50%+ of practices |
+| **Inherent Risk Score** | **15** (High) | 3 × 5 = 15 |
+
+**Risk Zone:** 🟧 High (13-19)
+
+#### Current Controls and Mitigations
+
+**Existing Controls:**
+1. **Contractual Obligations**: GP Connect support included in GP system contracts
+   - Owner: NHS Digital Commercial
+   - Effectiveness: **Adequate**
+   - Evidence: Contracts include GP Connect SLAs
+
+2. **NHS Funding for Integration**: Development funding available for suppliers
+   - Owner: NHS Digital Commercial
+   - Effectiveness: **Adequate**
+   - Evidence: Funding framework agreed
+
+3. **Regular Supplier Engagement**: Monthly meetings with each major supplier
+   - Owner: GP Connect Team Lead
+   - Effectiveness: **Adequate**
+   - Evidence: Meeting schedule established
+
+4. **Specification Stability**: Quarterly release cadence with locked specifications
+   - Owner: GP Connect Team Lead
+   - Effectiveness: **Adequate**
+   - Evidence: Release schedule published
+
+**Overall Control Effectiveness:** Adequate (reduces risk from 15 to 12)
+
+#### Residual Risk Assessment (After Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | Contractual controls help but cannot guarantee cooperation |
+| **Impact** | 4 - Major | Reduced through multi-supplier strategy |
+| **Residual Risk Score** | **12** (Medium) | 3 × 4 = 12 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+**Risk Reduction:** 20% reduction from inherent (15 → 12)
+
+#### Risk Response (4Ts Framework)
+
+**Primary Response:** TREAT (Mitigate/Reduce)
+
+#### Risk Appetite Assessment
+
+**Organizational Risk Appetite for STRATEGIC risks:** Medium (Score ≤ 12)
+**Current Residual Risk Score:** 12 (Medium)
+**Assessment:** ✅ **At Appetite Threshold** - Close monitoring required
+
+#### Action Plan
+
+**Additional Mitigations Needed:**
+
+1. **Supplier Relationship Escalation**
+   - Description: Establish Director-level relationship with each supplier for rapid escalation
+   - Owner: NHS Digital Director
+   - Due Date: Alpha launch
+   - Cost: Staff time
+   - Expected Impact: Faster issue resolution; reduce likelihood from 3 to 2
+
+**Target Residual Risk After Mitigations:**
+- Target Likelihood: 2 (Unlikely)
+- Target Impact: 4 (Major)
+- Target Score: 8 (Medium) ✅ Well within appetite
+
+**Monitoring Plan:**
+- **Frequency:** Monthly supplier performance review
+- **Key Indicators:**
+  - Supplier GP Connect compliance status
+  - Integration test pass rates
+  - Practice enablement by supplier
+- **Escalation Triggers:**
+  - Supplier misses SLA by >2 weeks
+  - Integration test failure rate >10%
+  - <50 practices enabled for a major supplier
+
+---
+
+### Risk R-006: Ministerial Scrutiny During Incident
+
+**Category:** REPUTATIONAL
+**Status:** Open
+**Risk Owner:** NHS England Director of Primary Care
+**Action Owner:** Communications Team
+
+#### Risk Identification
+
+**Risk Description:**
+A service issue (performance failure, safety concern, security incident, or poor user experience) generates negative media coverage and parliamentary questions, damaging NHS digital reputation and potentially requiring service pause.
+
+**Root Cause:**
+- High visibility of NHS digital services
+- Media interest in government IT failures
+- Parliamentary scrutiny of NHS access issues
+- Social media amplification of negative experiences
+
+**Trigger Events:**
+- Monday 8am service outage (peak booking time)
+- Patient complaint reaches MP surgery
+- Clinical safety incident (any severity)
+- Data breach media coverage
+- Poor user reviews/social media backlash
+
+**Consequences if Realized:**
+- Parliamentary questions requiring Minister response
+- Negative media coverage
+- Patient trust erosion
+- Potential service pause pending investigation
+- NAO/PAC scrutiny
+
+**Affected Stakeholders:**
+- **Minister** (SD-7): Facing parliamentary questions; negative headlines
+- **NHS England Director** (SD-1): Strategic credibility damaged
+- **NHS Digital Director**: Delivery credibility damaged
+- **Patients**: Trust in NHS digital services eroded
+
+**Related Objectives:**
+- G-1 (30% uptake): Patient trust required for adoption
+- O-1 (Digital Shift): Outcome threatened if trust lost
+
+#### Inherent Risk Assessment (Before Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 4 - Likely | Some incident is probable during service operation; media scrutiny is high |
+| **Impact** | 4 - Major | Reputational damage difficult to recover; service may pause |
+| **Inherent Risk Score** | **16** (High) | 4 × 4 = 16 |
+
+**Risk Zone:** 🟧 High (13-19)
+
+#### Current Controls and Mitigations
+
+**Existing Controls:**
+1. **Proactive Communications**: Regular positive updates to Minister's office
+   - Owner: Communications Team
+   - Effectiveness: **Adequate**
+   - Evidence: Monthly briefing schedule established
+
+2. **Rapid Response Process**: Incident communications protocol
+   - Owner: Communications Team
+   - Effectiveness: **Adequate**
+   - Evidence: Process documented
+
+3. **PQ Briefing Preparation**: Statistics and talking points for parliamentary questions
+   - Owner: Communications Team
+   - Effectiveness: **Adequate**
+   - Evidence: PQ briefing pack template created
+
+**Overall Control Effectiveness:** Adequate (reduces risk from 16 to 12)
+
+#### Residual Risk Assessment (After Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | Communications can manage but not prevent incidents |
+| **Impact** | 4 - Major | Impact difficult to reduce - reputational damage is hard to control |
+| **Residual Risk Score** | **12** (Medium) | 3 × 4 = 12 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+**Risk Reduction:** 25% reduction from inherent (16 → 12)
+
+#### Risk Response (4Ts Framework)
+
+**Primary Response:** TREAT (Mitigate/Reduce)
+
+**Rationale:**
+Reputational risk is best managed through prevention (other risk controls) and rapid response. Cannot eliminate media scrutiny of public services.
+
+#### Risk Appetite Assessment
+
+**Organizational Risk Appetite for REPUTATIONAL risks:** Low (Score ≤ 9)
+**Current Residual Risk Score:** 12 (Medium)
+**Assessment:** ❌ **Exceeds Appetite** by 3 points (33% over threshold)
+
+**Justification:**
+Reputational risks are inherent in public service delivery. Best mitigation is preventing underlying incidents (safety, security, performance). Accepted with understanding that strong controls on other risks are the primary defense.
+
+**Escalation Required:** Yes - NHS England Director approval required
+
+#### Action Plan
+
+**Additional Mitigations Needed:**
+
+1. **Crisis Communications Plan**
+   - Description: Develop detailed crisis communications plan with pre-approved messaging templates
+   - Owner: Communications Team
+   - Due Date: Before Beta launch
+   - Cost: £10K
+   - Expected Impact: Faster, more effective response; reduce impact from 4 to 3
+
+**Target Residual Risk After Mitigations:**
+- Target Likelihood: 3 (Possible - unchanged, prevention is through other risks)
+- Target Impact: 3 (Moderate)
+- Target Score: 9 (Medium) ✅ At appetite threshold
+
+**Monitoring Plan:**
+- **Frequency:** Daily media monitoring; Weekly comms review
+- **Key Indicators:**
+  - Media mentions (positive/negative ratio)
+  - Social media sentiment
+  - Patient complaint volumes
+- **Escalation Triggers:**
+  - Any negative national media coverage
+  - Parliamentary question received
+  - >10 patient complaints in a day
+
+---
+
+### Risk R-007: GDPR Compliance Failure
+
+**Category:** COMPLIANCE
+**Status:** In Progress
+**Risk Owner:** Information Governance Lead, NHS Digital
+**Action Owner:** IG Lead
+
+#### Risk Identification
+
+**Risk Description:**
+Processing of patient health data found to be non-compliant with UK GDPR requirements, resulting in ICO investigation, enforcement action, or fine. Derived from DPIA risks DPIA-001 through DPIA-010.
+
+**Root Cause:**
+- Special category health data requires stringent compliance
+- Complex data flows across multiple systems
+- Retention requirements spanning 8 years
+- Consent management complexity for optional processing
+
+**Trigger Events:**
+- ICO complaint from patient
+- DPIA review finds gaps
+- Audit discovers unauthorized processing
+- Consent management failure
+- Subject access request not fulfilled within deadline
+
+**Consequences if Realized:**
+- ICO investigation
+- Potential fine (up to £17.5M)
+- Patient trust erosion
+- Service pause for remediation
+- Reputational damage
+
+**Affected Stakeholders:**
+- **IG Lead** (SD-8): Data protection accountability
+- **Patients**: Rights not protected
+- **ICO**: Regulatory enforcement
+- **NHS Digital Director**: Organizational accountability
+
+**Related Objectives:**
+- G-6 (Zero data breaches): Related compliance measure
+
+#### Inherent Risk Assessment (Before Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 4 - Likely | Complex processing, special category data, high volume |
+| **Impact** | 4 - Major | Regulatory fines, service pause, reputation damage |
+| **Inherent Risk Score** | **16** (High) | 4 × 4 = 16 |
+
+**Risk Zone:** 🟧 High (13-19)
+
+#### Current Controls and Mitigations
+
+**Existing Controls:**
+1. **DPIA Completed**: Comprehensive DPIA (ARC-001-DPIA-v1.0) identifying and mitigating risks
+   - Owner: IG Lead
+   - Effectiveness: **Strong**
+   - Evidence: DPIA approved, 10 risks mitigated to acceptable levels
+
+2. **Privacy by Design**: Privacy embedded in architecture principles
+   - Owner: Enterprise Architect
+   - Effectiveness: **Strong**
+   - Evidence: Architecture Principle 7 (Patient Data Protection)
+
+3. **SAR Process**: Subject Access Request process with 1-month SLA
+   - Owner: IG Lead
+   - Effectiveness: **Adequate**
+   - Evidence: Process documented, to be tested
+
+4. **Consent Management**: Granular consent with versioning (E-007)
+   - Owner: Technical Lead
+   - Effectiveness: **Strong**
+   - Evidence: Data model includes consent tracking
+
+**Overall Control Effectiveness:** Strong (reduces risk from 16 to 12)
+
+#### Residual Risk Assessment (After Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | DPIA controls strong but compliance requires ongoing vigilance |
+| **Impact** | 4 - Major | Regulatory impact unchanged |
+| **Residual Risk Score** | **12** (Medium) | 3 × 4 = 12 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+**Risk Reduction:** 25% reduction from inherent (16 → 12)
+
+#### Risk Response (4Ts Framework)
+
+**Primary Response:** TREAT (Mitigate/Reduce)
+
+#### Risk Appetite Assessment
+
+**Organizational Risk Appetite for COMPLIANCE risks:** Low (Score ≤ 9)
+**Current Residual Risk Score:** 12 (Medium)
+**Assessment:** ❌ **Exceeds Appetite** by 3 points (33% over threshold)
+
+**Justification:**
+GDPR compliance is mandatory. DPIA identifies path to full compliance. Accepted with commitment to complete all DPIA conditions.
+
+**Escalation Required:** Yes - IG Lead approval obtained. DPO informed.
+
+#### Action Plan
+
+**Additional Mitigations Needed:**
+
+1. **SAR Process Testing**
+   - Description: End-to-end test of Subject Access Request process before go-live
+   - Owner: IG Lead
+   - Due Date: Before Beta launch
+   - Cost: £5K
+   - Expected Impact: Ensure rights can be exercised; reduce likelihood from 3 to 2
+
+2. **Annual DPIA Review**
+   - Description: Schedule and conduct annual DPIA review
+   - Owner: IG Lead
+   - Due Date: 2027-01-28
+   - Cost: Staff time
+   - Expected Impact: Ensure ongoing compliance
+
+**Target Residual Risk After Mitigations:**
+- Target Likelihood: 2 (Unlikely)
+- Target Impact: 4 (Major)
+- Target Score: 8 (Medium) ✅ Within appetite
+
+---
+
+### Risk R-008: Vulnerable Patient Exclusion
+
+**Category:** OPERATIONAL
+**Status:** In Progress
+**Risk Owner:** Product Owner, NHS Digital
+**Action Owner:** Product Owner
+
+#### Risk Identification
+
+**Risk Description:**
+Elderly, disabled, or low-digital-literacy patients cannot effectively use the service, widening the digital divide and creating health inequity. Derived from DPIA risk DPIA-010.
+
+**Root Cause:**
+- Digital services inherently favor digital-literate users
+- NHS patient population includes significant vulnerable groups
+- Accessibility requirements are complex and demanding
+- Some patients will never be comfortable with digital services
+
+**Trigger Events:**
+- Accessibility testing reveals critical barriers
+- Patient advocacy groups raise concerns
+- GDS assessment fails on accessibility
+- Phone booking capacity reduced, leaving vulnerable patients without option
+
+**Consequences if Realized:**
+- Health inequity for vulnerable populations
+- GDS assessment failure (Point 5: Inclusive design)
+- Patient advocacy group criticism
+- Potential Equality Act claims
+- Reputational damage for digital exclusion
+
+**Affected Stakeholders:**
+- **Patients - Elderly** (Arthur persona, age 78): May struggle with digital interface
+- **Patients - Disabled**: Require accessible interface
+- **Patient Advocacy Groups**: Champion patient interests
+- **Healthwatch**: Patient champion organization
+- **GDS Assessment Team** (SD-6): Accessibility is key assessment criterion
+
+**Related Objectives:**
+- G-5 (80% patient satisfaction): Vulnerable patients may lower score
+- O-1 (Digital Shift): Must be inclusive digital shift
+
+#### Inherent Risk Assessment (Before Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 4 - Likely | Some exclusion is inevitable despite best efforts |
+| **Impact** | 4 - Major | Health inequity, GDS failure, reputational harm |
+| **Inherent Risk Score** | **16** (High) | 4 × 4 = 16 |
+
+**Risk Zone:** 🟧 High (13-19)
+
+#### Current Controls and Mitigations
+
+**Existing Controls:**
+1. **WCAG 2.2 AA Compliance**: Mandatory accessibility standard
+   - Owner: Product Owner
+   - Effectiveness: **Strong**
+   - Evidence: Accessibility testing with partner engaged
+
+2. **Assisted Digital Pathway**: Practice staff can book on patient's behalf
+   - Owner: Product Owner
+   - Effectiveness: **Strong**
+   - Evidence: Assisted digital journey designed
+
+3. **Phone Channel Preserved**: Telephone booking remains available
+   - Owner: NHS England Primary Care Team
+   - Effectiveness: **Strong**
+   - Evidence: No plans to remove phone booking
+
+4. **Accessibility Testing with Real Users**: Testing with assistive technology users
+   - Owner: User Research Lead
+   - Effectiveness: **Adequate** (in progress)
+   - Evidence: Testing sessions planned
+
+**Overall Control Effectiveness:** Strong (reduces risk from 16 to 9)
+
+#### Residual Risk Assessment (After Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | Controls reduce but cannot eliminate exclusion |
+| **Impact** | 3 - Moderate | Phone option and assisted digital significantly reduce harm |
+| **Residual Risk Score** | **9** (Medium) | 3 × 3 = 9 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+**Risk Reduction:** 44% reduction from inherent (16 → 9)
+
+#### Risk Response (4Ts Framework)
+
+**Primary Response:** TREAT (Mitigate/Reduce)
+
+#### Risk Appetite Assessment
+
+**Organizational Risk Appetite for OPERATIONAL risks:** Medium (Score ≤ 9)
+**Current Residual Risk Score:** 9 (Medium)
+**Assessment:** ✅ **At Appetite Threshold**
+
+#### Action Plan
+
+**Monitoring Plan:**
+- **Frequency:** Monthly accessibility feedback review
+- **Key Indicators:**
+  - Accessibility audit findings
+  - Assisted digital pathway usage
+  - Patient complaints related to accessibility
+- **Escalation Triggers:**
+  - Critical accessibility audit finding
+  - GDS accessibility concern raised
+  - Patient advocacy group complaint
+
+---
+
+### Risk R-009: Unauthorized Access to Health Data
+
+**Category:** TECHNOLOGY
+**Status:** In Progress
+**Risk Owner:** Security Lead, NHS Digital
+**Action Owner:** Security Lead
+
+#### Risk Identification
+
+**Risk Description:**
+An attacker exploits a vulnerability (SQL injection, credential compromise, insider threat) to access the booking database containing appointment reason codes and free text revealing health conditions. Derived from DPIA risk DPIA-001.
+
+**Root Cause:**
+- Health data is high-value target
+- Multiple attack vectors exist
+- Insider threat possible
+- Application vulnerabilities may exist
+
+**Trigger Events:**
+- SQL injection or API vulnerability exploited
+- Privileged credential compromise
+- Insider accesses data inappropriately
+- Supply chain component vulnerability
+
+**Consequences if Realized:**
+- Patient health conditions disclosed
+- Potential discrimination (employment, insurance)
+- Patient distress and anxiety
+- ICO notification and investigation
+- NHS reputation damage
+
+**Affected Stakeholders:**
+- **Patients**: Health data exposed, potential discrimination
+- **Security Lead** (SD-10): Security accountability
+- **IG Lead** (SD-8): Data protection accountability
+
+**Related Objectives:**
+- G-6 (Zero data breaches): Direct measure
+
+#### Inherent Risk Assessment (Before Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 4 - Likely | NHS high-value target, health data valuable |
+| **Impact** | 4 - Major | Discrimination, distress, regulatory action |
+| **Inherent Risk Score** | **16** (High) | 4 × 4 = 16 |
+
+**Risk Zone:** 🟧 High (13-19)
+
+#### Current Controls and Mitigations
+
+**Existing Controls:**
+1. **AES-256 Encryption at Rest**: All patient data encrypted
+   - Owner: Technical Lead
+   - Effectiveness: **Strong**
+   - Evidence: Encryption implemented
+
+2. **RBAC and MFA**: Role-based access with multi-factor authentication
+   - Owner: Security Lead
+   - Effectiveness: **Strong**
+   - Evidence: Access controls implemented
+
+3. **Audit Logging**: All data access logged and monitored
+   - Owner: Security Lead
+   - Effectiveness: **Strong**
+   - Evidence: Comprehensive logging in E-006
+
+4. **Penetration Testing**: Security testing before each release
+   - Owner: Security Lead
+   - Effectiveness: **Strong**
+   - Evidence: Testing schedule agreed
+
+**Overall Control Effectiveness:** Strong (reduces risk from 16 to 9)
+
+#### Residual Risk Assessment (After Controls)
+
+| Assessment | Rating | Justification |
+|------------|--------|---------------|
+| **Likelihood** | 3 - Possible | Strong controls reduce but cannot eliminate threat |
+| **Impact** | 3 - Moderate | Encryption limits value of stolen data |
+| **Residual Risk Score** | **9** (Medium) | 3 × 3 = 9 |
+
+**Risk Zone:** 🟨 Medium (6-12)
+**Risk Reduction:** 44% reduction from inherent (16 → 9)
+
+---
+
+### Risk R-010: NHS Number and Contact Details Breach
+
+**Category:** TECHNOLOGY
+**Status:** In Progress
+**Risk Owner:** Security Lead, NHS Digital
+**Action Owner:** Security Lead
+
+#### Risk Identification
+
+**Risk Description:**
+Database breach or backup exposure reveals patient NHS Numbers, mobile phones, and email addresses, enabling identity theft and targeted phishing. Derived from DPIA risk DPIA-002.
+
+**Root Cause:**
+- NHS Number is unique lifetime identifier (cannot be changed)
+- Contact details enable phishing
+- Multiple data stores and backups
+- Supply chain exposure potential
+
+**Consequences if Realized:**
+- Identity theft using NHS Number
+- Targeted phishing campaigns
+- Patient distress from phishing attempts
+- ICO notification
+
+**Inherent Risk Score:** **16** (High) - 4 × 4 = 16
+**Residual Risk Score:** **9** (Medium) - 3 × 3 = 9 (after encryption and access controls)
+
+**Owner:** Security Lead
+**Status:** In Progress (controls implemented, monitoring ongoing)
+
+---
+
+### Risk R-011: Booking Error Causing Patient Safety Harm
+
+**Category:** CLINICAL SAFETY
+**Status:** In Progress
+**Risk Owner:** Clinical Safety Officer, NHS Digital
+**Action Owner:** Clinical Safety Officer
+
+#### Risk Identification
+
+**Risk Description:**
+System error causes booking to be lost, duplicated, or assigned to wrong patient; patient misses urgent care or receives wrong treatment. Derived from DPIA risk DPIA-003 and stakeholder risk R-2.
+
+**Note:** This risk is closely related to R-002 (Clinical Safety Incident) and shares controls. R-002 addresses the broader clinical safety governance; R-011 focuses on specific booking errors.
+
+**Inherent Risk Score:** **20** (Critical) - 4 × 5 = 20
+**Residual Risk Score:** **6** (Medium) - 2 × 3 = 6 (after clinical safety testing, GP Connect validation, hazard log)
+
+**Owner:** Clinical Safety Officer
+**Status:** In Progress (clinical safety governance active)
+
+---
+
+### Risk R-012: Excessive Data Retention
+
+**Category:** COMPLIANCE
+**Status:** Monitoring
+**Risk Owner:** IG Lead, NHS Digital
+
+#### Risk Identification
+
+**Risk Description:**
+Data retained beyond necessary period, increasing breach exposure window and violating data minimization principle. Derived from DPIA risk DPIA-004.
+
+**Inherent Risk Score:** **6** (Medium) - 2 × 3 = 6
+**Residual Risk Score:** **3** (Low) - 1 × 3 = 3 (after automated deletion jobs, retention policy enforcement)
+
+**Owner:** IG Lead
+**Status:** Monitoring (automated retention controls implemented)
+
+---
+
+### Risk R-013: Third-Party Processor Misuse
+
+**Category:** OPERATIONAL
+**Status:** Monitoring
+**Risk Owner:** IG Lead, NHS Digital
+
+#### Risk Identification
+
+**Risk Description:**
+Gov.uk Notify or GP system supplier misuses patient data for unauthorized purposes. Derived from DPIA risk DPIA-005.
+
+**Inherent Risk Score:** **6** (Medium) - 2 × 3 = 6
+**Residual Risk Score:** **3** (Low) - 1 × 3 = 3 (after DPAs, vendor audits, limited data sharing)
+
+**Owner:** IG Lead
+**Status:** Monitoring (DPAs in place, audits scheduled)
+
+---
+
+### Risk R-014: Re-identification of Pseudonymised Data
+
+**Category:** TECHNOLOGY
+**Status:** Monitoring
+**Risk Owner:** Security Lead, NHS Digital
+
+#### Risk Identification
+
+**Risk Description:**
+Audit logs with pseudonymised NHS Numbers re-identified through correlation with other data sources. Derived from DPIA risk DPIA-006.
+
+**Inherent Risk Score:** **6** (Medium) - 2 × 3 = 6
+**Residual Risk Score:** **3** (Low) - 1 × 3 = 3 (after k-anonymity for analytics, separate identifier storage)
+
+**Owner:** Security Lead
+**Status:** Monitoring (pseudonymisation controls implemented)
+
+---
+
+### Risk R-015: Loss of Control Over Personal Data
+
+**Category:** COMPLIANCE
+**Status:** Monitoring
+**Risk Owner:** IG Lead, NHS Digital
+
+#### Risk Identification
+
+**Risk Description:**
+Patients unable to effectively exercise data subject rights (SAR, deletion, portability). Derived from DPIA risk DPIA-007.
+
+**Inherent Risk Score:** **6** (Medium) - 2 × 3 = 6
+**Residual Risk Score:** **3** (Low) - 1 × 3 = 3 (after SAR process, consent management, privacy notice)
+
+**Owner:** IG Lead
+**Status:** Monitoring (rights processes documented, to be tested)
+
+---
+
+### Risk R-016: Function Creep
+
+**Category:** TECHNOLOGY
+**Status:** Monitoring
+**Risk Owner:** Enterprise Architect, NHS Digital
+
+#### Risk Identification
+
+**Risk Description:**
+Data used for purposes beyond stated booking purposes (e.g., marketing, research without consent). Derived from DPIA risk DPIA-008.
+
+**Inherent Risk Score:** **8** (Medium) - 2 × 4 = 8
+**Residual Risk Score:** **4** (Low) - 1 × 4 = 4 (after technical controls preventing repurposing, governance oversight, audit logging)
+
+**Owner:** Enterprise Architect
+**Status:** Monitoring (technical controls implemented)
+
+---
+
+## D. Risk Category Analysis
+
+### STRATEGIC Risks
+
+**Total STRATEGIC Risks:** 3 (R-001, R-005, R-006)
+**Average Inherent Score:** 15.7 (High)
+**Average Residual Score:** 12.0 (Medium)
+**Control Effectiveness:** 24% reduction
+
+**Risk List:**
+- R-001: GP Practice Adoption Stalls - Residual: 12 (Medium)
+- R-005: GP System Supplier Non-Cooperation - Residual: 12 (Medium)
+- R-006: Ministerial Scrutiny - Residual: 12 (Medium) *Note: Also categorized as Reputational*
+
+**Key Themes:**
+- External dependencies on GP practices and suppliers limit control effectiveness
+- Political/media scrutiny inherent in public service delivery
+- Success requires engagement and relationship management, not just technical controls
+
+**Category Risk Profile:** ⚠️ Concerning - Limited ability to reduce external dependencies
+
+---
+
+### CLINICAL SAFETY Risks
+
+**Total CLINICAL SAFETY Risks:** 2 (R-002, R-011)
+**Average Inherent Score:** 20.0 (Critical)
+**Average Residual Score:** 8.0 (Medium)
+**Control Effectiveness:** 60% reduction
+
+**Risk List:**
+- R-002: Clinical Safety Incident Occurs - Residual: 10 (Medium)
+- R-011: Booking Error Causing Patient Safety Harm - Residual: 6 (Medium)
+
+**Key Themes:**
+- Strong governance (DCB0129/0160) provides effective risk reduction
+- CSO halt authority is critical control
+- Phased rollout limits exposure while evidence accumulates
+- Impact remains high - patient safety is non-negotiable
+
+**Category Risk Profile:** ✅ Acceptable - Robust controls significantly reduce risk
+
+---
+
+### COMPLIANCE Risks
+
+**Total COMPLIANCE Risks:** 3 (R-003, R-007, R-012)
+**Average Inherent Score:** 11.3 (Medium)
+**Average Residual Score:** 9.0 (Medium)
+**Control Effectiveness:** 20% reduction
+
+**Risk List:**
+- R-003: GDS Assessment Fails - Residual: 12 (Medium) ❌ Exceeds appetite
+- R-007: GDPR Compliance Failure - Residual: 12 (Medium) ❌ Exceeds appetite
+- R-012: Excessive Data Retention - Residual: 3 (Low)
+
+**Key Themes:**
+- Compliance risks are mandatory - cannot avoid
+- DPIA and Service Standard provide clear compliance paths
+- Retention risks well-controlled through automation
+
+**Category Risk Profile:** ⚠️ Concerning - Two risks exceed appetite (GDS, GDPR)
+
+---
+
+### TECHNOLOGY Risks
+
+**Total TECHNOLOGY Risks:** 4 (R-004, R-009, R-010, R-014, R-016)
+**Average Inherent Score:** 14.4 (High)
+**Average Residual Score:** 7.2 (Medium)
+**Control Effectiveness:** 50% reduction
+
+**Risk List:**
+- R-004: Data Breach Occurs - Residual: 12 (Medium) ❌ Exceeds appetite
+- R-009: Unauthorized Access to Health Data - Residual: 9 (Medium)
+- R-010: NHS Number and Contact Breach - Residual: 9 (Medium)
+- R-014: Re-identification - Residual: 3 (Low)
+- R-016: Function Creep - Residual: 4 (Low)
+
+**Key Themes:**
+- Strong technical controls (encryption, access control) are highly effective
+- Cyber security risk can never be eliminated but can be well-managed
+- Technology risks cluster together - shared mitigations efficient
+
+**Category Risk Profile:** ⚠️ Concerning - Data breach risk exceeds appetite; otherwise well-controlled
+
+---
+
+### REPUTATIONAL Risks
+
+**Total REPUTATIONAL Risks:** 1 (R-006)
+**Average Inherent Score:** 16.0 (High)
+**Average Residual Score:** 12.0 (Medium)
+**Control Effectiveness:** 25% reduction
+
+**Risk List:**
+- R-006: Ministerial Scrutiny During Incident - Residual: 12 (Medium) ❌ Exceeds appetite
+
+**Key Themes:**
+- Reputational risk is difficult to directly control
+- Best mitigation is preventing underlying incidents
+- Communications can limit damage but not prevent
+
+**Category Risk Profile:** ⚠️ Concerning - Prevention through other risk controls is key
+
+---
+
+### OPERATIONAL Risks
+
+**Total OPERATIONAL Risks:** 2 (R-008, R-013)
+**Average Inherent Score:** 11.0 (Medium)
+**Average Residual Score:** 6.0 (Medium)
+**Control Effectiveness:** 45% reduction
+
+**Risk List:**
+- R-008: Vulnerable Patient Exclusion - Residual: 9 (Medium)
+- R-013: Third-Party Processor Misuse - Residual: 3 (Low)
+
+**Key Themes:**
+- Accessibility controls effective for inclusion risk
+- DPAs control processor risk
+
+**Category Risk Profile:** ✅ Acceptable - All risks within appetite
+
+---
+
+## E. Risk Ownership Matrix
+
+**Risk Ownership Distribution by Stakeholder:**
+
+| Stakeholder | Role | Owned Risks | Critical | High | Medium | Low | Total Score | Risk Concentration |
+|-------------|------|-------------|----------|------|--------|-----|-------------|-------------------|
+| NHS England Director | Strategic Sponsor | R-001, R-006 | 0 | 0 | 2 | 0 | 24 | Moderate |
+| Clinical Safety Officer | Clinical Governance | R-002, R-011 | 0 | 0 | 2 | 0 | 16 | Focused (appropriate) |
+| Security Lead | Security Governance | R-004, R-009, R-010, R-014 | 0 | 0 | 3 | 1 | 33 | ⚠️ High concentration |
+| IG Lead | Data Protection | R-007, R-012, R-013, R-015 | 0 | 0 | 1 | 3 | 21 | Moderate |
+| Product Owner | Product Delivery | R-003, R-008 | 0 | 0 | 2 | 0 | 21 | Moderate |
+| GP Connect Team Lead | Integration | R-005 | 0 | 0 | 1 | 0 | 12 | Low |
+| Enterprise Architect | Architecture | R-016 | 0 | 0 | 0 | 1 | 4 | Low |
+
+**Risk Concentration Analysis:**
+- ⚠️ **Security Lead owns 4 risks totaling 33 points** - Appropriate given role, but ensure adequate security team capacity
+- **Clinical Safety Officer concentration appropriate** - Patient safety is their core accountability
+- **Good distribution across other stakeholders**
+
+**Escalation Paths:**
+- **Clinical Safety Risks** → Clinical Safety Officer → NHS Digital Director → NHS England Director → Minister
+- **Security/Data Risks** → Security Lead / IG Lead → NHS Digital Director
+- **Strategic Risks** → NHS England Director → Minister
+- **Compliance Risks** → IG Lead / Product Owner → NHS Digital Director → GDS / ICO
+
+---
+
+## F. 4Ts Response Framework Summary
+
+**Risk Response Distribution:**
+
+| Response | Count | % | Total Risk Score | Key Examples |
+|----------|-------|---|------------------|--------------|
+| **TOLERATE** | 4 | 25% | 13 (Low) | R-012, R-013, R-014, R-015 - Low risks within appetite |
+| **TREAT** | 11 | 69% | 130 (High) | R-001 through R-011, R-016 - Active mitigation |
+| **TRANSFER** | 1 | 6% | 12 | R-004 has cyber insurance as secondary |
+| **TERMINATE** | 0 | 0% | 0 | No activities terminated |
+| **TOTAL** | 16 | 100% | 156 | |
+
+**Key Insights:**
+- **69% of risks require active treatment** - Significant mitigation effort underway
+- **25% can be tolerated** - Lower risks with adequate existing controls
+- **Limited transfer** - Cyber insurance supplements R-004 but doesn't fully transfer
+- **No termination** - All activities essential to service
+
+---
+
+## G. Risk Appetite Compliance
+
+**Organizational Risk Appetite Thresholds:**
+
+| Category | Appetite Level | Threshold Score | Description |
+|----------|---------------|-----------------|-------------|
+| STRATEGIC | Medium | ≤ 12 | Accept medium strategic risk for NHS transformation |
+| CLINICAL SAFETY | Very Low | ≤ 10 | Minimal tolerance for patient safety risks |
+| COMPLIANCE | Low | ≤ 9 | Low tolerance for regulatory breaches |
+| REPUTATIONAL | Low | ≤ 9 | Low tolerance for reputational damage |
+| TECHNOLOGY | Medium | ≤ 9 | Moderate technology risk with controls |
+| OPERATIONAL | Medium | ≤ 9 | Moderate operational risk tolerance |
+
+**Compliance Summary:**
+
+| Category | Appetite | Risks Within | Risks Exceeding | Avg Excess | Action Required |
+|----------|----------|--------------|-----------------|------------|-----------------|
+| STRATEGIC | ≤ 12 | 3 (100%) | 0 (0%) | N/A | ✅ Compliant |
+| CLINICAL SAFETY | ≤ 10 | 2 (100%) | 0 (0%) | N/A | ✅ Compliant |
+| COMPLIANCE | ≤ 9 | 1 (33%) | 2 (67%) | +3 points | ⚠️ Senior approval required |
+| REPUTATIONAL | ≤ 9 | 0 (0%) | 1 (100%) | +3 points | ⚠️ NHS England Director approval required |
+| TECHNOLOGY | ≤ 9 | 3 (60%) | 2 (40%) | +3 points | ⚠️ Security/IG approval required |
+| OPERATIONAL | ≤ 9 | 2 (100%) | 0 (0%) | N/A | ✅ Compliant |
+
+**Overall Appetite Compliance:** ⚠️ 4 risks exceed appetite - escalation required
+
+**Risks Exceeding Appetite:**
+
+| Risk ID | Category | Appetite | Actual | Excess | % Over | Escalation |
+|---------|----------|----------|--------|--------|--------|------------|
+| R-003 | COMPLIANCE | 9 | 12 | +3 | 33% | ⚠️ NHS Digital Director |
+| R-004 | TECHNOLOGY | 9 | 12 | +3 | 33% | ⚠️ Security Lead + IG Lead |
+| R-006 | REPUTATIONAL | 9 | 12 | +3 | 33% | ⚠️ NHS England Director |
+| R-007 | COMPLIANCE | 9 | 12 | +3 | 33% | ⚠️ IG Lead + DPO |
+
+**Recommendations:**
+1. Escalate R-003, R-004, R-006, R-007 to designated approvers for formal risk acceptance
+2. Continue active treatment to reduce these risks to within appetite
+3. Monitor closely - any increase requires re-escalation
+
+---
+
+## H. Prioritized Action Plan
+
+**Priority Actions for Risk Mitigation:**
+
+### Priority 1: URGENT (Appetite Exceedance)
+
+| Priority | Action | Risk(s) Addressed | Owner | Due Date | Cost | Expected Impact | Status |
+|----------|--------|-------------------|-------|----------|------|-----------------|--------|
+| 1 | Mock GDS Assessment | R-003 | Product Owner | 4 weeks before assessment | £15K | Reduce from 12 to 8 | Not Started |
+| 2 | Red Team Security Exercise | R-004 | Security Lead | Before Beta | £50K | Reduce from 12 to 6 | Not Started |
+| 3 | Crisis Communications Plan | R-006 | Communications Team | Before Beta | £10K | Reduce from 12 to 9 | Not Started |
+| 4 | SAR Process Testing | R-007 | IG Lead | Before Beta | £5K | Reduce from 12 to 8 | Not Started |
+
+**Total Urgent Actions:** 4
+**Total Cost:** £80K
+**Expected Risk Reduction:** 15 points total
+
+### Priority 2: HIGH (At Appetite Threshold)
+
+| Priority | Action | Risk(s) Addressed | Owner | Due Date | Cost | Expected Impact | Status |
+|----------|--------|-------------------|-------|----------|------|-----------------|--------|
+| 5 | Success Story Publication | R-001 | Communications Team | Alpha + 2 months | £10K | Reduce from 12 to 8 | Not Started |
+| 6 | Regional Practice Champions | R-001 | NHS England Primary Care | Beta launch | £25K | Reduce from 12 to 8 | Planning |
+| 7 | Clinical Pre-Mortem | R-002 | Clinical Safety Officer | Before Beta | £5K | Identify unknown hazards | Not Started |
+| 8 | Director-level Supplier Relationships | R-005 | NHS Digital Director | Alpha launch | Staff time | Reduce from 12 to 8 | Not Started |
+
+**Total High Priority Actions:** 4
+**Total Cost:** £40K + staff time
+**Expected Risk Reduction:** 12 points total
+
+### Priority 3: MEDIUM (Enhancement)
+
+| Priority | Action | Risk(s) Addressed | Owner | Due Date | Cost | Expected Impact | Status |
+|----------|--------|-------------------|-------|----------|------|-----------------|--------|
+| 9 | SOC Integration | R-004 | Security Lead | Before Live | £30K/year | Faster detection | Planning |
+| 10 | Independent Clinical Review | R-002 | NHS Digital Director | Before Live | £30K | External validation | Not Started |
+
+**Total Medium Priority Actions:** 2
+**Total Cost:** £60K (first year)
+**Expected Risk Reduction:** Enhancement, not primary reduction
+
+**Overall Action Plan Summary:**
+- **Total Actions:** 10
+- **Total Investment:** £180K (first year)
+- **Expected Risk Reduction:** 27+ points
+- **Target Completion:** Aligned with Alpha/Beta/Live milestones
+
+---
+
+## I. Integration with SOBC
+
+**How this Risk Register feeds into Strategic Outline Business Case (SOBC):**
+
+### SOBC Strategic Case (Part A)
+- **R-001** (GP Practice Adoption): Demonstrates dependency on practice engagement
+- **R-002** (Clinical Safety): Justifies phased approach with clinical governance
+
+### SOBC Economic Case (Part B)
+- **R-004** (Data Breach): Contingency for security remediation (£50K)
+- **R-001** (GP Adoption): Risk of reduced benefits if adoption lower than planned
+
+### SOBC Management Case (Part E - Risk Management)
+- **Full risk register** included in Management Case Part E
+- **Top 10 risks** with residual scores and mitigation plans
+- **Risk ownership matrix** from stakeholder RACI
+- **Monthly monitoring** at Steering Committee
+
+### SOBC Recommendation
+- **4 risks exceeding appetite** requires Board/Director approval
+- **Strong clinical safety governance** supports healthcare IT investment case
+- **Technology risk controls** demonstrate security maturity
+
+---
+
+## J. Monitoring and Review Framework
+
+### Review Schedule
+
+| Risk Level | Review Frequency | Reviewed By | Escalated To | Report Format |
+|------------|------------------|-------------|--------------|---------------|
+| **Critical (20-25)** | Weekly | Risk Owner + PMO | Steering Committee | Dashboard + narrative |
+| **High (13-19)** | Bi-weekly | Risk Owner | NHS Digital Director | Dashboard |
+| **Medium (6-12)** | Monthly | Risk Owner | Project Manager | Exception report |
+| **Low (1-5)** | Quarterly | Action Owner | Risk Owner | Status update |
+
+### Key Risk Indicators (KRIs)
+
+**Leading Indicators** (predict future risk changes):
+- Practice expression of interest pipeline (R-001)
+- Hazard log closure rate (R-002)
+- Security vulnerability scan findings (R-004)
+- User research session completion rate (R-003)
+- Supplier GP Connect compliance status (R-005)
+
+**Lagging Indicators** (confirm risk materialization):
+- Clinical incident reports (R-002)
+- Data breach notifications (R-004)
+- GDS assessment outcomes (R-003)
+- Practice onboarding rate (R-001)
+- Patient complaints volume (R-006)
+
+### Escalation Criteria
+
+**Automatic Escalation Triggers:**
+1. Any risk increases by 4+ points
+2. Any new Critical risk (score 20-25) identified
+3. Any clinical safety incident (any severity)
+4. Any data breach (any severity)
+5. Any risk exceeds appetite and no mitigation plan in place
+6. Mitigation action delayed > 1 month
+
+### Reporting Requirements
+
+**Weekly** (Clinical Safety + Security):
+- Clinical safety dashboard to Clinical Safety Officer
+- Security dashboard to Security Lead
+- Any incident immediately to NHS Digital Director
+
+**Monthly** (All Risks):
+- Full risk register to Steering Committee
+- Risk matrix visualization
+- Risk appetite compliance summary
+- Action plan status
+
+**Quarterly** (Strategic Review):
+- Risk trend analysis
+- Risk appetite threshold review
+- SOBC risk section update
+- Lessons learned
+
+### Risk Register Maintenance
+
+**Risk Register Owner:** Programme Manager, NHS Digital
+
+**Responsibilities:**
+- Maintain accuracy of risk register
+- Coordinate risk reviews with risk owners
+- Update risk scores based on evidence
+- Track mitigation action completion
+- Escalate risks per criteria
+- Produce risk reports
+
+**Update Process:**
+1. Risk owners submit updates weekly (critical/high) or monthly (medium/low)
+2. Risk register owner validates and updates register
+3. PMO reviews for consistency and completeness
+4. Steering Committee approves material changes
+
+---
+
+## K. Orange Book Compliance Checklist
+
+This risk register demonstrates compliance with HM Treasury Orange Book (2023):
+
+### Part I - Risk Management Principles
+
+- ✅ **A. Governance and Leadership**
+  - Risk owners assigned from senior stakeholders (from RACI matrix)
+  - Escalation paths defined to NHS Digital Director, NHS England Director, Minister
+  - Risk appetite set and monitored per category
+
+- ✅ **B. Integration**
+  - Risks linked to stakeholder drivers (SD-1 through SD-10) and goals (G-1 through G-7)
+  - Risks inform SOBC Management Case
+  - DPIA risks (DPIA-001 through DPIA-010) integrated
+
+- ✅ **C. Collaboration and Best Information**
+  - Risks sourced from stakeholder analysis (ARC-001-STKE-v1.1)
+  - Risks sourced from DPIA (ARC-001-DPIA-v1.0)
+  - Evidence-based assessment with justified likelihood and impact
+
+- ✅ **D. Risk Management Processes**
+  - Systematic identification across 6 categories
+  - Consistent 5×5 assessment methodology
+  - 4Ts response framework applied
+  - Inherent and residual risk tracked
+
+- ✅ **E. Continual Improvement**
+  - Review schedule (weekly/monthly/quarterly) defined
+  - Key Risk Indicators defined
+  - Version control for risk register
+
+### Part II - Risk Control Framework
+
+- ✅ **4-Pillar "House" Structure**
+  - Risk appetite and tolerance defined per category
+  - Risk ownership and governance established
+  - Risk assessment methodology documented
+  - Control effectiveness measured (inherent vs residual)
+
+---
+
+## Appendix A: Risk Assessment Scales
+
+### Likelihood Scale (1-5)
+
+| Score | Rating | Probability | Description |
+|-------|--------|-------------|-------------|
+| 1 | Rare | < 5% | Highly unlikely, exceptional circumstances only |
+| 2 | Unlikely | 5-25% | Could happen but probably won't |
+| 3 | Possible | 25-50% | Reasonable chance, has happened before |
+| 4 | Likely | 50-75% | More likely to happen than not |
+| 5 | Almost Certain | > 75% | Expected to occur, highly probable |
+
+### Impact Scale (1-5)
+
+| Score | Rating | Financial | Schedule | Patient/Stakeholder | Description |
+|-------|--------|-----------|----------|---------------------|-------------|
+| 1 | Negligible | < £50K | < 1 week | Minimal concern | Easily absorbed |
+| 2 | Minor | £50K-£200K | 1-4 weeks | Minor concern | Manageable |
+| 3 | Moderate | £200K-£500K | 1-2 months | Significant concern | Requires effort |
+| 4 | Major | £500K-£2M | 2-6 months | Severe concern | Threatens objectives |
+| 5 | Catastrophic | > £2M | > 6 months | Patient harm / existential | Project failure |
+
+### Risk Score Matrix (Likelihood × Impact)
+
+| Score Range | Risk Level | Color | Action Required |
+|-------------|------------|-------|-----------------|
+| 20-25 | Critical | 🟥 Red | Immediate escalation |
+| 13-19 | High | 🟧 Orange | Management attention |
+| 6-12 | Medium | 🟨 Yellow | Monitoring |
+| 1-5 | Low | 🟩 Green | Routine |
+
+---
+
+## Appendix B: Stakeholder-Risk Linkage
+
+**Traceability from Stakeholders (ARC-001-STKE-v1.1) to Risks:**
+
+| Stakeholder | Driver | Risk ID | Risk Title | Category | Score |
+|-------------|--------|---------|------------|----------|-------|
+| NHS England Director | SD-1: Deliver Long Term Plan | R-001 | GP Practice Adoption Stalls | STRATEGIC | 12 |
+| NHS England Director | SD-1: Deliver Long Term Plan | R-006 | Ministerial Scrutiny | REPUTATIONAL | 12 |
+| Clinical Safety Officer | SD-2: Protect Patients | R-002 | Clinical Safety Incident | CLINICAL SAFETY | 10 |
+| Clinical Safety Officer | SD-2: Protect Patients | R-011 | Booking Error | CLINICAL SAFETY | 6 |
+| GP Practice Managers | SD-3: Reduce Admin Burden | R-001 | GP Practice Adoption Stalls | STRATEGIC | 12 |
+| Patients | SD-4: Access Without Frustration | R-008 | Vulnerable Patient Exclusion | OPERATIONAL | 9 |
+| GP System Suppliers | SD-5: Maintain Market Position | R-005 | GP Supplier Non-Cooperation | STRATEGIC | 12 |
+| GDS Assessment Team | SD-6: Service Standard | R-003 | GDS Assessment Fails | COMPLIANCE | 12 |
+| Minister | SD-7: Demonstrate Modernisation | R-006 | Ministerial Scrutiny | REPUTATIONAL | 12 |
+| IG Lead | SD-8: Protect Patient Data | R-007 | GDPR Compliance Failure | COMPLIANCE | 12 |
+| IG Lead | SD-8: Protect Patient Data | R-004 | Data Breach | TECHNOLOGY | 12 |
+| Security Lead | SD-10: Protect NHS Systems | R-004 | Data Breach | TECHNOLOGY | 12 |
+| Security Lead | SD-10: Protect NHS Systems | R-009 | Unauthorized Access | TECHNOLOGY | 9 |
+
+**DPIA Risks Consolidated into Risk Register:**
+
+| DPIA Risk | Risk Register ID | Mapping |
+|-----------|------------------|---------|
+| DPIA-001: Unauthorized access to health data | R-009 | Direct mapping |
+| DPIA-002: NHS Number and contact breach | R-010 | Direct mapping |
+| DPIA-003: Booking error causing patient safety harm | R-011 | Direct mapping |
+| DPIA-004: Excessive data retention | R-012 | Direct mapping |
+| DPIA-005: Third-party processor misuse | R-013 | Direct mapping |
+| DPIA-006: Re-identification | R-014 | Direct mapping |
+| DPIA-007: Loss of control over personal data | R-015 | Direct mapping |
+| DPIA-008: Function creep | R-016 | Direct mapping |
+| DPIA-009: Discrimination from health data | R-009 | Consolidated with R-009 |
+| DPIA-010: Vulnerable patient exclusion | R-008 | Direct mapping |
+
+---
+
+## Document Approval
+
+| Role | Name | Signature | Date |
+|------|------|-----------|------|
+| **Risk Register Owner** | Programme Manager | | |
+| **Clinical Safety Officer** | NHS Digital CSO | | |
+| **Security Lead** | NHS Digital Security Lead | | |
+| **IG Lead** | NHS Digital IG Lead | | |
+| **NHS Digital Director** | Director of Digital Services | | |
+| **NHS England Director** | Director of Primary Care | | |
+
+---
+
+## Next Steps
+
+1. **Immediate Actions** (This Week):
+   - [ ] Escalate R-003 (GDS), R-004 (Data Breach), R-006 (Ministerial), R-007 (GDPR) to designated approvers
+   - [ ] Schedule risk review meetings with all risk owners
+   - [ ] Set up risk monitoring dashboard
+
+2. **Short-term Actions** (This Month):
+   - [ ] Commission mock GDS assessment (Priority 1)
+   - [ ] Commission red team security exercise (Priority 1)
+   - [ ] Develop crisis communications plan (Priority 1)
+   - [ ] Test SAR process end-to-end (Priority 1)
+
+3. **Medium-term Actions** (This Quarter):
+   - [ ] Publish practice success stories (Priority 5)
+   - [ ] Recruit regional practice champions (Priority 6)
+   - [ ] Conduct clinical pre-mortem exercise (Priority 7)
+   - [ ] Establish Director-level supplier relationships (Priority 8)
+
+4. **Ongoing**:
+   - [ ] Monthly risk register review at Steering Committee
+   - [ ] Quarterly risk appetite compliance review
+   - [ ] Annual DPIA review (2027-01-28)
+
+---
+
+**END OF RISK REGISTER**
+
+---
+
+*This risk register follows HM Treasury Orange Book (2023) principles and integrates with ArcKit's stakeholder-driven architecture governance framework.*
+
+*For questions or updates, contact: Programme Manager, NHS Digital*
+
+---
+
+**Generated by**: ArcKit `/arckit.risk` command
+**Generated on**: 2026-01-28
+**ArcKit Version**: 1.0.0
+**Project**: NHS Doctors Online Appointment System (Project 001)
+**Model**: Claude Opus 4.5 (claude-opus-4-5-20251101)
