@@ -254,9 +254,20 @@ migrate_subdir() {
 migrate_project() {
     local project_dir="$1"
 
+    # Create directory if it doesn't exist (especially for 000-global)
     if [[ ! -d "$project_dir" ]]; then
-        log_error "Project directory not found: $project_dir"
-        return 1
+        local basename=$(basename "$project_dir")
+        if [[ "$basename" == "000-global" ]]; then
+            log_info "Creating global directory: $project_dir"
+            if [[ "$DRY_RUN" == "false" ]]; then
+                mkdir -p "$project_dir"
+            else
+                log_info "[DRY-RUN] Would create directory: $project_dir"
+            fi
+        else
+            log_error "Project directory not found: $project_dir"
+            return 1
+        fi
     fi
 
     local project_id
@@ -363,17 +374,8 @@ migrate_project() {
 
 # Main execution
 if [[ "$MIGRATE_GLOBAL" == "true" ]]; then
-    # Migrate only the global directory
+    # Migrate only the global directory (will be created if it doesn't exist)
     GLOBAL_DIR="$REPO_ROOT/projects/000-global"
-
-    if [[ ! -d "$GLOBAL_DIR" ]]; then
-        log_error "Global directory not found at: $GLOBAL_DIR"
-        log_info "Creating global directory..."
-        if [[ "$DRY_RUN" == "false" ]]; then
-            mkdir -p "$GLOBAL_DIR"
-        fi
-    fi
-
     migrate_project "$GLOBAL_DIR"
 elif [[ "$MIGRATE_ALL" == "true" ]]; then
     PROJECTS_DIR="$REPO_ROOT/projects"
