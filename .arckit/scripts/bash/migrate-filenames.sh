@@ -32,6 +32,10 @@ declare -A FILE_MAPPING=(
     ["traceability-matrix.md"]="TRAC"
     ["analysis-report.md"]="ANAL"
 
+    # Global documents (for 000-global)
+    ["architecture-principles.md"]="PRIN"
+    ["principles.md"]="PRIN"  # Alternative name
+
     # Strategy & Operations
     ["project-plan.md"]="PLAN"
     ["roadmap.md"]="ROADMAP"
@@ -86,6 +90,7 @@ Migrate ArcKit project files to new Document ID-based filenames.
 
 Options:
     --all           Migrate all projects in the projects/ directory
+    --global        Migrate only the global directory (000-global)
     --dry-run       Show what would be changed without making changes
     --no-backup     Skip creating backup (not recommended)
     --force         Overwrite existing files if they exist
@@ -94,7 +99,13 @@ Options:
 Examples:
     $0 projects/001-payment-gateway
     $0 projects/001-payment-gateway --dry-run
-    $0 --all --dry-run
+    $0 projects/000-global                      # Migrate global principles
+    $0 --global --dry-run                       # Dry run for global only
+    $0 --all --dry-run                          # Migrate all (including global)
+
+Supported global files (000-global):
+    architecture-principles.md  → ARC-000-PRIN-v1.0.md
+    principles.md               → ARC-000-PRIN-v1.0.md
 
 EOF
     exit 1
@@ -103,6 +114,7 @@ EOF
 # Parse arguments
 PROJECT_DIR=""
 MIGRATE_ALL=false
+MIGRATE_GLOBAL=false
 DRY_RUN=false
 NO_BACKUP=false
 FORCE=false
@@ -111,6 +123,10 @@ while [[ $# -gt 0 ]]; do
     case $1 in
         --all)
             MIGRATE_ALL=true
+            shift
+            ;;
+        --global)
+            MIGRATE_GLOBAL=true
             shift
             ;;
         --dry-run)
@@ -143,8 +159,8 @@ done
 REPO_ROOT="$(find_repo_root)"
 
 # Validate arguments
-if [[ "$MIGRATE_ALL" == "false" && -z "$PROJECT_DIR" ]]; then
-    log_error "PROJECT_DIR required (or use --all)"
+if [[ "$MIGRATE_ALL" == "false" && "$MIGRATE_GLOBAL" == "false" && -z "$PROJECT_DIR" ]]; then
+    log_error "PROJECT_DIR required (or use --all or --global)"
     usage
 fi
 
@@ -152,6 +168,12 @@ fi
 get_project_id() {
     local dir="$1"
     local basename=$(basename "$dir")
+
+    # Handle 000-global specially
+    if [[ "$basename" == "000-global" ]]; then
+        echo "000"
+        return 0
+    fi
 
     if [[ "$basename" =~ ^([0-9]{3})- ]]; then
         echo "${BASH_REMATCH[1]}"
@@ -340,7 +362,20 @@ migrate_project() {
 }
 
 # Main execution
-if [[ "$MIGRATE_ALL" == "true" ]]; then
+if [[ "$MIGRATE_GLOBAL" == "true" ]]; then
+    # Migrate only the global directory
+    GLOBAL_DIR="$REPO_ROOT/projects/000-global"
+
+    if [[ ! -d "$GLOBAL_DIR" ]]; then
+        log_error "Global directory not found at: $GLOBAL_DIR"
+        log_info "Creating global directory..."
+        if [[ "$DRY_RUN" == "false" ]]; then
+            mkdir -p "$GLOBAL_DIR"
+        fi
+    fi
+
+    migrate_project "$GLOBAL_DIR"
+elif [[ "$MIGRATE_ALL" == "true" ]]; then
     PROJECTS_DIR="$REPO_ROOT/projects"
 
     if [[ ! -d "$PROJECTS_DIR" ]]; then
