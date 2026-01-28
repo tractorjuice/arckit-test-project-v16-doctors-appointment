@@ -35,6 +35,13 @@ You are helping an enterprise architect or project manager understand stakeholde
    - List external stakeholders (regulators, customers, vendors, partners)
    - Create a Power-Interest grid using **Mermaid quadrantChart** showing who needs what level of engagement
 
+   **IMPORTANT for readable diagrams:**
+   - Use short codes (S1, S2, S3) with abbreviated names, NOT full stakeholder names
+   - Include a legend table mapping codes to full names, power, interest, and quadrant
+   - Spread coordinates by at least 0.1 apart to prevent label overlap
+   - Limit to 10-12 stakeholders per diagram; group similar roles if needed
+   - Quadrant order: quadrant-1=Manage Closely (top-right), quadrant-2=Keep Satisfied (top-left), quadrant-3=Monitor (bottom-left), quadrant-4=Keep Informed (bottom-right)
+
    **Phase 2: Understand Drivers**
    For each key stakeholder, identify:
    - **STRATEGIC drivers**: Competitive advantage, market position, innovation

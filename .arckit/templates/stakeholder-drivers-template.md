@@ -81,21 +81,40 @@ quadrantChart
     title Stakeholder Power-Interest Grid
     x-axis Low Interest --> High Interest
     y-axis Low Power --> High Power
-    quadrant-1 Keep Satisfied
-    quadrant-2 Manage Closely
+    quadrant-1 Manage Closely
+    quadrant-2 Keep Satisfied
     quadrant-3 Monitor
     quadrant-4 Keep Informed
-    Executive Sponsor: [0.9, 0.95]
-    Business Unit Leader: [0.85, 0.9]
-    Security: [0.7, 0.85]
-    Finance: [0.5, 0.8]
-    Compliance: [0.45, 0.75]
-    Legal: [0.4, 0.7]
-    End Users: [0.85, 0.3]
-    Product Owner: [0.9, 0.4]
-    Operations: [0.7, 0.35]
-    Industry Bodies: [0.2, 0.15]
+    S1 Exec Sponsor: [0.9, 0.95]
+    S2 Business Lead: [0.75, 0.88]
+    S3 Security: [0.35, 0.82]
+    S4 Finance: [0.25, 0.75]
+    S5 Compliance: [0.4, 0.68]
+    S6 End Users: [0.85, 0.28]
+    S7 Product Owner: [0.92, 0.35]
+    S8 Operations: [0.7, 0.22]
+    S9 Industry Bodies: [0.15, 0.12]
 ```
+
+**Stakeholder Key** (use short codes in diagram to prevent overlap):
+
+| Code | Stakeholder | Power | Interest | Quadrant |
+|------|-------------|-------|----------|----------|
+| S1 | Executive Sponsor | 0.95 | 0.90 | Manage Closely |
+| S2 | Business Unit Leader | 0.88 | 0.75 | Manage Closely |
+| S3 | Security Team | 0.82 | 0.35 | Keep Satisfied |
+| S4 | Finance | 0.75 | 0.25 | Keep Satisfied |
+| S5 | Compliance | 0.68 | 0.40 | Keep Satisfied |
+| S6 | End Users | 0.28 | 0.85 | Keep Informed |
+| S7 | Product Owner | 0.35 | 0.92 | Keep Informed |
+| S8 | Operations | 0.22 | 0.70 | Keep Informed |
+| S9 | Industry Bodies | 0.12 | 0.15 | Monitor |
+
+**Tips for readable diagrams:**
+- Use short codes (S1, S2) with a legend table instead of full names
+- Spread coordinates by at least 0.1 to prevent overlap
+- Limit to 10-12 stakeholders per diagram; group similar roles
+- If more stakeholders needed, create separate diagrams by category
 
 **Quadrant Interpretation:**
 - **Manage Closely** (High Power, High Interest): Key decision-makers requiring active engagement

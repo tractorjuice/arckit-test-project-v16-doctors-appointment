@@ -101,8 +101,8 @@ quadrantChart
     title Inherent Risk Matrix (Before Controls)
     x-axis Low Impact --> High Impact
     y-axis Low Likelihood --> High Likelihood
-    quadrant-1 High Risk
-    quadrant-2 Critical Risk
+    quadrant-1 Critical Risk
+    quadrant-2 High Risk
     quadrant-3 Low Risk
     quadrant-4 Medium Risk
     R-001: [0.95, 0.95]
@@ -132,8 +132,8 @@ quadrantChart
     title Residual Risk Matrix (After Controls)
     x-axis Low Impact --> High Impact
     y-axis Low Likelihood --> High Likelihood
-    quadrant-1 High Risk
-    quadrant-2 Critical Risk
+    quadrant-1 Critical Risk
+    quadrant-2 High Risk
     quadrant-3 Low Risk
     quadrant-4 Medium Risk
     R-003: [0.55, 0.75]
