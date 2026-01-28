@@ -7,7 +7,7 @@
   },
   "global": [
     {
-      "path": ".arckit/memory/architecture-principles.md",
+      "path": ".arckit/memory/ARC-000-PRIN-v1.0.md",
       "title": "Architecture Principles",
       "category": "Architecture"
     }
