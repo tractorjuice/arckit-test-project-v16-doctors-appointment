@@ -212,40 +212,31 @@ This command creates a **comprehensive risk register** following HM Treasury Ora
    - Key risks requiring immediate attention (top 3-5)
    - Recommended actions and decisions needed
 
-   **B. Risk Matrix Visualization** (using Mermaid quadrantChart):
+   **B. Risk Matrix Visualization** (using ASCII 5×5 matrix):
 
-   Create TWO matrices using **Mermaid quadrantChart**:
+   Create TWO 5×5 matrices showing Likelihood (rows) × Impact (columns):
 
    **Inherent Risk Matrix** (before controls):
-   ```mermaid
-   quadrantChart
-       title Inherent Risk Matrix (Before Controls)
-       x-axis Low Impact --> High Impact
-       y-axis Low Likelihood --> High Likelihood
-       quadrant-1 High Risk
-       quadrant-2 Critical Risk
-       quadrant-3 Low Risk
-       quadrant-4 Medium Risk
-       R-001: [0.95, 0.95]
-       R-003: [0.55, 0.95]
-       R-007: [0.65, 0.95]
-       %% Add all risks with [impact, likelihood] coordinates (0-1 scale)
+   ```
+                                       IMPACT
+                 1-Minimal   2-Minor    3-Moderate   4-Major    5-Severe
+              ┌───────────┬───────────┬───────────┬───────────┬───────────┐
+   5-Almost   │           │           │   R-003   │   R-007   │   R-001   │
+   Certain    │    5      │    10     │    15     │    20     │    25     │
+              ├───────────┼───────────┼───────────┼───────────┼───────────┤
+   4-Likely   │           │           │           │   R-009   │   R-004   │
+              │    4      │    8      │    12     │    16     │    20     │
+   L          ├───────────┼───────────┼───────────┼───────────┼───────────┤
+   I 3-Possible│          │           │   R-002   │           │           │
+   K          │    3      │    6      │    9      │    12     │    15     │
+   ...        └───────────┴───────────┴───────────┴───────────┴───────────┘
+
+   Legend: Critical (20-25)  High (13-19)  Medium (6-12)  Low (1-5)
    ```
 
-   **Residual Risk Matrix** (after controls):
-   ```mermaid
-   quadrantChart
-       title Residual Risk Matrix (After Controls)
-       x-axis Low Impact --> High Impact
-       y-axis Low Likelihood --> High Likelihood
-       quadrant-1 High Risk
-       quadrant-2 Critical Risk
-       quadrant-3 Low Risk
-       quadrant-4 Medium Risk
-       %% Show risks at new positions after controls applied
-   ```
+   **Residual Risk Matrix** (after controls): Same format showing new positions
 
-   Show movement: \"R-001 moved from Critical (25) to Medium (9) after controls\"
+   Show movement: \"R-001 moved from Critical (25) to Medium (6) after controls\"
 
    **C. Top 10 Risks** (by residual score):
 

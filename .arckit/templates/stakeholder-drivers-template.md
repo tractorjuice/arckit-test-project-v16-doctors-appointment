@@ -76,45 +76,39 @@ This document identifies key stakeholders, their underlying drivers (motivations
 
 ### Stakeholder Power-Interest Grid
 
-```mermaid
-quadrantChart
-    title Stakeholder Power-Interest Grid
-    x-axis Low Interest --> High Interest
-    y-axis Low Power --> High Power
-    quadrant-1 Keep Satisfied
-    quadrant-2 Manage Closely
-    quadrant-3 Monitor
-    quadrant-4 Keep Informed
-    S1 Exec Sponsor: [0.88, 0.92]
-    S2 Business Lead: [0.72, 0.85]
-    S3 Security: [0.32, 0.78]
-    S4 Finance: [0.22, 0.72]
-    S5 Compliance: [0.38, 0.65]
-    S6 End Users: [0.82, 0.25]
-    S7 Product Owner: [0.88, 0.32]
-    S8 Operations: [0.68, 0.18]
-    S9 Industry Bodies: [0.12, 0.08]
+```
+                          INTEREST
+              Low                         High
+        ┌─────────────────────┬─────────────────────┐
+        │                     │                     │
+        │   KEEP SATISFIED    │   MANAGE CLOSELY    │
+   High │                     │                     │
+        │  • Security         │  • Executive Sponsor│
+        │  • Finance          │  • Business Lead    │
+        │  • Compliance       │  • Project Board    │
+ P      │                     │                     │
+ O      ├─────────────────────┼─────────────────────┤
+ W      │                     │                     │
+ E      │      MONITOR        │    KEEP INFORMED    │
+ R      │                     │                     │
+   Low  │  • Industry Bodies  │  • End Users        │
+        │                     │  • Product Owner    │
+        │                     │  • Operations       │
+        │                     │                     │
+        └─────────────────────┴─────────────────────┘
 ```
 
-**Stakeholder Key** (use short codes in diagram to prevent overlap):
-
-| Code | Stakeholder | Power | Interest | Quadrant |
-|------|-------------|-------|----------|----------|
-| S1 | Executive Sponsor | 0.95 | 0.90 | Manage Closely |
-| S2 | Business Unit Leader | 0.88 | 0.75 | Manage Closely |
-| S3 | Security Team | 0.82 | 0.35 | Keep Satisfied |
-| S4 | Finance | 0.75 | 0.25 | Keep Satisfied |
-| S5 | Compliance | 0.68 | 0.40 | Keep Satisfied |
-| S6 | End Users | 0.28 | 0.85 | Keep Informed |
-| S7 | Product Owner | 0.35 | 0.92 | Keep Informed |
-| S8 | Operations | 0.22 | 0.70 | Keep Informed |
-| S9 | Industry Bodies | 0.12 | 0.15 | Monitor |
-
-**Tips for readable diagrams:**
-- Use short codes (S1, S2) with a legend table instead of full names
-- Spread coordinates by at least 0.1 to prevent overlap
-- Limit to 10-12 stakeholders per diagram; group similar roles
-- If more stakeholders needed, create separate diagrams by category
+| Stakeholder | Power | Interest | Quadrant | Engagement Strategy |
+|-------------|-------|----------|----------|---------------------|
+| Executive Sponsor | HIGH | HIGH | Manage Closely | Weekly steering meetings |
+| Business Lead | HIGH | HIGH | Manage Closely | Regular status updates |
+| Security Team | HIGH | LOW | Keep Satisfied | Milestone reviews |
+| Finance | HIGH | LOW | Keep Satisfied | Budget checkpoints |
+| Compliance | HIGH | MEDIUM | Keep Satisfied | Compliance gates |
+| End Users | LOW | HIGH | Keep Informed | Newsletter, demos |
+| Product Owner | LOW | HIGH | Keep Informed | Sprint reviews |
+| Operations | LOW | HIGH | Keep Informed | Release notifications |
+| Industry Bodies | LOW | LOW | Monitor | Annual updates |
 
 **Quadrant Interpretation:**
 - **Manage Closely** (High Power, High Interest): Key decision-makers requiring active engagement

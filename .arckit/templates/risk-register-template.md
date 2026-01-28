@@ -94,64 +94,68 @@
 
 ### Inherent Risk Matrix (Before Controls)
 
-**Likelihood × Impact Matrix - Inherent Risk Positions**
+**5×5 Likelihood × Impact Matrix**
 
-```mermaid
-quadrantChart
-    title Inherent Risk Matrix (Before Controls)
-    x-axis Low Impact --> High Impact
-    y-axis Low Likelihood --> High Likelihood
-    quadrant-1 High Risk
-    quadrant-2 Critical Risk
-    quadrant-3 Low Risk
-    quadrant-4 Medium Risk
-    R-001: [0.85, 0.92]
-    R-003: [0.58, 0.88]
-    R-007: [0.72, 0.84]
-    R-004: [0.88, 0.58]
-    R-005: [0.62, 0.72]
-    R-009: [0.78, 0.68]
-    R-002: [0.55, 0.52]
-    R-006: [0.18, 0.48]
-    R-008: [0.32, 0.32]
-    R-010: [0.48, 0.18]
+```
+                                    IMPACT
+              1-Minimal   2-Minor    3-Moderate   4-Major    5-Severe
+           ┌───────────┬───────────┬───────────┬───────────┬───────────┐
+5-Almost   │           │           │   R-003   │   R-007   │   R-001   │
+Certain    │    5      │    10     │    15     │    20     │    25     │
+           ├───────────┼───────────┼───────────┼───────────┼───────────┤
+4-Likely   │           │           │   R-005   │   R-009   │   R-004   │
+           │    4      │    8      │    12     │    16     │    20     │
+L          ├───────────┼───────────┼───────────┼───────────┼───────────┤
+I 3-Possible│          │   R-006   │   R-002   │           │           │
+K          │    3      │    6      │    9      │    12     │    15     │
+E          ├───────────┼───────────┼───────────┼───────────┼───────────┤
+L 2-Unlikely│          │   R-008   │   R-010   │           │           │
+I          │    2      │    4      │    6      │    8      │    10     │
+H          ├───────────┼───────────┼───────────┼───────────┼───────────┤
+O 1-Rare   │           │           │           │           │           │
+O          │    1      │    2      │    3      │    4      │    5      │
+D          └───────────┴───────────┴───────────┴───────────┴───────────┘
+
+Legend: ██ Critical (20-25)  ▓▓ High (13-19)  ░░ Medium (6-12)  ·· Low (1-5)
 ```
 
 **Risk Zones:**
-- **Critical (20-25)**: R-001, R-003 - Immediate escalation required
-- **High (13-19)**: R-002, R-004, R-005, R-007, R-009 - Senior management attention
-- **Medium (6-12)**: R-006, R-008 - Management monitoring
-- **Low (1-5)**: R-010 - Routine monitoring
+- **Critical (20-25)**: R-001, R-003, R-004 - Immediate escalation required
+- **High (13-19)**: R-005, R-007, R-009 - Senior management attention
+- **Medium (6-12)**: R-002, R-006, R-008, R-010 - Management monitoring
+- **Low (1-5)**: None currently - Routine monitoring
 
 ### Residual Risk Matrix (After Controls)
 
-**Likelihood × Impact Matrix - Residual Risk Positions**
+**5×5 Likelihood × Impact Matrix - After Controls Applied**
 
-```mermaid
-quadrantChart
-    title Residual Risk Matrix (After Controls)
-    x-axis Low Impact --> High Impact
-    y-axis Low Likelihood --> High Likelihood
-    quadrant-1 High Risk
-    quadrant-2 Critical Risk
-    quadrant-3 Low Risk
-    quadrant-4 Medium Risk
-    R-003: [0.58, 0.72]
-    R-001: [0.32, 0.58]
-    R-002: [0.52, 0.52]
-    R-005: [0.72, 0.48]
-    R-006: [0.18, 0.42]
-    R-007: [0.48, 0.32]
-    R-008: [0.32, 0.28]
-    R-009: [0.68, 0.38]
-    R-004: [0.78, 0.18]
-    R-010: [0.38, 0.12]
+```
+                                    IMPACT
+              1-Minimal   2-Minor    3-Moderate   4-Major    5-Severe
+           ┌───────────┬───────────┬───────────┬───────────┬───────────┐
+5-Almost   │           │           │           │           │           │
+Certain    │    5      │    10     │    15     │    20     │    25     │
+           ├───────────┼───────────┼───────────┼───────────┼───────────┤
+4-Likely   │           │           │   R-003   │           │           │
+           │    4      │    8      │    12     │    16     │    20     │
+L          ├───────────┼───────────┼───────────┼───────────┼───────────┤
+I 3-Possible│          │   R-001   │   R-002   │   R-005   │           │
+K          │    3      │    6      │    9      │    12     │    15     │
+E          ├───────────┼───────────┼───────────┼───────────┼───────────┤
+L 2-Unlikely│          │   R-006   │   R-007   │   R-009   │           │
+I          │    2      │    4      │   R-008   │    8      │    10     │
+H          ├───────────┼───────────┼───────────┼───────────┼───────────┤
+O 1-Rare   │   R-010   │           │           │   R-004   │           │
+O          │    1      │    2      │    3      │    4      │    5      │
+D          └───────────┴───────────┴───────────┴───────────┴───────────┘
+
+Legend: ██ Critical (20-25)  ▓▓ High (13-19)  ░░ Medium (6-12)  ·· Low (1-5)
 ```
 
 **Risk Movement Analysis:**
-- **Significant Improvement**: R-001 (25→9), R-004 (20→4) - Controls very effective
-- **Moderate Improvement**: R-002 (15→9), R-005 (16→12) - Additional controls needed
-- **Limited Improvement**: R-003 (20→16) - Current controls insufficient
+- **Significant Improvement**: R-001 (25→6), R-004 (20→4) - Controls very effective
+- **Moderate Improvement**: R-002 (9→9), R-005 (16→12) - Additional controls needed
+- **Limited Improvement**: R-003 (15→12) - Current controls insufficient
 - **Monitoring**: R-006, R-008, R-010 - Stable, continue current approach
 
 ---
