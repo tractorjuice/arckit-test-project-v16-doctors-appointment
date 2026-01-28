@@ -39,10 +39,10 @@
           "documentId": "ARC-001-DATA-v1.0"
         },
         {
-          "path": "projects/001-doctors-appointment/ARC-001-RISK-v1.0.md",
+          "path": "projects/001-doctors-appointment/ARC-001-RISK-v1.1.md",
           "title": "Risk Register",
           "category": "Governance",
-          "documentId": "ARC-001-RISK-v1.0"
+          "documentId": "ARC-001-RISK-v1.1"
         },
         {
           "path": "projects/001-doctors-appointment/ARC-001-DPIA-v1.0.md",
