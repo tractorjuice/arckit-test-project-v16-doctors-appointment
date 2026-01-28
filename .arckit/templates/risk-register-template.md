@@ -101,20 +101,20 @@ quadrantChart
     title Inherent Risk Matrix (Before Controls)
     x-axis Low Impact --> High Impact
     y-axis Low Likelihood --> High Likelihood
-    quadrant-1 Critical Risk
-    quadrant-2 High Risk
+    quadrant-1 High Risk
+    quadrant-2 Critical Risk
     quadrant-3 Low Risk
     quadrant-4 Medium Risk
-    R-001: [0.95, 0.95]
-    R-003: [0.55, 0.95]
-    R-007: [0.65, 0.95]
-    R-004: [0.95, 0.55]
-    R-005: [0.55, 0.75]
-    R-009: [0.75, 0.75]
-    R-002: [0.55, 0.55]
-    R-006: [0.15, 0.55]
-    R-008: [0.35, 0.35]
-    R-010: [0.55, 0.15]
+    R-001: [0.85, 0.92]
+    R-003: [0.58, 0.88]
+    R-007: [0.72, 0.84]
+    R-004: [0.88, 0.58]
+    R-005: [0.62, 0.72]
+    R-009: [0.78, 0.68]
+    R-002: [0.55, 0.52]
+    R-006: [0.18, 0.48]
+    R-008: [0.32, 0.32]
+    R-010: [0.48, 0.18]
 ```
 
 **Risk Zones:**
@@ -132,20 +132,20 @@ quadrantChart
     title Residual Risk Matrix (After Controls)
     x-axis Low Impact --> High Impact
     y-axis Low Likelihood --> High Likelihood
-    quadrant-1 Critical Risk
-    quadrant-2 High Risk
+    quadrant-1 High Risk
+    quadrant-2 Critical Risk
     quadrant-3 Low Risk
     quadrant-4 Medium Risk
-    R-003: [0.55, 0.75]
-    R-001: [0.35, 0.55]
-    R-002: [0.55, 0.55]
-    R-005: [0.75, 0.55]
-    R-006: [0.15, 0.55]
-    R-007: [0.55, 0.35]
-    R-008: [0.35, 0.35]
-    R-009: [0.75, 0.35]
-    R-004: [0.75, 0.15]
-    R-010: [0.35, 0.15]
+    R-003: [0.58, 0.72]
+    R-001: [0.32, 0.58]
+    R-002: [0.52, 0.52]
+    R-005: [0.72, 0.48]
+    R-006: [0.18, 0.42]
+    R-007: [0.48, 0.32]
+    R-008: [0.32, 0.28]
+    R-009: [0.68, 0.38]
+    R-004: [0.78, 0.18]
+    R-010: [0.38, 0.12]
 ```
 
 **Risk Movement Analysis:**

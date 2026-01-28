@@ -38,9 +38,10 @@ $ARGUMENTS
    **IMPORTANT for readable diagrams:**
    - Use short codes (S1, S2, S3) with abbreviated names, NOT full stakeholder names
    - Include a legend table mapping codes to full names, power, interest, and quadrant
-   - Spread coordinates by at least 0.1 apart to prevent label overlap
+   - Spread coordinates by at least 0.08 apart to prevent label overlap
    - Limit to 10-12 stakeholders per diagram; group similar roles if needed
-   - Quadrant order: quadrant-1=Manage Closely (top-right), quadrant-2=Keep Satisfied (top-left), quadrant-3=Monitor (bottom-left), quadrant-4=Keep Informed (bottom-right)
+   - **Mermaid quadrant positions**: quadrant-1=top-LEFT, quadrant-2=top-RIGHT, quadrant-3=bottom-left, quadrant-4=bottom-right
+   - **Correct labels**: quadrant-1 Keep Satisfied, quadrant-2 Manage Closely, quadrant-3 Monitor, quadrant-4 Keep Informed
 
    **Phase 2: Understand Drivers**
    For each key stakeholder, identify:

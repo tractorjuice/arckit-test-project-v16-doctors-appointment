@@ -81,19 +81,19 @@ quadrantChart
     title Stakeholder Power-Interest Grid
     x-axis Low Interest --> High Interest
     y-axis Low Power --> High Power
-    quadrant-1 Manage Closely
-    quadrant-2 Keep Satisfied
+    quadrant-1 Keep Satisfied
+    quadrant-2 Manage Closely
     quadrant-3 Monitor
     quadrant-4 Keep Informed
-    S1 Exec Sponsor: [0.9, 0.95]
-    S2 Business Lead: [0.75, 0.88]
-    S3 Security: [0.35, 0.82]
-    S4 Finance: [0.25, 0.75]
-    S5 Compliance: [0.4, 0.68]
-    S6 End Users: [0.85, 0.28]
-    S7 Product Owner: [0.92, 0.35]
-    S8 Operations: [0.7, 0.22]
-    S9 Industry Bodies: [0.15, 0.12]
+    S1 Exec Sponsor: [0.88, 0.92]
+    S2 Business Lead: [0.72, 0.85]
+    S3 Security: [0.32, 0.78]
+    S4 Finance: [0.22, 0.72]
+    S5 Compliance: [0.38, 0.65]
+    S6 End Users: [0.82, 0.25]
+    S7 Product Owner: [0.88, 0.32]
+    S8 Operations: [0.68, 0.18]
+    S9 Industry Bodies: [0.12, 0.08]
 ```
 
 **Stakeholder Key** (use short codes in diagram to prevent overlap):
