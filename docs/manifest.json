@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-28T15:30:00Z",
+  "generated": "2026-01-28T16:00:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v16-doctors-appointment",
@@ -19,16 +19,28 @@
       "name": "NHS Doctors Online Appointment System",
       "documents": [
         {
+          "path": "projects/001-doctors-appointment/ARC-001-STKE-v1.1.md",
+          "title": "Stakeholder Drivers",
+          "category": "Discovery",
+          "documentId": "ARC-001-STKE-v1.1"
+        },
+        {
           "path": "projects/001-doctors-appointment/ARC-001-REQ-v1.0.md",
           "title": "Requirements",
           "category": "Discovery",
           "documentId": "ARC-001-REQ-v1.0"
         },
         {
-          "path": "projects/001-doctors-appointment/ARC-001-STKE-v1.0.md",
-          "title": "Stakeholder Drivers",
-          "category": "Discovery",
-          "documentId": "ARC-001-STKE-v1.0"
+          "path": "projects/001-doctors-appointment/ARC-001-DATA-v1.0.md",
+          "title": "Data Model",
+          "category": "Architecture",
+          "documentId": "ARC-001-DATA-v1.0"
+        },
+        {
+          "path": "projects/001-doctors-appointment/ARC-001-DPIA-v1.0.md",
+          "title": "Data Protection Impact Assessment",
+          "category": "Compliance",
+          "documentId": "ARC-001-DPIA-v1.0"
         }
       ],
       "diagrams": [],
