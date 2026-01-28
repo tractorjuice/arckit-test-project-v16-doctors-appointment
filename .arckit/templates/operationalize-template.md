@@ -1,5 +1,7 @@
 # Operational Readiness Pack
 
+> **Template Status**: Experimental | **Version**: 1.0.0 | **Command**: `/arckit.operationalize`
+
 ## Document Control
 
 | Field | Value |
@@ -851,4 +853,4 @@ curl -f https://[service]/health
 **Generated on**: [DATE]
 **ArcKit Version**: [VERSION]
 **Project**: [PROJECT_NAME]
-**AI Model**: [MODEL]
+**Model**: [AI_MODEL]

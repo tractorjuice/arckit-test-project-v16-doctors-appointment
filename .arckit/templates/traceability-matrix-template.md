@@ -1,5 +1,7 @@
 # Requirements Traceability Matrix: [PROJECT_NAME]
 
+> **Template Status**: Live | **Version**: 1.0.0 | **Command**: `/arckit.traceability`
+
 ## Document Control
 
 | Field | Value |

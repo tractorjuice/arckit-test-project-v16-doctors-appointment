@@ -1,5 +1,7 @@
 # [ORGANIZATION_NAME] Enterprise Architecture Principles
 
+> **Template Status**: Live | **Version**: 1.0.0 | **Command**: `/arckit.principles`
+
 ## Document Control
 
 | Field | Value |

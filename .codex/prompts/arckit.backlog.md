@@ -1,3 +1,7 @@
+---
+description: Generate prioritised product backlog from ArcKit artifacts - convert requirements to user stories, organise into sprints
+alwaysShow: true
+---
 
 # Generate Product Backlog
 
@@ -24,6 +28,7 @@ You are creating a **prioritised product backlog** for an ArcKit project, conver
 - `dependency` - Dependency-based only
 - `multi` - Multi-factor (recommended)
 
+---
 
 ## What This Command Does
 
@@ -63,10 +68,11 @@ Scans all ArcKit artifacts and automatically:
    - Links to HLD components
    - Maps to epics and business goals
 
-**Output**: `projects/{project-dir}/backlog.md` (+ optional CSV/JSON)
+**Output**: `projects/{project-dir}/ARC-{PROJECT_ID}-BKLG-v1.0.md` (+ optional CSV/JSON)
 
 **Time Savings**: 75%+ reduction (4-6 weeks → 3-5 days)
 
+---
 
 ## Process
 
@@ -87,40 +93,40 @@ Extract project metadata:
 Read these files from `projects/{project-dir}/`:
 
 **Requirements** (primary source):
-- `requirements.md` - BRs, FRs, NFRs, INTs, DRs
+- Any `ARC-*-REQ-*.md` file - BRs, FRs, NFRs, INTs, DRs
 - Extract all requirement IDs and details
 
 **Architecture**:
-- `hld.md` - Component mapping
-- `dld.md` - Detailed component info
+- `vendors/{vendor}/hld-v*.md` - Component mapping (vendor submission)
+- `vendors/{vendor}/dld-v*.md` - Detailed component info (vendor submission)
 - Extract component names and responsibilities
 
 **Stakeholders**:
-- `stakeholder-analysis.md` - User personas
+- Any `ARC-*-STKE-*.md` file - User personas
 - Extract user types for "As a..." statements
 
 **Risk and Security**:
-- `risk-register.md` - Risk priorities
-- `threat-model.md` - Security threats
+- Any `ARC-*-RISK-*.md` file - Risk priorities
+- `threat-model.md` - Security threats (optional external document)
 - Extract risk levels and mitigations
 
 **Business Context**:
-- `business-case.md` - Value priorities
+- Any `ARC-*-SOBC-*.md` file - Value priorities
 - Extract ROI and benefit information
 
 **Testing**:
-- `test-strategy.md` - Test requirements
+- `test-strategy.md` - Test requirements (optional external document)
 - Extract test types and coverage needs
 
 **Principles**:
-- `principles.md` - Definition of Done
+- Any `ARC-000-PRIN-*.md` file in `.arckit/memory/` - Definition of Done
 - Extract quality standards
 
 **Note**: If any file is missing, continue with available artifacts. The command adapts to what exists.
 
 ### Step 3: Parse Requirements
 
-For each requirement in `requirements.md`, extract:
+For each requirement in the requirements document (`ARC-*-REQ-*.md`), extract:
 
 **Business Requirements (BR-xxx)**:
 ```markdown
@@ -172,7 +178,7 @@ For **each FR-xxx**, create a user story in GDS format:
 
 #### 4.1: Identify the Actor (User Persona)
 
-Look in `stakeholder-analysis.md` for user types:
+Look in the stakeholder analysis (`ARC-*-STKE-*.md`) for user types:
 - Service users
 - Administrators
 - System operators
@@ -315,7 +321,7 @@ Cap at 13 (break down if larger)
 #### 4.6: Identify Component (from HLD)
 
 Map story to HLD component:
-- Read `hld.md` for component list
+- Read `vendors/{vendor}/hld-v*.md` for component list
 - Match FR to component based on:
   - Component responsibilities
   - Component name (e.g., "User Service", "Payment Service")
@@ -446,7 +452,7 @@ For **each BR-xxx**, create an epic:
 **Estimated Duration**: {points / velocity} sprints
 
 **Description**:
-{BR description from requirements.md}
+{BR description from ARC-*-REQ-*.md}
 
 **Success Criteria**:
 {BR acceptance criteria}
@@ -454,6 +460,7 @@ For **each BR-xxx**, create an epic:
 **Stories in this Epic**:
 {List all FR stories that map to this BR}
 
+---
 ```
 
 #### 5.2: Group Stories into Epics
@@ -509,6 +516,7 @@ UK GDPR and provide audit trail for all user data access.
 
 **Total**: 34 story points across 8 stories
 
+---
 ```
 
 ### Step 6: Create Technical Tasks from NFRs
@@ -638,13 +646,13 @@ Priority Score = (
 - Could Have = 2
 - Won't Have = 1
 
-**Risk Weight** (from `risk-register.md`):
+**Risk Weight** (from `ARC-*-RISK-*.md`):
 - Critical risk = 4
 - High risk = 3
 - Medium risk = 2
 - Low risk = 1
 
-**Value Weight** (from `business-case.md`):
+**Value Weight** (from `ARC-*-SOBC-*.md`):
 - High ROI/impact = 4
 - Medium ROI/impact = 3
 - Low ROI/impact = 2
@@ -1073,7 +1081,7 @@ Create epic summary table:
 
 ### Step 12: Generate Definition of Done
 
-Extract from `principles.md` or use defaults:
+Extract from `ARC-000-PRIN-*.md` or use defaults:
 
 ```markdown
 ## Appendix D: Definition of Done
@@ -1126,15 +1134,16 @@ Every story must meet these criteria before marking "Done":
 - [ ] Acceptance criteria validated by PO
 - [ ] User feedback incorporated (if available)
 
+---
 
 **Note**: This DoD applies to all stories. Additional criteria may be added per story based on specific requirements.
 ```
 
 ### Step 13: Generate Output Files
 
-#### 13.1: Primary Output - backlog.md
+#### 13.1: Primary Output - ARC-*-BKLG-*.md
 
-Create comprehensive markdown file at `projects/{project-dir}/backlog.md`:
+Create comprehensive markdown file at `projects/{project-dir}/ARC-{PROJECT_ID}-BKLG-v1.0.md`:
 
 ```markdown
 # Product Backlog: {Project Name}
@@ -1146,6 +1155,7 @@ Create comprehensive markdown file at `projects/{project-dir}/backlog.md`:
 **Sprint Length**: {sprint_length}
 **Total Sprints Planned**: {sprints}
 
+---
 
 ## Executive Summary
 
@@ -1162,6 +1172,7 @@ Create comprehensive markdown file at `projects/{project-dir}/backlog.md`:
 ### Epic Breakdown
 {List all epics with point totals}
 
+---
 
 ## How to Use This Backlog
 
@@ -1191,29 +1202,35 @@ Create comprehensive markdown file at `projects/{project-dir}/backlog.md`:
 - **Monthly**: Reassess epic priorities
 - **Per sprint**: Update based on completed work and learnings
 
+---
 
 ## Epics
 
 {Generate all epic sections from Step 5}
 
+---
 
 ## Prioritized Backlog
 
 {Generate all user stories from Step 4, sorted by priority from Step 7}
 
+---
 
 ## Sprint Plan
 
 {Generate all sprint plans from Step 8}
 
+---
 
 ## Appendices
 
 {Include all appendices from Steps 9-12}
 
+---
 
 **Note**: This backlog was auto-generated from ArcKit artifacts. Review and refine with your team before sprint planning begins. Story points are estimates - re-estimate based on your team's velocity and capacity.
 
+---
 
 **End of Backlog**
 ```
@@ -1337,11 +1354,11 @@ Create `backlog.json` for programmatic access:
 Write all files to `projects/{project-dir}/`:
 
 **Always create**:
-- `backlog.md` - Primary output
+- `ARC-{PROJECT_ID}-BKLG-v1.0.md` - Primary output
 
 **Create if FORMAT includes**:
-- `backlog.csv` - If FORMAT=csv or FORMAT=all
-- `backlog.json` - If FORMAT=json or FORMAT=all
+- `ARC-{PROJECT_ID}-BKLG-v1.0.csv` - If FORMAT=csv or FORMAT=all
+- `ARC-{PROJECT_ID}-BKLG-v1.0.json` - If FORMAT=json or FORMAT=all
 
 **CRITICAL - Show Summary Only**:
 After writing the file(s), show ONLY the confirmation message below. Do NOT output the full backlog content in your response. The backlog document can be 1000+ lines and will exceed token limits.
@@ -1352,9 +1369,9 @@ After writing the file(s), show ONLY the confirmation message below. Do NOT outp
 ✅ Product backlog generated successfully!
 
 📁 Output files:
-  - projects/{project-dir}/backlog.md ({N} KB)
-  - projects/{project-dir}/backlog.csv ({N} KB)
-  - projects/{project-dir}/backlog.json ({N} KB)
+  - projects/{project-dir}/ARC-{PROJECT_ID}-BKLG-v1.0.md ({N} KB)
+  - projects/{project-dir}/ARC-{PROJECT_ID}-BKLG-v1.0.csv ({N} KB)
+  - projects/{project-dir}/ARC-{PROJECT_ID}-BKLG-v1.0.json ({N} KB)
 
 📊 Backlog Summary:
   - Total stories: {N}
@@ -1372,11 +1389,12 @@ After writing the file(s), show ONLY the confirmation message below. Do NOT outp
 ⚠️ Important: Story point estimates are AI-generated. Your team should re-estimate based on actual velocity and capacity.
 
 📚 Integration:
-  - Import backlog.csv to Jira, Azure DevOps, or GitHub Projects
-  - Use backlog.json for custom integrations
+  - Import ARC-{PROJECT_ID}-BKLG-v1.0.csv to Jira, Azure DevOps, or GitHub Projects
+  - Use ARC-{PROJECT_ID}-BKLG-v1.0.json for custom integrations
   - Link to /arckit.traceability for requirements tracking
 ```
 
+---
 
 ## Important Notes
 
@@ -1419,14 +1437,15 @@ High-risk items are prioritised early to:
 - Reduce uncertainty
 - Allow time for mitigation
 
+---
 
 ## Error Handling
 
 If artifacts are missing:
 
-**No requirements.md**:
+**No requirements document**:
 ```
-❌ Error: requirements.md not found in projects/{project-dir}/
+❌ Error: No ARC-*-REQ-*.md file found in projects/{project-dir}/
 
 Cannot generate backlog without requirements. Please run:
   /arckit.requirements
@@ -1434,9 +1453,9 @@ Cannot generate backlog without requirements. Please run:
 Then re-run /arckit.backlog
 ```
 
-**No stakeholder-analysis.md**:
+**No stakeholder analysis**:
 ```
-⚠️ Warning: stakeholder-analysis.md not found. Using generic personas.
+⚠️ Warning: No ARC-*-STKE-*.md file found. Using generic personas.
 
 For better user stories, run:
   /arckit.stakeholders
@@ -1446,7 +1465,7 @@ Then re-run /arckit.backlog
 
 **No HLD**:
 ```
-⚠️ Warning: hld.md not found. Stories will not be mapped to components.
+⚠️ Warning: hld-v*.md not found. Stories will not be mapped to components.
 
 For better component mapping, run:
   /arckit.hld or /arckit.diagram
@@ -1456,6 +1475,7 @@ Then re-run /arckit.backlog
 
 Continue with available artifacts, note limitations in output.
 
+---
 
 ## Time Savings
 
@@ -1473,6 +1493,7 @@ Continue with available artifacts, note limitations in output.
 
 **Time savings: 75-85%**
 
+---
 
 ## Examples
 
@@ -1483,7 +1504,7 @@ Continue with available artifacts, note limitations in output.
 ```
 
 Output:
-- Creates `backlog.md` with 8 sprints at 20 points/sprint
+- Creates `ARC-{PROJECT_ID}-BKLG-v1.0.md` with 8 sprints at 20 points/sprint
 - Uses multi-factor prioritization
 - Includes all available artifacts
 
@@ -1505,9 +1526,9 @@ Output:
 ```
 
 Output:
-- `backlog.md` (markdown)
-- `backlog.csv` (Jira import)
-- `backlog.json` (API integration)
+- `ARC-{PROJECT_ID}-BKLG-v1.0.md` (markdown)
+- `ARC-{PROJECT_ID}-BKLG-v1.0.csv` (Jira import)
+- `ARC-{PROJECT_ID}-BKLG-v1.0.json` (API integration)
 
 ### Example 4: Risk-Based Priority Only
 
@@ -1520,6 +1541,7 @@ Output:
 - High-risk items first
 - Ignores MoSCoW, value, dependencies
 
+---
 
 ## Integration with Other Commands
 
@@ -1537,6 +1559,7 @@ Output:
 - `/arckit.test-strategy` → Test cases from acceptance criteria
 - `/arckit.analyze` → Backlog completeness check
 
+---
 
 ## Success Criteria
 
@@ -1552,5 +1575,6 @@ Backlog is complete when:
 ✅ Traceability is maintained
 ✅ Output formats are tool-compatible
 
+---
 
 Now generate the backlog following this comprehensive process.

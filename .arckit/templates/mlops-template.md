@@ -1,5 +1,7 @@
 # MLOps Strategy
 
+> **Template Status**: Experimental | **Version**: 1.0.0 | **Command**: `/arckit.mlops`
+
 ## Document Control
 
 | Field | Value |
@@ -704,4 +706,4 @@ flowchart LR
 **Generated on**: [DATE]
 **ArcKit Version**: [VERSION]
 **Project**: [PROJECT_NAME]
-**AI Model**: [MODEL]
+**Model**: [AI_MODEL]

@@ -1,5 +1,7 @@
 # FinOps Strategy
 
+> **Template Status**: Experimental | **Version**: 1.0.0 | **Command**: `/arckit.finops`
+
 ## Document Control
 
 | Field | Value |
@@ -648,4 +650,4 @@ flowchart TB
 **Generated on**: [DATE]
 **ArcKit Version**: [VERSION]
 **Project**: [PROJECT_NAME]
-**AI Model**: [MODEL]
+**Model**: [AI_MODEL]

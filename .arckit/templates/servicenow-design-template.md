@@ -1,5 +1,7 @@
 # ServiceNow Service Design
 
+> **Template Status**: Beta | **Version**: 1.0.0 | **Command**: `/arckit.servicenow`
+
 ## Document Control
 
 | Field | Value |

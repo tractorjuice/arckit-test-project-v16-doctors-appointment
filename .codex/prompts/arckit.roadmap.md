@@ -14,7 +14,7 @@ $ARGUMENTS
 
 Before creating the roadmap, verify these strategic inputs exist (roadmap synthesis requires upstream context):
 
-1. **Architecture Principles**: `.arckit/memory/architecture-principles.md` (REQUIRED)
+1. **Architecture Principles**: `.arckit/memory/ARC-000-PRIN-*.md` (REQUIRED)
    - If missing: Ask user to run `/arckit.principles` first
 
 2. **Stakeholder Drivers**: Check if stakeholder analysis exists for this initiative
@@ -34,7 +34,7 @@ If architecture principles are missing, STOP and ask the user to create them fir
 Run the project creation script to get the project directory:
 
 ```bash
-.arckit/scripts/bash/create-project.sh --name "[project-name-from-user-input]" --json
+bash .arckit/scripts/bash/create-project.sh --name "[project-name-from-user-input]" --json
 ```
 
 Parse the JSON response to extract:
@@ -47,13 +47,13 @@ Parse the JSON response to extract:
 Read the following files to understand strategic context (only read files that exist):
 
 **REQUIRED**:
-- `.arckit/memory/architecture-principles.md` - Principles to align roadmap to
+- `.arckit/memory/ARC-000-PRIN-*.md` - Principles to align roadmap to
 
 **If Available**:
-- `projects/[PROJECT_ID]/stakeholder-drivers.md` - Business drivers and outcomes
-- `projects/[PROJECT_ID]/requirements.md` - Capability requirements
-- `projects/[PROJECT_ID]/risk-register.md` - Strategic risks
-- `projects/[PROJECT_ID]/wardley-maps/*.md` - Technology evolution maps
+- `projects/[PROJECT_ID]/ARC-*-STKE-*.md` - Business drivers and outcomes
+- `projects/[PROJECT_ID]/ARC-*-REQ-*.md` - Capability requirements
+- `projects/[PROJECT_ID]/ARC-*-RISK-*.md` - Strategic risks
+- `projects/[PROJECT_ID]/wardley-maps/ARC-*-WARD-*.md` - Technology evolution maps
 
 Use this context to inform roadmap themes, timeline, and priorities.
 
@@ -63,6 +63,8 @@ Load the roadmap template structure:
 
 ```bash
 cat .arckit/templates/roadmap-template.md
+
+   > **Note**: Read the `VERSION` file and update the version in the template metadata line when generating.
 ```
 
 ### 4. Generate Strategic Roadmap
@@ -70,7 +72,7 @@ cat .arckit/templates/roadmap-template.md
 Create a comprehensive multi-year architecture roadmap with the following sections:
 
 #### Document Control
-- Generate Document ID: `ARC-[PROJECT_ID]-ROADMAP-v1.0`
+- Generate Document ID: `ARC-[PROJECT_ID]-ROAD-v1.0` (for filename: `ARC-{PROJECT_ID}-ROAD-v1.0.md`)
 - Set owner, dates, financial years covered
 - Review cycle: Quarterly (default for roadmaps)
 
@@ -249,7 +251,7 @@ If this is a Ministry of Defence project, include:
 
 Create the file at:
 ```
-projects/[PROJECT_ID]/roadmap.md
+projects/[PROJECT_ID]/ARC-{PROJECT_ID}-ROAD-v1.0.md
 ```
 
 Use the Write tool with the complete roadmap content following the template structure.
@@ -261,8 +263,8 @@ After writing the file, show a concise summary (NOT the full document):
 ```markdown
 ## Strategic Architecture Roadmap Created
 
-**Document**: `projects/[PROJECT_ID]/roadmap.md`
-**Document ID**: ARC-[PROJECT_ID]-ROADMAP-v1.0
+**Document**: `projects/[PROJECT_ID]/ARC-{PROJECT_ID}-ROAD-v1.0.md`
+**Document ID**: ARC-[PROJECT_ID]-ROAD-v1.0
 
 ### Roadmap Overview
 - **Timeline**: FY [START_YEAR] - FY [END_YEAR] ([N] years)
@@ -318,7 +320,7 @@ After writing the file, show a concise summary (NOT the full document):
 - Delivers [N] strategic capabilities
 - Mitigates [N] strategic risks
 
-**File location**: `projects/[PROJECT_ID]/roadmap.md`
+**File location**: `projects/[PROJECT_ID]/ARC-{PROJECT_ID}-ROAD-v1.0.md`
 ```
 
 ## Important Notes

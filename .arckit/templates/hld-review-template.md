@@ -1,5 +1,7 @@
 # High-Level Design (HLD) Review: [PROJECT_NAME]
 
+> **Template Status**: Beta | **Version**: 1.0.0 | **Command**: `/arckit.hld-review`
+
 ## Document Control
 
 | Field | Value |

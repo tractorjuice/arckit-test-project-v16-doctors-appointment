@@ -1,5 +1,7 @@
 # Architecture Diagram: {diagram_name}
 
+> **Template Status**: Live | **Version**: 1.0.0 | **Command**: `/arckit.diagram`
+
 ## Document Control
 
 | Field | Value |

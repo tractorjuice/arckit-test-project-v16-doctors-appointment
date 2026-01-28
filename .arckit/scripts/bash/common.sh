@@ -74,6 +74,11 @@ create_project_dir() {
     mkdir -p "$project_dir"
     mkdir -p "$project_dir/vendors"
     mkdir -p "$project_dir/final"
+    mkdir -p "$project_dir/decisions"
+    mkdir -p "$project_dir/diagrams"
+    mkdir -p "$project_dir/wardley-maps"
+    mkdir -p "$project_dir/data-contracts"
+    mkdir -p "$project_dir/reviews"
 
     log_success "Created project directory: $project_dir"
 }

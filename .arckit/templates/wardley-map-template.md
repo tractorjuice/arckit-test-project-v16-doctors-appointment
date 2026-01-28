@@ -1,5 +1,7 @@
 # Wardley Map: {map_name}
 
+> **Template Status**: Experimental | **Version**: 1.0.0 | **Command**: `/arckit.wardley`
+
 ## Document Control
 
 | Field | Value |

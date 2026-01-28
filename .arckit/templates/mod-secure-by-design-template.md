@@ -1,5 +1,7 @@
 # MOD Secure by Design Assessment
 
+> **Template Status**: Experimental | **Version**: 1.0.0 | **Command**: `/arckit.mod-secure`
+
 ## Document Control
 
 | Field | Value |

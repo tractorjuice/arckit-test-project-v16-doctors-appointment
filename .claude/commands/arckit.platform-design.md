@@ -23,7 +23,7 @@ Generate a comprehensive platform strategy design document using PDT v2.2.1 meth
 **IMPORTANT**: Before generating a platform design, verify that foundational artifacts exist:
 
 1. **Architecture Principles** (REQUIRED):
-   - Check if `.arckit/memory/architecture-principles.md` exists
+   - Check if `.arckit/memory/ARC-000-PRIN-*.md` exists
    - If it does NOT exist:
      ```
      ❌ Architecture principles not found.
@@ -37,7 +37,7 @@ Generate a comprehensive platform strategy design document using PDT v2.2.1 meth
      ```
 
 2. **Stakeholder Analysis** (HIGHLY RECOMMENDED):
-   - Check if any `projects/*/stakeholder-drivers.md` files exist
+   - Check if any `projects/*/ARC-*-STKE-*.md` files exist
    - If stakeholder analysis exists:
      - Note which project(s) have stakeholder analysis
      - You will auto-populate entity portraits from stakeholder drivers
@@ -54,7 +54,7 @@ Generate a comprehensive platform strategy design document using PDT v2.2.1 meth
      ```
 
 3. **Requirements** (RECOMMENDED):
-   - Check if any `projects/*/requirements.md` files exist
+   - Check if any `projects/*/ARC-*-REQ-*.md` files exist
    - If requirements exist:
      - You will auto-populate platform capabilities from FR/NFR requirements
    - If none exist:
@@ -67,7 +67,7 @@ Generate a comprehensive platform strategy design document using PDT v2.2.1 meth
      ```
 
 4. **Wardley Maps** (OPTIONAL):
-   - Check if any `projects/*/wardley-maps/*.md` files exist
+   - Check if any `projects/*/wardley-maps/ARC-*-WARD-*.md` files exist
    - If Wardley maps exist:
      - You will use evolution analysis to inform build vs. buy decisions
    - This is optional but valuable for platform strategy
@@ -96,7 +96,7 @@ If `status` is "created":
 
 If `status` is "exists":
 - Project already has artifacts
-- Check for existing `platform-design.md`
+- Check for existing `ARC-{PROJECT_ID}-PLAT-v*.md` files
 - If exists, ask user if they want to overwrite or update
 
 ---
@@ -107,6 +107,8 @@ Read the platform design template:
 
 ```bash
 cat .arckit/templates/platform-design-template.md
+
+   > **Note**: Read the `VERSION` file and update the version in the template metadata line when generating.
 ```
 
 This template contains the structure for all 8 PDT canvases.
@@ -119,7 +121,7 @@ This template contains the structure for all 8 PDT canvases.
 
 #### 3.1 Extract Stakeholder Data → Entity Portraits
 
-If `projects/{project_id}/stakeholder-drivers.md` exists:
+If `projects/{project_id}/ARC-*-STKE-*.md` exists:
 
 **Read the file** and extract:
 - **Stakeholders** → Map to **Entities** in ecosystem
@@ -138,7 +140,7 @@ If `projects/{project_id}/stakeholder-drivers.md` exists:
 
 **Extraction Logic**:
 ```
-For each stakeholder in stakeholder-drivers.md:
+For each stakeholder in ARC-*-STKE-*.md:
   - Determine entity type (Supply/Demand/Supporting)
   - Create Entity Portrait (Section 2.2, 2.3, 2.4)
   - Populate context from stakeholder description
@@ -149,7 +151,7 @@ For each stakeholder in stakeholder-drivers.md:
 
 #### 3.2 Extract Requirements → Platform Capabilities
 
-If `projects/{project_id}/requirements.md` exists:
+If `projects/{project_id}/ARC-*-REQ-*.md` exists:
 
 **Read the file** and extract:
 - **BR (Business Requirements)** → Map to **Value Creation** and **Revenue Model**
@@ -167,7 +169,7 @@ If `projects/{project_id}/requirements.md` exists:
 
 **Extraction Logic**:
 ```
-For each requirement in requirements.md:
+For each requirement in ARC-*-REQ-*.md:
   - Map BR-xxx to business model and value creation
   - Map FR-xxx to platform features and transactions
   - Map NFR-xxx to architecture and scale targets
@@ -176,7 +178,7 @@ For each requirement in requirements.md:
 
 #### 3.3 Extract Wardley Map → Build vs. Buy Strategy
 
-If `projects/{project_id}/wardley-maps/*.md` exists:
+If `projects/{project_id}/wardley-maps/ARC-*-WARD-*.md` exists:
 
 **Read Wardley map(s)** and extract:
 - **Components** and their **Evolution Stages**:
@@ -193,7 +195,7 @@ If `projects/{project_id}/wardley-maps/*.md` exists:
 
 #### 3.4 Extract Architecture Principles → Platform Governance
 
-Read `.arckit/memory/architecture-principles.md`:
+Read `.arckit/memory/ARC-000-PRIN-*.md`:
 
 **Extract principles** that apply to platform strategy:
 - Example: Principle "API-First" → Platform must expose APIs for ecosystem integrations
@@ -209,10 +211,10 @@ Read `.arckit/memory/architecture-principles.md`:
 Use the bash script to generate document ID:
 
 ```bash
-bash .arckit/scripts/bash/generate-document-id.sh "$PROJECT_ID" "PLATFORM" "1.0"
+bash .arckit/scripts/bash/generate-document-id.sh "$PROJECT_ID" "PLAT" "1.0"
 ```
 
-This returns a document ID like: `ARC-001-PLATFORM-v1.0`
+This returns a document ID like: `ARC-001-PLAT-v1.0`
 
 **Populate document control fields**:
 - `document_id`: From script output
@@ -320,10 +322,10 @@ This returns a document ID like: `ARC-001-PLATFORM-v1.0`
    - UK Government Context: GaaP, TCoP, Service Standard, Digital Marketplace
 
 4. **Auto-populate from artifacts** (from Step 3):
-   - Entity portraits from stakeholder-drivers.md
-   - Platform capabilities from requirements.md
-   - Build vs. buy from wardley-maps/*.md
-   - Governance from architecture-principles.md
+   - Entity portraits from ARC-*-STKE-*.md
+   - Platform capabilities from ARC-*-REQ-*.md
+   - Build vs. buy from wardley-maps/ARC-*-WARD-*.md
+   - Governance from ARC-000-PRIN-*.md
 
 5. **UK Government Context** (if applicable):
    - Government as a Platform (GaaP) principles
@@ -351,7 +353,7 @@ This returns a document ID like: `ARC-001-PLATFORM-v1.0`
 **USE THE WRITE TOOL** to create the platform design document:
 
 ```
-File path: projects/{project_id}-{project_name}/platform-design.md
+File path: projects/{project_id}-{project_name}/ARC-{PROJECT_ID}-PLAT-v1.0.md
 Content: [Complete platform design following template, all 8 canvases filled out]
 ```
 
@@ -371,7 +373,7 @@ After writing the file, provide a **concise summary** (NOT the full document):
 ✅ Platform Strategy Design Created
 
 **Project**: {project_name} ({project_id})
-**Document**: projects/{project_id}-{project_name}/platform-design.md
+**Document**: projects/{project_id}-{project_name}/ARC-{PROJECT_ID}-PLAT-v1.0.md
 **Document ID**: {document_id}
 
 ## Platform Overview
@@ -439,12 +441,12 @@ After writing the file, provide a **concise summary** (NOT the full document):
 
 ## Auto-Population Sources
 
-{IF stakeholder-drivers.md used:}
-✅ **Stakeholders** → Entity portraits auto-populated from stakeholder-drivers.md
+{IF ARC-*-STKE-*.md used:}
+✅ **Stakeholders** → Entity portraits auto-populated from ARC-*-STKE-*.md
    - {N} stakeholders mapped to {M} ecosystem entities
 
-{IF requirements.md used:}
-✅ **Requirements** → Platform capabilities auto-populated from requirements.md
+{IF ARC-*-REQ-*.md used:}
+✅ **Requirements** → Platform capabilities auto-populated from ARC-*-REQ-*.md
    - {N} BR requirements → Value creation
    - {M} FR requirements → Platform features
    - {K} NFR requirements → Architecture and scale
@@ -454,8 +456,8 @@ After writing the file, provide a **concise summary** (NOT the full document):
    - {N} components to BUILD (Custom/Genesis)
    - {M} components to BUY (Product/Commodity)
 
-{IF architecture-principles.md used:}
-✅ **Architecture Principles** → Platform governance from architecture-principles.md
+{IF ARC-000-PRIN-*.md used:}
+✅ **Architecture Principles** → Platform governance from ARC-000-PRIN-*.md
    - {N} principles applied to platform design
 
 ## UK Government Context
@@ -492,7 +494,7 @@ After writing the file, provide a **concise summary** (NOT the full document):
 
 ## Files Created
 
-📄 `projects/{project_id}-{project_name}/platform-design.md` ({file_size} lines)
+📄 `projects/{project_id}-{project_name}/ARC-{PROJECT_ID}-PLAT-v1.0.md` ({file_size} lines)
 
 ## Related Commands
 
