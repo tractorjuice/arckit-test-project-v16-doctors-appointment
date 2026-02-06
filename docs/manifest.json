@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-05T12:00:00Z",
+  "generated": "2026-02-06T12:00:00Z",
   "repository": {
     "owner": "tractorjuice",
     "name": "arckit-test-project-v16-doctors-appointment",
@@ -16,6 +16,12 @@
     {
       "path": "docs/guides/stakeholders.md",
       "title": "Stakeholder Analysis Playbook",
+      "category": "Discovery",
+      "status": "live"
+    },
+    {
+      "path": "docs/guides/stakeholder-analysis.md",
+      "title": "Stakeholder Analysis Guide",
       "category": "Discovery",
       "status": "live"
     },
@@ -206,6 +212,48 @@
       "status": "beta"
     },
     {
+      "path": "docs/guides/uk-government/technology-code-of-practice.md",
+      "title": "Technology Code of Practice (TCoP) Guide",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/uk-government/secure-by-design.md",
+      "title": "UK Government Secure by Design Guide",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/uk-government/ai-playbook.md",
+      "title": "UK Government AI Playbook Guide",
+      "category": "Compliance",
+      "status": "alpha"
+    },
+    {
+      "path": "docs/guides/uk-government/algorithmic-transparency.md",
+      "title": "Algorithmic Transparency Recording Standard (ATRS) Guide",
+      "category": "Compliance",
+      "status": "alpha"
+    },
+    {
+      "path": "docs/guides/uk-government/standards-map.md",
+      "title": "UK Government Digital Policy & Standards Map",
+      "category": "Compliance",
+      "status": "beta"
+    },
+    {
+      "path": "docs/guides/uk-government/digital-marketplace.md",
+      "title": "Digital Marketplace Procurement Guide",
+      "category": "Procurement",
+      "status": "experimental"
+    },
+    {
+      "path": "docs/guides/uk-mod/secure-by-design.md",
+      "title": "MOD Secure by Design Guide",
+      "category": "Compliance",
+      "status": "experimental"
+    },
+    {
       "path": "docs/guides/devops.md",
       "title": "DevOps Strategy Playbook",
       "category": "Operations",
@@ -312,6 +360,12 @@
       "title": "Template Customization Guide",
       "category": "Other",
       "status": "experimental"
+    },
+    {
+      "path": "docs/guides/upgrading.md",
+      "title": "Upgrading ArcKit",
+      "category": "Other",
+      "status": "live"
     }
   ],
   "global": [
@@ -323,6 +377,8 @@
       "isDefault": true
     }
   ],
+  "globalExternal": [],
+  "globalPolicies": [],
   "projects": [
     {
       "id": "001-doctors-appointment",
@@ -401,7 +457,8 @@
       "wardleyMaps": [],
       "dataContracts": [],
       "reviews": [],
-      "vendors": []
+      "vendors": [],
+      "external": []
     }
   ]
 }
